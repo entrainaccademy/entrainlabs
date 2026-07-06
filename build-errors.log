@@ -1,0 +1,22 @@
+
+> entrain-labs@0.1.0 build
+> next build
+
+▲ Next.js 16.2.4 (Turbopack)
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 1590ms
+  Running TypeScript ...
+Failed to type check.
+
+./components/ui/galaxy.tsx:267:9
+Type error: 'program' is possibly 'null'.
+
+  [90m265 |[0m       animateId = requestAnimationFrame(update);
+  [90m266 |[0m       [36mif[0m (!disableAnimation) {
+[31m[1m>[0m [90m267 |[0m         program.uniforms.uTime.value = t * [35m0.001[0m;
+  [90m    |[0m         [31m[1m^[0m
+  [90m268 |[0m         program.uniforms.uStarSpeed.value = (t * [35m0.001[0m * starSpeed) / [35m10.0[0m;
+  [90m269 |[0m       }
+  [90m270 |[0m
+Next.js build worker exited with code: 1 and signal: null
