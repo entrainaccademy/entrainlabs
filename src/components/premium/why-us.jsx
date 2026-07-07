@@ -24,7 +24,7 @@ import {
 // import ten from "../../assets/ten.jpg";
 // import eleven from "../../assets/eleven.jpg";
 // import twelve from "../../assets/twelve.jpg";
-// import thirteen from "../../assets/thirteen.jpg";
+// import thirteen from "../../assets/thirteenonbg.";
 // import fourteen from "../../assets/fourteen.jpg";
 // import fifteen from "../../assets/fifteen.jpg";
 // import sixteen from "../../assets/sixteen.jpg";
@@ -34,7 +34,10 @@ import {
 // import twenty from "../../assets/twenty.jpg";
 // import twentyone from "../../assets/twentyone.jpg";
 // import twentytwo from "../../assets/twentytwo.jpg";
-import twentythree from "../../assets/twentythree.jpg";
+// import twentythree from "../../assets/twentythree.png";
+// import nonbg from "../../assets/nonbg.png";
+// import nonbg2 from "../../assets/nonbg2.png";
+import demo from '../../assets/demo.jpeg'
 
 
 
@@ -107,18 +110,18 @@ export default function WhyChooseUs() {
     <section id="about" className="relative py-28 md:py-32 bg-zinc-50 dark:bg-zinc-950 font-sans overflow-hidden transition-colors duration-300">
       
       {/* 5% Opacity Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none select-none z-0" />
+      {/* <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none select-none z-0" /> */}
 
       {/* Subtle blurred gradient blob */}
       <div className="absolute top-10 right-10 w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] rounded-full bg-brand-primary/5 dark:bg-brand-primary/10 blur-[100px] sm:blur-[120px] pointer-events-none select-none z-0" />
       <div className="absolute bottom-10 left-10 w-[350px] sm:w-[450px] h-[350px] sm:h-[450px] rounded-full bg-brand-accent/3 dark:bg-brand-accent/5 blur-[100px] sm:blur-[120px] pointer-events-none select-none z-0" />
 
       {/* Floating background dots */}
-      <div className="absolute inset-0 pointer-events-none z-0">
+      {/* <div className="absolute inset-0 pointer-events-none z-0">
         <div className="absolute top-1/4 left-10 w-1.5 h-1.5 rounded-full bg-brand-primary/20" />
         <div className="absolute bottom-1/4 right-10 w-2 h-2 rounded-full bg-brand-accent/20" />
         <div className="absolute top-2/3 right-1/3 w-1 h-1 rounded-full bg-zinc-300 dark:bg-zinc-700" />
-      </div>
+      </div> */}
 
       <div className="relative mx-auto max-w-[1280px] px-6 md:px-8 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-[40px] lg:gap-[80px] items-center">
@@ -132,22 +135,21 @@ export default function WhyChooseUs() {
             className="lg:col-span-5 relative w-full flex justify-center"
           >
             {/* Soft decorative blur behind image */}
-            <div className="absolute -inset-2 bg-brand-primary/5 rounded-[2.5rem] blur-xl pointer-events-none" />
+            {/* <div className="absolute -inset-2 bg-brand-primary/5 rounded-[2.5rem] blur-xl pointer-events-none" /> */}
 
             {/* Framed Image */}
-            <div className="relative w-full aspect-[4/5] sm:aspect-[4/3] lg:aspect-[3/4] max-w-md rounded-[2rem] overflow-hidden border border-zinc-200/60 dark:border-zinc-800/60 shadow-xl shadow-zinc-200/50 dark:shadow-zinc-950/50 group select-none bg-zinc-100 dark:bg-zinc-900">
+            <div className="relative w-full aspect-[4/5] sm:aspect-[4/3] lg:aspect-[3/4] max-w-md rounded-[2rem] overflow-hidden  border-zinc-200/60 dark:border-zinc-800/60   shadow-zinc-200/50 dark:shadow-zinc-950/50 group select-none bg-zinc-000 dark:bg-zinc-900">
               <img 
-                src={twentythree} 
+                src={demo} 
                 alt="Students collaborating at study table" 
                 className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" 
               />
               {/* Subtle gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent z-10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/00 via-transparent to-transparent z-10" />
 
               {/* Floating Glass Badge */}
-              <div className="absolute bottom-6 left-6 z-20 px-4 py-2 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md rounded-2xl border border-white/20 dark:border-zinc-800/20 shadow-lg shadow-zinc-200/20 dark:shadow-zinc-950/20 text-xs sm:text-sm font-bold text-zinc-850 dark:text-zinc-100 flex items-center gap-1.5">
-                <span>⭐</span>
-                <span>1000+ Students Trained</span>
+              <div className="absolute bottom-6 left-6 z-20 px-4 py-2 bg-white/10  dark:border-zinc-800/20 shadow-lg shadow-zinc-200/20 dark:shadow-zinc-950/20 text-xs sm:text-sm font-bold text-zinc-850 dark:text-zinc-100 flex items-center gap-1.5">
+                
               </div>
             </div>
           </motion.div>
@@ -156,10 +158,8 @@ export default function WhyChooseUs() {
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             
             {/* Section Header */}
-            <div className="flex flex-col items-start gap-3 mb-10 max-w-2xl">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-[10px] font-bold uppercase tracking-widest font-satoshi">
-                <Sparkles size={10} /> Why Choose Entrain Labs
-              </span>
+            <div className="flex flex-col items-start gap-3  mb-10 max-w-2xl">
+             
               <motion.h2 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -169,7 +169,7 @@ export default function WhyChooseUs() {
               >
                 Why Choose<br />Entrain Labs?
               </motion.h2>
-              <p className="text-base sm:text-lg text-zinc-500 dark:text-zinc-400 font-satoshi mt-2 max-w-xl">
+              <p className="text-[12px] lg:text-[12px] sm:text-lg text-zinc-500 dark:text-zinc-400  font-satoshi mt-2 max-w-xl">
                 "We focus on practical learning, industry tools, AI-powered training, and career success."
               </p>
             </div>
@@ -180,7 +180,7 @@ export default function WhyChooseUs() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, margin: "-50px" }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-[18px] w-full mb-10"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-[18px]  w-full mb-10"
             >
               {items.map((item, idx) => {
                 const IconComponent = item.icon;
@@ -190,12 +190,12 @@ export default function WhyChooseUs() {
                     variants={itemVariants}
                     whileHover={{ 
                       y: -6,
-                      boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.05)"
+                      boxShadow: "0 10px 25px -5px  rgba(0, 0, 0, 0.05)"
                     }}
-                    className="group relative flex items-start gap-4 p-5 rounded-2xl border border-zinc-200/60 dark:border-zinc-800/60 bg-white/50 dark:bg-zinc-900/10 hover:bg-white dark:hover:bg-zinc-900/65 shadow-sm transition-all duration-300 cursor-pointer border-l-[3px] border-l-transparent hover:border-l-brand-primary overflow-hidden"
+                    className="group relative flex items-start gap-4  p-5  rounded-2xl border border-zinc-200/60 dark:border-zinc-800/60 bg-white/50 dark:bg-zinc-900/10 hover:bg-white dark:hover:bg-zinc-900/65 shadow-sm transition-all duration-300 cursor-pointer border-l-[3px] border-l-transparent hover:border-l-[#4F8A8A]/90 overflow-hidden"
                   >
                     {/* Hover subtle background glow */}
-                    <div className="absolute inset-0 bg-brand-primary/[0.005] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl pointer-events-none" />
+                    <div className="absolute inset-0 bg-red-900 opacity-0  group-hover:opacity-[#4F8A8A]  transition-opacity duration-300 rounded-2xl pointer-events-none" />
 
                     {/* Circular Glass Icon */}
                     <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center border transition-all duration-300 group-hover:rotate-[8deg] ${item.color}`}>
@@ -204,7 +204,7 @@ export default function WhyChooseUs() {
 
                     {/* Content */}
                     <div className="flex-1 min-w-0 pr-4">
-                      <h3 className="text-zinc-950 dark:text-white font-semibold text-base mb-1 tracking-tight font-clash flex items-center gap-1.5">
+                      <h3 className="text-zinc-950 dark:text-white  font-semibold text-base mb-1 tracking-tight font-clash flex items-center gap-1.5">
                         {item.title}
                       </h3>
                       <p className="text-zinc-500 dark:text-zinc-400 text-xs leading-relaxed font-satoshi">
@@ -213,9 +213,9 @@ export default function WhyChooseUs() {
                     </div>
 
                     {/* Tiny arrow appearing on hover */}
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-brand-primary">
+                    {/* <div className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-brand-primary">
                       <ArrowRight size={14} />
-                    </div>
+                    </div> */}
                   </motion.div>
                 );
               })}

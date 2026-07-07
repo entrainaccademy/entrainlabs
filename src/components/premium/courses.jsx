@@ -1,149 +1,633 @@
 "use client";
-import { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Search, Calendar, Star, Compass, ArrowRight, CheckCircle2 } from "lucide-react";
-import { coursesData } from "@/lib/data";
+import {
+  GraduationCap,
+  Building,
+  Laptop,
+  Check,
+  ArrowRight,
+  Sparkles,
+  FileText,
+  HelpCircle,
+  Award,
+  ChevronRight,
+  TrendingUp,
+  Cpu,
+  Star,
+  ShieldCheck,
+  CheckCircle2
+} from "lucide-react";
 import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced";
-export default function Courses() {
-    const [activeCategory, setActiveCategory] = useState("All");
-    const [searchQuery, setSearchQuery] = useState("");
-    const [selectedCourse, setSelectedCourse] = useState(null);
-    const [isEnrollOpen, setIsEnrollOpen] = useState(false);
-    const categories = ["All", "Flagship", "Ads", "Organic", "Specialized"];
-    // Filter courses based on category AND search query
-    const filteredCourses = coursesData.filter((course) => {
-        const matchesCategory = activeCategory === "All" || course.category === activeCategory;
-        const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            course.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            course.tools.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()));
-        return matchesCategory && matchesSearch;
-    });
-    const handleEnrollClick = (course) => {
-        setSelectedCourse(course);
-        setIsEnrollOpen(true);
-    };
-    return (<section id="courses" className="relative py-20 md:py-28 bg-zinc-50 dark:bg-zinc-950 font-sans overflow-hidden">
-      {/* Noise texture overlay */}
-      <div className="absolute inset-0 noise-overlay pointer-events-none opacity-[0.02] dark:opacity-[0.03]"/>
-      
-      {/* Subtle backdrop glows */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-brand-accent/5 blur-[130px] pointer-events-none"/>
-      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-brand-accent-2/5 blur-[150px] pointer-events-none"/>
 
-      <div className="relative mx-auto max-w-7xl px-6 md:px-8">
+export default function Courses() {
+  const [isEnrollOpen, setIsEnrollOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState("");
+
+  // Smooth scroll handler for anchor links
+  const handleScrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // High performance mouse tracking for glass reflection/spotlight without re-renders
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
+  };
+
+  const handleEnrollClick = (planName) => {
+    setSelectedPlan(planName);
+    setIsEnrollOpen(true);
+  };
+
+  // Pricing Plans Data
+  const pricingPlans = [
+    {
+      id: "starter",
+      name: "Starter",
+      badge: "Best for Beginners",
+      duration: "4 Months",
+      perfectFor: "Students & Beginners",
+      description: "Get started with the fundamentals of digital marketing and master core execution skills.",
+      buttonText: "Enroll Now",
+      features: [
+        "Live Classes",
+        "Recorded Classes",
+        "Basic Assignments",
+        "Downloadable Notes",
+        "Community Support",
+        "Certificate"
+      ],
+      popular: false
+    },
+    {
+      id: "career-track",
+      name: "Career Track",
+      badge: "🔥 Most Popular",
+      duration: "4 Months",
+      perfectFor: "Students & Job Seekers",
+      description: "Build an agency-ready portfolio, learn from client briefs, and master modern AI marketing automation.",
+      buttonText: "Start Career",
+      features: [
+        "Live Classes",
+        "Recorded Classes",
+        "Virtual Workplace",
+        "Weekly Review",
+        "AI Tools Training",
+        "Prompt Engineering",
+        "Practical Assignments",
+        "Real Client Projects",
+        "Career Guidance",
+        "Certificate"
+      ],
+      popular: true
+    },
+    {
+      id: "pro-master",
+      name: "Pro Master",
+      badge: "👑 Premium",
+      duration: "4 Months",
+      perfectFor: "Professionals & Freelancers",
+      description: "Get 1-on-1 mentorship, advanced growth strategies, personal branding, and lifetime premium support.",
+      buttonText: "Become a Pro",
+      features: [
+        "Live Classes",
+        "Recorded Classes",
+        "Virtual Workplace",
+        "Weekly Review",
+        "AI Tools",
+        "Prompt Engineering",
+        "Practical Assignments",
+        "Real Projects",
+        "Individual Mentor",
+        "Lifetime Support",
+        "Career Assistance",
+        "Certificate"
+      ],
+      popular: false
+    }
+  ];
+
+  // Comparison Table Rows
+  const comparisonRows = [
+    { name: "Live Classes", starter: "Yes", career: "Yes", pro: "Yes" },
+    { name: "Recorded Classes", starter: "Yes", career: "Yes", pro: "Yes" },
+    { name: "Assignments", starter: "Basic", career: "Practical", pro: "Practical" },
+    { name: "Virtual Workplace", starter: "No", career: "Yes", pro: "Yes" },
+    { name: "Weekly Review", starter: "No", career: "Yes", pro: "Yes" },
+    { name: "AI Tools", starter: "No", career: "Yes", pro: "Yes" },
+    { name: "Prompt Engineering", starter: "No", career: "Yes", pro: "Yes" },
+    { name: "Real Projects", starter: "No", career: "Client Projects", pro: "Enterprise Projects" },
+    { name: "Individual Mentor", starter: "No", career: "No", pro: "Yes" },
+    { name: "Lifetime Support", starter: "No", career: "No", pro: "Yes" },
+    { name: "Certificate", starter: "Yes", career: "Yes", pro: "Yes" }
+  ];
+
+  return (
+    <section
+      id="courses"
+      className="relative py-24 md:py-36 bg-zinc-950 text-white overflow-hidden font-sans selection:bg-[#0A756A]/30 selection:text-white"
+    >
+      {/* Background System */}
+      {/* Dot Grid Pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808007_1px,transparent_1px),linear-gradient(to_bottom,#80808007_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
+
+      {/* Noise Texture */}
+      <div className="absolute inset-0 noise-overlay pointer-events-none opacity-[0.02]" />
+
+      {/* Mesh Gradient / Glowing Blurs */}
+      <div className="absolute top-[10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-[#0A756A]/10 blur-[130px] pointer-events-none" />
+      <div className="absolute top-[40%] right-[-10%] w-[600px] h-[600px] rounded-full bg-[#0A756A]/5 blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-[10%] left-[20%] w-[550px] h-[550px] rounded-full bg-[#0A756A]/8 blur-[140px] pointer-events-none" />
+
+      {/* Soft Top Radial Lighting Overlay */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-[#0A756A]/30 to-transparent pointer-events-none" />
+      
+      <div className="relative mx-auto max-w-7xl px-6 md:px-8 z-10">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
-          <div className="flex flex-col text-left gap-4 max-w-xl">
-            <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent font-satoshi">
-              Curriculum Catalog
+        {/* SECTION HEADER */}
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-20 md:mb-28">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#0A756A]/20 bg-[#0A756A]/5 text-[#0A756A] text-xs font-semibold tracking-wide uppercase mb-5 backdrop-blur-md"
+          >
+            <span>Digital Marketing Courses</span>
+          </motion.div>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            className="text-4xl md:text-6xl font-bold font-clash tracking-tight text-white leading-[1.1] mb-6"
+          >
+            Choose the Perfect <br className="hidden sm:inline" />
+            <span className="bg-gradient-to-r from-white via-zinc-200 to-[#0A756A] bg-clip-text text-transparent">
+              Digital Marketing Program
             </span>
-            <h2 className="text-3xl md:text-5xl font-bold font-clash tracking-tight text-zinc-900 dark:text-white leading-tight">
-              Explore Our Core Programs.
-            </h2>
-            <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">
-              Find the specialization that aligns with your professional path. All programs feature live agency campaigns and dedicated job search support.
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="text-zinc-400 text-base md:text-lg leading-relaxed font-satoshi max-w-2xl"
+          >
+            Whether you're a beginner, job seeker, freelancer, entrepreneur, or business owner, Entrain Labs offers practical Digital Marketing programs designed to build real-world skills through live training, projects, AI tools, and career support.
+          </motion.p>
+        </div>
+
+        {/* DISPLAY TWO MAIN TRAINING MODES */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-28 md:mb-36">
+          
+          {/* CARD 1 - Offline Classroom */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            whileHover={{ y: -6, rotate: -0.2 }}
+            onMouseMove={handleMouseMove}
+            className="group relative rounded-[32px] p-[1px] bg-gradient-to-b from-white/10 via-zinc-800/50 to-transparent overflow-hidden"
+          >
+            {/* Glass spotlight reflection overlay */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+              style={{
+                background: "radial-gradient(400px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(10, 117, 106, 0.12), transparent 80%)"
+              }}
+            />
+            
+            <div className="relative h-full bg-zinc-900/40 backdrop-blur-2xl rounded-[31px] p-8 md:p-12 flex flex-col justify-between overflow-hidden">
+              {/* Dynamic light streak */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#0A756A]/10 rounded-full blur-2xl pointer-events-none group-hover:bg-[#0A756A]/20 transition-colors duration-500" />
+              
+              <div>
+                <div className="flex items-start justify-between mb-8">
+                  {/* Floating Icon Wrapper */}
+                  <motion.div
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                    className="w-14 h-14 rounded-2xl bg-[#0A756A]/15 border border-[#0A756A]/30 flex items-center justify-center text-[#0A756A]"
+                  >
+                    <Building className="w-7 h-7" />
+                  </motion.div>
+                  <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase px-2.5 py-1 rounded-full border border-white/5 bg-white/5">
+                    Physical Academy
+                  </span>
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-bold font-clash text-white mb-4">
+                  Offline Classroom
+                </h3>
+
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-8 max-w-md font-satoshi">
+                  Experience classroom-based learning with direct interaction, practical sessions, expert mentoring, and collaborative learning.
+                </p>
+
+                {/* Features List */}
+                <div className="grid grid-cols-2 gap-4 mb-10 pb-8 border-b border-white/5">
+                  {[
+                    "Classroom Training",
+                    "Live Instructor",
+                    "Practical Sessions",
+                    "Weekly Reviews",
+                    "Networking",
+                    "Certificate"
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-[#0A756A]/10 border border-[#0A756A]/30 flex items-center justify-center shrink-0">
+                        <Check className="w-3.5 h-3.5 text-[#0A756A]" />
+                      </div>
+                      <span className="text-xs md:text-sm text-zinc-300 font-satoshi">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action Button */}
+              <button
+                onClick={() => handleEnrollClick("Offline Classroom")}
+                className="relative w-full h-12 rounded-xl bg-white text-zinc-950 font-semibold text-sm transition-all duration-300 hover:bg-[#0A756A] hover:text-white hover:shadow-[0_0_30px_rgba(10,117,106,0.3)] flex items-center justify-center gap-2 group/btn cursor-pointer"
+              >
+                <span>Join Offline Batch</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+              </button>
+            </div>
+          </motion.div>
+
+          {/* CARD 2 - Online Learning */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            whileHover={{ y: -6, rotate: 0.2 }}
+            onMouseMove={handleMouseMove}
+            className="group relative rounded-[32px] p-[1px] bg-gradient-to-b from-white/10 via-zinc-800/50 to-transparent overflow-hidden"
+          >
+            {/* Glass spotlight reflection overlay */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+              style={{
+                background: "radial-gradient(400px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(10, 117, 106, 0.12), transparent 80%)"
+              }}
+            />
+
+            <div className="relative h-full bg-zinc-900/40 backdrop-blur-2xl rounded-[31px] p-8 md:p-12 flex flex-col justify-between overflow-hidden">
+              {/* Dynamic light streak */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#0A756A]/10 rounded-full blur-2xl pointer-events-none group-hover:bg-[#0A756A]/20 transition-colors duration-500" />
+              
+              <div>
+                <div className="flex items-start justify-between mb-8">
+                  {/* Floating Icon Wrapper */}
+                  <motion.div
+                    animate={{ y: [0, -6, 0] }}
+                    transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 0.5 }}
+                    className="w-14 h-14 rounded-2xl bg-[#0A756A]/15 border border-[#0A756A]/30 flex items-center justify-center text-[#0A756A]"
+                  >
+                    <Laptop className="w-7 h-7" />
+                  </motion.div>
+                  <span className="text-[10px] font-mono tracking-widest text-[#0A756A] uppercase px-2.5 py-1 rounded-full border border-[#0A756A]/20 bg-[#0A756A]/5">
+                    Flexible Learning
+                  </span>
+                </div>
+
+                <h3 className="text-2xl md:text-3xl font-bold font-clash text-white mb-4">
+                  Online Learning
+                </h3>
+
+                <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-8 max-w-md font-satoshi">
+                  Attend classes from anywhere with live sessions, recorded videos, practical assignments, and continuous mentor support.
+                </p>
+
+                {/* Features List */}
+                <div className="grid grid-cols-2 gap-4 mb-10 pb-8 border-b border-white/5">
+                  {[
+                    "Live Classes",
+                    "Recorded Videos",
+                    "Flexible Schedule",
+                    "Community Support",
+                    "Practical Learning",
+                    "Certificate"
+                  ].map((feature, i) => (
+                    <div key={i} className="flex items-center gap-3">
+                      <div className="w-5 h-5 rounded-full bg-[#0A756A]/10 border border-[#0A756A]/30 flex items-center justify-center shrink-0">
+                        <Check className="w-3.5 h-3.5 text-[#0A756A]" />
+                      </div>
+                      <span className="text-xs md:text-sm text-zinc-300 font-satoshi">{feature}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Action Button - Scrolls to Pricing */}
+              <button
+                onClick={() => handleScrollToSection("online-programs")}
+                className="relative w-full h-12 rounded-xl bg-transparent border border-white/10 hover:border-[#0A756A] text-white font-semibold text-sm transition-all duration-300 hover:bg-[#0A756A]/10 flex items-center justify-center gap-2 group/btn cursor-pointer"
+              >
+                <span>Explore Online Plans</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+              </button>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* ONLINE PROGRAMS PRICING HEADER */}
+        <div id="online-programs" className="scroll-mt-24 mb-16 text-center">
+          <span className="text-[10px] font-mono tracking-widest text-[#0A756A] uppercase mb-3 block">
+            Flexible Pricing Structure
+          </span>
+          <h3 className="text-3xl md:text-5xl font-bold font-clash text-white mb-4">
+            Online Training Programs
+          </h3>
+          <p className="text-zinc-400 text-sm max-w-xl mx-auto font-satoshi">
+            Select a pathway tailored to your experience, and speed up your career progression with structured resources.
+          </p>
+        </div>
+
+        {/* DISPLAY THREE PREMIUM PRICING CARDS */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-28 md:mb-36 items-stretch">
+          {pricingPlans.map((plan, idx) => {
+            const isPopular = plan.popular;
+            return (
+              <motion.div
+                key={plan.id}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.7, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                whileHover={{ y: -8 }}
+                onMouseMove={handleMouseMove}
+                className={`group relative rounded-3xl p-[1px] flex flex-col justify-between overflow-hidden transition-all duration-500 ${
+                  isPopular
+                    ? "bg-gradient-to-b from-[#0A756A] via-zinc-800 to-transparent lg:scale-105 z-20 shadow-[0_20px_50px_rgba(10,117,106,0.15)]"
+                    : "bg-gradient-to-b from-white/10 via-zinc-900 to-transparent"
+                }`}
+              >
+                {/* Spotlight background */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{
+                    background: isPopular
+                      ? "radial-gradient(400px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(10, 117, 106, 0.2), transparent 80%)"
+                      : "radial-gradient(400px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(10, 117, 106, 0.12), transparent 80%)"
+                  }}
+                />
+
+                {/* Popular Glow Effect */}
+                {isPopular && (
+                  <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-64 h-32 bg-[#0A756A]/20 blur-3xl pointer-events-none" />
+                )}
+
+                <div className="relative h-full bg-zinc-950/90 backdrop-blur-2xl rounded-[23px] p-6 md:p-8 flex flex-col justify-between">
+                  <div>
+                    {/* Badge */}
+                    <div className="flex items-center justify-between gap-3 mb-6">
+                      <span className={`text-[10px] font-mono tracking-wider px-3 py-1 rounded-full uppercase font-bold border ${
+                        isPopular
+                          ? "bg-[#0A756A]/20 text-[#0A756A] border-[#0A756A]/30 animate-pulse"
+                          : "bg-white/5 text-zinc-400 border-white/5"
+                      }`}>
+                        {plan.badge}
+                      </span>
+                      <div className="flex items-center gap-1 text-zinc-500 font-mono text-xs">
+                        <span>Duration:</span>
+                        <span className="text-white font-semibold">{plan.duration}</span>
+                      </div>
+                    </div>
+
+                    {/* Plan Name */}
+                    <h4 className="text-2xl md:text-3xl font-bold font-clash text-white mb-2">
+                      {plan.name}
+                    </h4>
+                    
+                    {/* Perfect For */}
+                    <p className="text-[#0A756A] text-xs font-semibold tracking-wide font-satoshi mb-4 uppercase">
+                      Perfect For: {plan.perfectFor}
+                    </p>
+
+                    <p className="text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 pb-6 border-b border-white/5 font-satoshi">
+                      {plan.description}
+                    </p>
+
+                    {/* Features checklist */}
+                    <div className="flex flex-col gap-3.5 mb-8">
+                      <span className="text-[10px] font-mono tracking-widest text-zinc-500 uppercase">
+                        What's Included:
+                      </span>
+                      {plan.features.map((feat, i) => (
+                        <div key={i} className="flex items-start gap-2.5 text-xs md:text-sm text-zinc-300">
+                          <CheckCircle2 className="w-4.5 h-4.5 text-[#0A756A] shrink-0 mt-0.5" />
+                          <span className="font-satoshi">{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Button CTA */}
+                  <button
+                    onClick={() => handleEnrollClick(plan.name)}
+                    className={`relative w-full h-12 rounded-xl font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 group/pbtn cursor-pointer ${
+                      isPopular
+                        ? "bg-[#0A756A] text-white hover:bg-[#129A8C] hover:shadow-[0_0_30px_rgba(10,117,106,0.4)]"
+                        : "bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-[#0A756A]/50"
+                    }`}
+                  >
+                    <span>{plan.buttonText}</span>
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover/pbtn:translate-x-1" />
+                  </button>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* COMPARISON TABLE */}
+        <div className="mb-28 md:mb-36">
+          <div className="text-center mb-12">
+            <span className="text-[10px] font-mono tracking-widest text-[#0A756A] uppercase mb-3 block">
+              Side-By-Side Details
+            </span>
+            <h3 className="text-2xl md:text-4xl font-bold font-clash text-white mb-3">
+              Compare Our Training Plans
+            </h3>
+            <p className="text-zinc-400 text-xs md:text-sm font-satoshi max-w-md mx-auto">
+              Compare features and deliverables side-by-side to find the right level for your professional goals.
             </p>
           </div>
 
-          {/* Search bar widget */}
-          <div className="flex items-center gap-2.5 px-4 py-2.5 w-full md:w-80 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm transition-all focus-within:border-brand-accent focus-within:ring-2 focus-within:ring-brand-accent/10">
-            <Search size={16} className="text-zinc-400"/>
-            <input type="text" placeholder="Search courses or tools..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} className="bg-transparent border-none outline-none text-xs text-zinc-800 dark:text-zinc-100 placeholder-zinc-400 w-full"/>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative rounded-3xl border border-white/10 bg-zinc-900/20 backdrop-blur-2xl overflow-hidden"
+          >
+            {/* Horizontal scroll support for small devices */}
+            <div className="overflow-x-auto no-scrollbar">
+              <table className="w-full min-w-[700px] border-collapse text-left text-sm font-satoshi">
+                <thead>
+                  <tr className="border-b border-white/10 bg-zinc-900/60">
+                    <th className="p-5 md:p-6 text-xs font-mono tracking-wider text-zinc-500 uppercase">
+                      Features / Deliverables
+                    </th>
+                    <th className="p-5 md:p-6 text-center w-[22%]">
+                      <span className="block text-white font-bold font-clash text-base">Starter</span>
+                    </th>
+                    {/* Career Track Column Header - Highlighted */}
+                    <th className="p-5 md:p-6 text-center w-[25%] relative bg-[#0A756A]/5 border-x border-white/10">
+                      <div className="absolute top-0 inset-x-0 h-1 bg-[#0A756A]" />
+                      <span className="block text-white font-bold font-clash text-base flex items-center justify-center gap-1">
+                        Career Track <Star className="w-3.5 h-3.5 fill-[#0A756A] text-[#0A756A]" />
+                      </span>
+                    </th>
+                    <th className="p-5 md:p-6 text-center w-[22%]">
+                      <span className="block text-white font-bold font-clash text-base">Pro Master</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-white/5">
+                  {comparisonRows.map((row, idx) => (
+                    <tr
+                      key={idx}
+                      className="hover:bg-white/[0.02] transition-colors duration-250 group/row"
+                    >
+                      {/* Feature Name */}
+                      <td className="p-5 md:p-6 text-zinc-300 font-semibold group-hover/row:text-white transition-colors">
+                        {row.name}
+                      </td>
+
+                      {/* Starter Value */}
+                      <td className="p-5 md:p-6 text-center">
+                        {row.starter === "Yes" ? (
+                          <div className="flex justify-center">
+                            <Check className="w-5 h-5 text-[#0A756A] stroke-[3]" />
+                          </div>
+                        ) : row.starter === "No" ? (
+                          <span className="text-zinc-600">—</span>
+                        ) : (
+                          <span className="text-zinc-300 font-medium text-xs bg-white/5 px-2.5 py-1 rounded-md">
+                            {row.starter}
+                          </span>
+                        )}
+                      </td>
+
+                      {/* Career Track Value (Highlighted) */}
+                      <td className="p-5 md:p-6 text-center bg-[#0A756A]/5 border-x border-white/10">
+                        {row.career === "Yes" ? (
+                          <div className="flex justify-center">
+                            <Check className="w-5 h-5 text-[#0A756A] stroke-[3]" />
+                          </div>
+                        ) : row.career === "No" ? (
+                          <span className="text-zinc-600">—</span>
+                        ) : (
+                          <span className="text-white font-semibold text-xs bg-[#0A756A]/20 border border-[#0A756A]/30 px-3 py-1 rounded-md inline-block">
+                            {row.career}
+                          </span>
+                        )}
+                      </td>
+
+                      {/* Pro Master Value */}
+                      <td className="p-5 md:p-6 text-center">
+                        {row.pro === "Yes" ? (
+                          <div className="flex justify-center">
+                            <Check className="w-5 h-5 text-[#0A756A] stroke-[3]" />
+                          </div>
+                        ) : row.pro === "No" ? (
+                          <span className="text-zinc-600">—</span>
+                        ) : (
+                          <span className="text-zinc-300 font-medium text-xs bg-white/5 px-2.5 py-1 rounded-md">
+                            {row.pro}
+                          </span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            
+            {/* Visual indicator for horizontal swiping on mobile */}
+            <div className="md:hidden flex items-center justify-center gap-1.5 py-3 border-t border-white/5 bg-zinc-900/40 text-xs text-zinc-500 font-mono">
+              <ChevronRight className="w-3.5 h-3.5 animate-bounce-horizontal" />
+              <span>Swipe to compare all features</span>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* BOTTOM CTA SECTION */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="relative rounded-[32px] overflow-hidden border border-white/10 bg-gradient-to-br from-zinc-900/60 via-zinc-950 to-zinc-900/30 p-8 md:p-16 text-center shadow-[0_30px_70px_-15px_rgba(10,117,106,0.15)]"
+        >
+          {/* Ambient Glows */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-[#0A756A]/10 blur-3xl pointer-events-none" />
+          <div className="absolute inset-0 noise-overlay pointer-events-none opacity-[0.03]" />
+
+          <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+            
+            {/* Floating micro-badge */}
+            <div className="w-10 h-10 rounded-full bg-[#0A756A]/10 border border-[#0A756A]/20 flex items-center justify-center text-[#0A756A] mb-6">
+              <Award className="w-5 h-5 animate-pulse" />
+            </div>
+
+            <h3 className="text-3xl md:text-5xl font-bold font-clash text-white tracking-tight leading-tight mb-4">
+              Ready to Start Your <br />
+              <span className="bg-gradient-to-r from-white to-[#0A756A] bg-clip-text text-transparent">
+                Digital Marketing Journey?
+              </span>
+            </h3>
+
+            <p className="text-zinc-400 text-sm md:text-base leading-relaxed mb-8 max-w-lg font-satoshi">
+              Learn from industry experts, work on real projects, master AI-powered marketing tools, and become job-ready with Entrain Labs.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              
+              {/* Primary CTA */}
+              <button
+                onClick={() => handleEnrollClick("CTA Section")}
+                className="h-12 px-8 rounded-xl bg-white text-zinc-950 font-bold text-sm transition-all duration-300 hover:bg-[#0A756A] hover:text-white hover:shadow-[0_0_30px_rgba(10,117,106,0.3)] flex items-center justify-center gap-2 group/ctaBtn cursor-pointer"
+              >
+                <span>Enroll Now</span>
+                <ArrowRight className="w-4 h-4 transition-transform group-hover/ctaBtn:translate-x-1" />
+              </button>
+
+              {/* Secondary CTA */}
+              <button
+                onClick={() => handleEnrollClick("Download Brochure")}
+                className="h-12 px-8 rounded-xl bg-transparent border border-white/10 hover:border-white/20 text-white font-semibold text-sm transition-all duration-300 hover:bg-white/5 flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <FileText className="w-4 h-4 text-zinc-400" />
+                <span>Download Brochure</span>
+              </button>
+            </div>
           </div>
-        </div>
-
-        {/* Categories Tabs */}
-        <div className="flex flex-wrap gap-2.5 mb-10 pb-2 border-b border-zinc-200 dark:border-zinc-850">
-          {categories.map((category) => (<button key={category} onClick={() => setActiveCategory(category)} className={`px-5 py-2.5 rounded-full text-xs font-semibold font-satoshi tracking-wide transition-all border cursor-pointer ${activeCategory === category
-                ? "bg-zinc-950 dark:bg-white text-white dark:text-zinc-950 border-zinc-950 dark:border-white shadow-md scale-105"
-                : "bg-transparent text-zinc-500 dark:text-zinc-400 border-zinc-200 dark:border-zinc-800 hover:text-zinc-800 dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-700"}`}>
-              {category === "All" ? "All Courses" : category}
-            </button>))}
-        </div>
-
-        {/* Courses Grid with animations */}
-        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          <AnimatePresence mode="popLayout">
-            {filteredCourses.map((course, idx) => (<motion.div layout initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }} transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }} id={`course-${course.id}`} key={course.id} className="spotlight-card group relative rounded-3xl p-6 md:p-8 bg-white dark:bg-zinc-900/40 border border-zinc-150 dark:border-zinc-800/80 shadow-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-md flex flex-col justify-between overflow-hidden text-left">
-                {/* Background noise */}
-                <div className="absolute inset-0 noise-overlay pointer-events-none opacity-20 dark:opacity-30"/>
-
-                <div>
-                  {/* Card Header tag */}
-                  <div className="flex items-center justify-between gap-4 mb-5">
-                    <span className="text-[10px] font-mono tracking-widest text-zinc-400 uppercase">
-                      {course.category} Program
-                    </span>
-                    {course.badge && (<span className="px-2.5 py-0.5 rounded-full text-[9px] font-semibold tracking-wider font-mono uppercase bg-brand-accent/10 border border-brand-accent/20 text-brand-accent">
-                        {course.badge}
-                      </span>)}
-                  </div>
-
-                  {/* Course Title */}
-                  <h3 className="text-xl font-bold font-clash text-zinc-900 dark:text-white mb-3 group-hover:text-brand-accent transition-colors">
-                    {course.title}
-                  </h3>
-
-                  {/* Course description */}
-                  <p className="text-xs md:text-sm text-zinc-500 dark:text-zinc-400 leading-relaxed mb-6">
-                    {course.description}
-                  </p>
-
-                  {/* Course stats icons */}
-                  <div className="grid grid-cols-2 gap-3 mb-6 bg-zinc-50 dark:bg-zinc-900/60 p-3 rounded-2xl border border-zinc-100 dark:border-zinc-800/60">
-                    <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-300">
-                      <Calendar size={13} className="text-brand-accent-2"/>
-                      <span className="text-[11px] font-semibold">{course.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5 text-zinc-600 dark:text-zinc-300">
-                      <Star size={13} className="text-amber-500 fill-amber-500"/>
-                      <span className="text-[11px] font-semibold">{course.rating} Rating</span>
-                    </div>
-                  </div>
-
-                  {/* Course Highlights checklist */}
-                  <div className="flex flex-col gap-2 mb-6">
-                    <span className="text-[10px] font-semibold font-satoshi uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
-                      Program Deliverables:
-                    </span>
-                    {course.highlights.map((h, i) => (<div key={i} className="flex items-start gap-2 text-xs text-zinc-600 dark:text-zinc-300">
-                        <CheckCircle2 size={13} className="text-brand-success mt-0.5 shrink-0"/>
-                        <span>{h}</span>
-                      </div>))}
-                  </div>
-                </div>
-
-                {/* Card Footer: Tools & CTA */}
-                <div>
-                  <div className="flex flex-wrap gap-1.5 mb-6">
-                    {course.tools.slice(0, 4).map((tool, i) => (<span key={i} className="px-2 py-0.5 rounded-md text-[9px] font-medium font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 border border-zinc-200/50 dark:border-zinc-800/50">
-                        {tool}
-                      </span>))}
-                    {course.tools.length > 4 && (<span className="px-2 py-0.5 rounded-md text-[9px] font-medium font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400">
-                        +{course.tools.length - 4} More
-                      </span>)}
-                  </div>
-
-                  <button onClick={() => handleEnrollClick(course)} className="w-full flex h-10 items-center justify-between rounded-xl border border-zinc-200 dark:border-zinc-800 bg-transparent text-zinc-800 dark:text-zinc-200 px-4 text-xs font-semibold hover:border-brand-accent hover:bg-brand-accent hover:text-white dark:hover:bg-brand-accent transition-all duration-300 cursor-pointer group/btn">
-                    <span>Request Details</span>
-                    <ArrowRight size={13} className="transition-transform group-hover/btn:translate-x-1"/>
-                  </button>
-                </div>
-              </motion.div>))}
-          </AnimatePresence>
         </motion.div>
-
-        {/* Empty state search fallback */}
-        {filteredCourses.length === 0 && (<motion.div initial={{ opacity: 0 }} animate={{ opacity: 0.5 }} className="flex flex-col items-center justify-center py-16 gap-3 text-zinc-400">
-            <Compass size={32} className="animate-spin text-zinc-500" style={{ animationDuration: "12s" }}/>
-            <span className="text-sm font-semibold uppercase tracking-wider">No matching programs found</span>
-            <span className="text-xs">Try searching for other keywords like "SEO", "Ads", or "AI"</span>
-          </motion.div>)}
 
       </div>
 
-      {/* Shared Dialog trigger */}
-      <EnrollmentFormAdvanced open={isEnrollOpen} onOpenChange={setIsEnrollOpen} storageKey={`enroll-popup-${selectedCourse?.id || "courses"}`}/>
-    </section>);
+      {/* Advanced WhatsApp Form Popup */}
+      <EnrollmentFormAdvanced
+        open={isEnrollOpen}
+        onOpenChange={setIsEnrollOpen}
+        storageKey={`enroll-popup-marketing-courses-${selectedPlan || "general"}`}
+      />
+    </section>
+  );
 }

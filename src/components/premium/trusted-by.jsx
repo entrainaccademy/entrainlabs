@@ -42,7 +42,7 @@ export default function TrustedBy() {
                   <img
                     src={tool.logo}
                     alt={tool.name}
-                    className="h-14 w-auto object-contain select-none dark:brightness-200 dark:contrast-100"
+                    className="h-22 w-auto object-contain select-none dark:brightness-200 dark:contrast-100"
                   />
                 </div>
               );
