@@ -19,12 +19,13 @@ export default function Home() {
       <TrustedBy />
       <WhyChooseUs />
       <Courses />
-      <LearningJourney />
-      <SuccessStories />
-      <PlacementPartners />
+
+      {/* <LearningJourney /> */}
+      {/* <SuccessStories /> */}
+      {/* <PlacementPartners /> */}
       <MentorsSection />
-      <NumbersSection />
-      <AIToolsSection />
+      {/* <NumbersSection /> */}
+      {/* <AIToolsSection /> */}
       <FAQSection />
       <FinalCTA />
     </>
