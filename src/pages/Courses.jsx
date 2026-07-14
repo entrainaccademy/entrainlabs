@@ -277,11 +277,7 @@ export default function Courses({ defaultSection }) {
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#0A756A]/5 dark:bg-[#0A756A]/10 rounded-full blur-2xl pointer-events-none group-hover:bg-[#0A756A]/10 dark:group-hover:bg-[#0A756A]/20 transition-colors duration-500" />
               
               <div>
-                <div className="flex items-start justify-between mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-[#0A756A]/10 flex items-center justify-center text-[#0A756A]">
-                    <Building className="w-6 h-6" />
-                  </div>
-                </div>
+            
 
                 <h3 className="text-2xl md:text-3xl font-clash font-semibold text-zinc-900 dark:text-white mb-4">
                   Offline Classroom
@@ -342,11 +338,7 @@ export default function Courses({ defaultSection }) {
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#0A756A]/5 dark:bg-[#0A756A]/10 rounded-full blur-2xl pointer-events-none group-hover:bg-[#0A756A]/10 dark:group-hover:bg-[#0A756A]/20 transition-colors duration-500" />
               
               <div>
-                <div className="flex items-start justify-between mb-8">
-                  <div className="w-12 h-12 rounded-xl bg-[#0A756A]/10 flex items-center justify-center text-[#0A756A]">
-                    <Laptop className="w-6 h-6" />
-                  </div>
-                </div>
+         
 
                 <h3 className="text-2xl md:text-3xl font-semibold font-clash text-zinc-900 dark:text-white mb-4">
                   Online Learning
@@ -430,13 +422,13 @@ export default function Courses({ defaultSection }) {
                   />
 
                   {isPopular && (
-                    <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-64 h-32 bg-[#0A756A]/10 dark:bg-[#0A756A]/20 blur-3xl pointer-events-none" />
+                    <div className="absolute -top-20 left-1/2  -translate-x-1/2 w-64 h-32 bg-[#0A756A]/10 dark:bg-[#0A756A]/20 blur-3xl pointer-events-none" />
                   )}
 
-                  <div className="relative h-full bg-white dark:bg-zinc-950/90 backdrop-blur-2xl rounded-[23px] p-6 md:p-8 flex flex-col justify-between">
+                  <div className="relative h-full bg-red-900   bg-white dark:bg-zinc-950/90 backdrop-blur-2xl rounded-[23px] p-6 md:p-8 flex flex-col justify-between">
                     <div>
                       <div className="flex items-center justify-between gap-3 mb-6">
-                        <span className={`text-[10px] font-mono tracking-wider px-3 py-1 rounded-full uppercase font-bold border ${isPopular
+                        <span className={`text-[10px]  tracking-wider px-3 py-1 rounded-full uppercase font-medium font-clash border ${isPopular
                           ? "bg-[#0A756A]/10 text-[#0A756A] border-[#0A756A]/20 dark:bg-[#0A756A]/20 dark:text-[#0A756A] dark:border-[#0A756A]/30"
                           : "bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 border-zinc-200 dark:border-white/5"
                           }`}>
@@ -494,108 +486,7 @@ export default function Courses({ defaultSection }) {
         {/* ==========================================
             SECTION 3: COMPARISON TABLE
             ========================================== */}
-        <div className="mb-24 md:mb-32">
-          <div className="text-center mb-12">
-           
-            <h3 className="text-2xl md:text-4xl font-bold font-clash text-zinc-900 dark:text-white mb-3">
-              Compare Our Training Plans
-            </h3>
-            <p className="text-zinc-650 dark:text-zinc-400 text-xs md:text-sm font-satoshi max-w-md mx-auto">
-              Compare features and deliverables side-by-side to find the right level for your professional goals.
-            </p>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative rounded-3xl border border-zinc-200 dark:border-white/10 bg-white/60 dark:bg-zinc-900/20 backdrop-blur-2xl overflow-hidden shadow-sm dark:shadow-none"
-          >
-            <div className="overflow-x-auto no-scrollbar">
-              <table className="w-full min-w-[700px] border-collapse text-left text-sm font-satoshi">
-                <thead>
-                  <tr className="border-b border-zinc-200 dark:border-white/10 bg-zinc-50 dark:bg-zinc-900/60">
-                    <th className="p-5 md:p-6 text-xs font-mono tracking-wider text-zinc-500 uppercase">
-                      Features / Deliverables
-                    </th>
-                    <th className="p-5 md:p-6 text-center w-[22%] text-zinc-900 dark:text-white">
-                      <span className="block font-bold font-clash text-base">Starter</span>
-                    </th>
-                    <th className="p-5 md:p-6 text-center w-[25%] relative bg-[#0A756A]/5 border-x border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-white">
-                      <div className="absolute top-0 inset-x-0 h-1 bg-[#0A756A]" />
-                      <span className="block font-bold font-clash text-base flex items-center justify-center gap-1">
-                        Career Track 
-                      </span>
-                    </th>
-                    <th className="p-5 md:p-6 text-center w-[22%] text-zinc-900 dark:text-white">
-                      <span className="block font-bold font-clash text-base">Pro Master</span>
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-zinc-200/60 dark:divide-white/5">
-                  {comparisonRows.map((row, idx) => (
-                    <tr
-                      key={idx}
-                      className="hover:bg-zinc-50/50   dark:hover:bg-white/[0.02] transition-colors duration-250 group/row"
-                    >
-                      <td className="p-5 md:p-6 text-zinc-700 dark:text-zinc-300 font-semibold group-hover/row:text-zinc-950 dark:group-hover/row:text-white transition-colors">
-                        {row.name}
-                      </td>
-
-                      <td className="p-5 md:p-6 text-center">
-                        {row.starter === "Yes" ? (
-                          <div className="flex justify-center">
-                            <Check className="w-5 h-5 text-[#0A756A] stroke-[3]" />
-                          </div>
-                        ) : row.starter === "No" ? (
-                          <span className="text-zinc-400 dark:text-zinc-600">—</span>
-                        ) : (
-                          <span className="text-zinc-750 dark:text-zinc-300 font-medium text-xs bg-zinc-100 dark:bg-white/5 px-2.5 py-1 rounded-md">
-                            {row.starter}
-                          </span>
-                        )}
-                      </td>
-
-                      <td className="p-5 md:p-6 text-center bg-[#0A756A]/5 border-x border-zinc-200 dark:border-white/10">
-                        {row.career === "Yes" ? (
-                          <div className="flex justify-center">
-                            <Check className="w-5 h-5 text-[#0A756A] stroke-[3]" />
-                          </div>
-                        ) : row.career === "No" ? (
-                          <span className="text-zinc-400 dark:text-zinc-600">—</span>
-                        ) : (
-                          <span className="text-[#0A756A] font-semibold text-xs bg-[#0A756A]/10 border border-[#0A756A]/20 dark:bg-[#0A756A]/20 dark:border-[#0A756A]/30 px-3 py-1 rounded-md inline-block">
-                            {row.career}
-                          </span>
-                        )}
-                      </td>
-
-                      <td className="p-5 md:p-6 text-center">
-                        {row.pro === "Yes" ? (
-                          <div className="flex justify-center">
-                            <Check className="w-5 h-5 text-[#0A756A] stroke-[3]" />
-                          </div>
-                        ) : row.pro === "No" ? (
-                          <span className="text-zinc-400 dark:text-zinc-600">—</span>
-                        ) : (
-                          <span className="text-zinc-750 dark:text-zinc-300 font-medium text-xs bg-zinc-100 dark:bg-white/5 px-2.5 py-1 rounded-md">
-                            {row.pro}
-                          </span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="md:hidden flex items-center justify-center gap-1.5 py-3 border-t border-zinc-200 dark:border-white/5 bg-zinc-100/50 dark:bg-zinc-900/40 text-xs text-zinc-500 font-mono">
-              <ChevronRight className="w-3.5 h-3.5 animate-bounce-horizontal" />
-              <span>Swipe to compare all features</span>
-            </div>
-          </motion.div>
-        </div>
+      
 
 
      
@@ -686,9 +577,7 @@ export default function Courses({ defaultSection }) {
           <div className="absolute inset-0 noise-overlay pointer-events-none opacity-[0.015] dark:opacity-[0.03]" />
 
           <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
-            <div className="w-10 h-10 rounded-full bg-[#0A756A]/10 border border-[#0A756A]/20 flex items-center justify-center text-[#0A756A] mb-6">
-              <Award className="w-5 h-5 animate-pulse" />
-            </div>
+
 
             <h3 className="text-3xl md:text-5xl font-bold font-clash text-zinc-900 dark:text-white tracking-tight leading-tight mb-4">
               Get Started with the <br />

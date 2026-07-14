@@ -233,7 +233,7 @@ export default function WhyChooseUs() {
                   boxShadow: "0 0 25px rgba(16, 185, 129, 0.4)"
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="relative inline-flex h-12 items-center justify-center rounded-full bg-gradient-to-r from-brand-primary to-emerald-600 text-white px-10 text-xs font-bold tracking-widest uppercase hover:opacity-95 shadow-md shadow-brand-primary/10 transition-all duration-300 cursor-pointer"
+                className="relative inline-flex h-12 font-montserrat font-medium items-center justify-center  bg-gradient-to-r from-brand-primary to-emerald-600 text-white px-10 text-xs font-bold tracking-widest uppercase hover:opacity-95 shadow-md shadow-brand-primary/10 transition-all duration-300 cursor-pointer"
               >
                 Join Our First Batch
               </motion.button>

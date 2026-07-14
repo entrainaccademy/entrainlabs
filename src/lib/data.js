@@ -149,36 +149,28 @@ export const coursesData = [
 ];
 export const mentorsData = [
     {
-        name: "Arjun Menon",
-        role: "Lead Performance Marketer",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400",
-        bio: "Ex-agency Director who managed over $15M in cumulative digital marketing ad spends across Google and Meta. Specializes in hyper-scaling SaaS and D2C brands.",
-        pastCompanies: ["Google Partner", "Dentsu India", "AdSpire"],
-        linkedin: "https://linkedin.com/in/arjun-menon"
+        name: "Afan",
+        role: "Founder & Lead Performance Marketer",
+        image: "/afananobg.png",
+        bio: "Specialist in media buying, scaling paid acquisition channels, and conversion funnel optimization. Managed ₹5Cr+ in ad spend for major e-commerce and lead-gen brands.",
+        pastCompanies: ["Meta Certified", "Ex-Media Director", "AdScale Lead"],
+        linkedin: "https://linkedin.com/"
     },
     {
-        name: "Priya Nair",
-        role: "SEO Architect",
-        image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400",
-        bio: "Ranked 200+ global brands on page #1 of search engines. Architected organic growth engines generating 5M+ monthly page visits in competitive finance niches.",
-        pastCompanies: ["Ahrefs Expert", "RankFlow", "ScaleUp Media"],
-        linkedin: "https://linkedin.com/in/priya-nair"
+        name: "Shahan",
+        role: "Co-Founder & Organic Growth Lead",
+        image: "/shahannobg.png",
+        bio: "SEO architect and organic strategist. Driven over 10M+ search clicks, ranking brands on Page 1 for high-competition niches. Expert in semantic SEO and automation.",
+        pastCompanies: ["Ahrefs Specialist", "Growth Architect", "SEO Advisor"],
+        linkedin: "https://linkedin.com/"
     },
     {
-        name: "Karthik Kumar",
-        role: "Creative Social Strategist",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400",
-        bio: "Growth strategist who built viral social formats resulting in 40M+ impressions. Expert in organic hooks, community psychology, and creator collaborations.",
-        pastCompanies: ["Schbang", "Social Pundit", "BuzzFeed Group"],
-        linkedin: "https://linkedin.com/in/karthik-kumar"
-    },
-    {
-        name: "Anjali Sharma",
-        role: "Content & Copywriter Lead",
-        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400",
-        bio: "Award-winning strategist specializing in high-conversion brand sales copy, editorial architecture, and lead generation frameworks that translate to pipeline growth.",
-        pastCompanies: ["Ogilvy India", "ContentFlow", "HubSpot Academy Partner"],
-        linkedin: "https://linkedin.com/in/anjali-sharma"
+        name: "Safa",
+        role: "Co-Founder & Lead Design Mentor",
+        image: "/safa.png",
+        bio: "Creative Director specializing in UI/UX design, visual storytelling, and brand strategy. Mentors students in crafting high-converting landing pages and premium branding assets.",
+        pastCompanies: ["UI/UX Specialist", "Creative Director", "Figma Expert"],
+        linkedin: "https://linkedin.com/"
     }
 ];
 export const testimonialsData = [
