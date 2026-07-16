@@ -34,9 +34,9 @@ export default function Navbar() {
 
 
   return (<>
-    <motion.header className="fixed top-0 left-0 right-0  z-50 w-full pointer-events-none flex flex-col items-center pt-8" initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }}>
+    <motion.header className="fixed top-0 left-0 right-0  z-50 w-full pointer-events-none flex flex-col items-center  pt-6 md:pt-8" initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }}>
       {/* Floating Capsule Container */}
-      <div className={cn("pointer-events-auto w-[94%] h-[70px]   max-w-6xl flex items-center justify-between transition-all duration-300 ease-in-out rounded-[18px] border border-border/80 bg-background/80 backdrop-blur-xl shadow-lg shadow-black/5", isScrolled ? "py-2 px-6 md:px-8" : "py-2 px-6 md:px-8")}>
+      <div className={cn("pointer-events-auto w-68 md:w-[94%]  h-16 md:h-[70px]   max-w-6xl flex items-center justify-between transition-all duration-300 ease-in-out rounded-[12px] md:rounded-[18px] border border-primary/10 bg-background/80 backdrop-blur-xl shadow-lg shadow-black/5", isScrolled ? "py-2 px-6 md:px-8" : "py-2 px-6 md:px-8")}>
         {/* Logo */}
         <Link to="/" className="flex items-center group">
           <div className="relative w-24 h-16 overflow-visible">
@@ -65,8 +65,8 @@ export default function Navbar() {
           </button>
 
           {/* Mobile Menu Toggle */}
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="flex lg:hidden h-9 w-9 items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 text-zinc-650 dark:text-zinc-300 transition-colors cursor-pointer bg-white/50 dark:bg-zinc-900/50" aria-label="Toggle mobile menu">
-            {isMobileMenuOpen ? <X size={16} /> : <Menu size={16} />}
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="flex lg:hidden h-9 w-9 items-center justify-center   border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 text-zinc-650 dark:text-zinc-300 transition-colors cursor-pointer text-primary dark:bg-zinc-900/50" aria-label="Toggle mobile menu">
+            {isMobileMenuOpen ? <X size={20} /> : <Menu size={24} />}
           </button>
         </div>
       </div>

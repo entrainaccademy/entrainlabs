@@ -171,6 +171,14 @@ export const mentorsData = [
         bio: "Creative Director specializing in UI/UX design, visual storytelling, and brand strategy. Mentors students in crafting high-converting landing pages and premium branding assets.",
         pastCompanies: ["UI/UX Specialist", "Creative Director", "Figma Expert"],
         linkedin: "https://linkedin.com/"
+    },
+    {
+        name: "Naina",
+        role: "Lead Coordinator & Success Mentor",
+        image: "/naina.png",
+        bio: "Specialist in career growth strategy, resume drafting, and student recruitment. Coordinates with partner brands to facilitate job readiness and premium internships.",
+        pastCompanies: ["Talent Acquisition", "Career Architect", "Success Lead"],
+        linkedin: "https://linkedin.com/"
     }
 ];
 export const testimonialsData = [

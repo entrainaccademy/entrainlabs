@@ -165,7 +165,7 @@ export default function WhyChooseUs() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl sm:text-5xl font-bold font-clash tracking-tight text-zinc-950 dark:text-white leading-[1.1]"
+                className="text-4xl sm:text-5xl font-semibold font-outfit tracking-tight text-zinc-950 dark:text-white leading-[1.1]"
               >
                 Why Choose<br />Entrain Labs?
               </motion.h2>
@@ -204,10 +204,10 @@ export default function WhyChooseUs() {
 
                     {/* Content */}
                     <div className="flex-1 min-w-0 pr-4">
-                      <h3 className="text-zinc-950 dark:text-white  font-semibold text-base mb-1 tracking-tight font-clash flex items-center gap-1.5">
+                      <h3 className="text-zinc-950 dark:text-white  font-medium text-base mb-1 tracking-tight font-outfit flex items-center gap-1.5">
                         {item.title}
                       </h3>
-                      <p className="text-zinc-500 dark:text-zinc-400 text-xs leading-relaxed font-satoshi">
+                      <p className="text-zinc-500 dark:text-zinc-400 text-xs leading-relaxed font-outfit">
                         {item.description}
                       </p>
                     </div>
@@ -233,7 +233,7 @@ export default function WhyChooseUs() {
                   boxShadow: "0 0 25px rgba(16, 185, 129, 0.4)"
                 }}
                 whileTap={{ scale: 0.98 }}
-                className="relative inline-flex h-12 font-montserrat font-medium items-center justify-center  bg-gradient-to-r from-brand-primary to-emerald-600 text-white px-10 text-xs font-bold tracking-widest uppercase hover:opacity-95 shadow-md shadow-brand-primary/10 transition-all duration-300 cursor-pointer"
+                className="relative inline-flex h-12 font-outfit font-lightg items-center justify-center  bg-primary text-white px-10 text-xs  tracking-widest uppercase hover:opacity-95 shadow-md shadow-brand-primary/10 transition-all duration-300 cursor-pointer"
               >
                 Join Our First Batch
               </motion.button>

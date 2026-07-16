@@ -148,7 +148,7 @@ export default function Courses() {
             className="text-4xl md:text-6xl font-regular  font-clash tracking-tight text-zinc-900 bg-red-000 dark:text-white mt-1 leading-[1.1] mb-6"
           >
            
-            <span className="bg-gradient-to-r from-zinc-800 via-zinc-900 to-[#0A756A] dark:from-white dark:via-zinc-200 dark:to-[#0A756A] bg-clip-text text-transparent">
+            <span className=" font-normal font-dm  bg-gradient-to-r from-zinc-800 via-zinc-900 to-[#0A756A] dark:from-white dark:via-zinc-200 dark:to-[#0A756A] bg-clip-text text-transparent">
               Digital Marketing Program
             </span>
           </motion.h2>
@@ -157,7 +157,7 @@ export default function Courses() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-[#0A756A] dark:text-zinc-400 text-base  md:text-[14px]  leading-relaxed font-clash font-thin max-w-2xl"
+            className="text-[#0A756A] dark:text-zinc-400 text-base  md:text-[14px]  leading-relaxed font-outfit font-thin max-w-2xl"
           >
             Learn Digital Marketing through live training, real projects, AI tools, and expert career support.
           </motion.p>
@@ -201,11 +201,11 @@ export default function Courses() {
                  
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-clash font-semibold text-zinc-900 dark:text-white mb-4">
+                <h3 className="text-2xl md:text-3xl tracking-tight font-outfit font-semibold text-zinc-900 dark:text-white mb-4">
                   Offline Classroom
                 </h3>
 
-                <p className="text-zinc-650 dark:text-zinc-400  text-sm md:text-[16px] font-light leading-relaxed mb-8 max-w-md font-satoshi">
+                <p className="text-zinc-650 dark:text-zinc-400  text-sm md:text-[15px] font-outfit font-extralight leading-relaxed mb-8 max-w-md ">
                   Experience classroom-based learning with direct interaction, practical sessions, expert mentoring, and collaborative learning.
                 </p>
  
@@ -232,7 +232,7 @@ export default function Courses() {
               {/* Action Button */}
               <button
                 onClick={() => handleEnrollClick("Offline Classroom")}
-                className="relative w-full h-12 rounded-xl bg-[#0A756A] text-white font-semibold text-sm transition-all duration-300 hover:bg-[#129A8C] hover:shadow-[0_0_30px_rgba(10,117,106,0.25)] dark:bg-white dark:text-zinc-950 dark:hover:bg-[#0A756A] dark:hover:text-white flex items-center justify-center gap-2 group/btn cursor-pointer"
+                className="relative w-full h-12 rounded-xl bg-[#0A756A] text-white font-light font-outfit text-sm transition-all duration-300 hover:bg-[#129A8C] hover:shadow-[0_0_30px_rgba(10,117,106,0.25)] dark:bg-white dark:text-zinc-950 dark:hover:bg-[#0A756A] dark:hover:text-white flex items-center justify-center gap-2 group/btn cursor-pointer"
               >
                 <span>Join Offline Batch</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
@@ -277,11 +277,11 @@ export default function Courses() {
                   </span> */}
                 </div>
 
-                <h3 className="text-2xl md:text-3xl font-semibold font-clash text-zinc-900 dark:text-white mb-4">
+                <h3 className="text-2xl md:text-3xl font-outfit font-semibold tracking-tight text-zinc-900 dark:text-white mb-4">
                   Online Learning
                 </h3>
 
-                <p className="text-zinc-650 dark:text-zinc-400  text-sm md:text-[16px] font-light leading-relaxed mb-8 max-w-md font-satoshi">
+                <p className="text-zinc-650 dark:text-zinc-400 font-outfit   text-sm md:text-[15px] font-extralight leading-relaxed mb-8 max-w-md ">
                   Attend classes from anywhere with live sessions, recorded videos, practical assignments, and continuous mentor support.
                 </p>
 
@@ -308,10 +308,10 @@ export default function Courses() {
               {/* Action Button - Scrolls to Pricing */}
          <button
   onClick={() => navigate("/coursedetails")}
-  className="relative w-full h-12 rounded-xl bg-transparent border border-zinc-200 dark:border-white/10 hover:border-[#0A756A] dark:hover:border-[#0A756A] text-[#0A756A] dark:text-white font-semibold text-sm transition-all duration-300 hover:bg-[#0A756A]/5 dark:hover:bg-[#0A756A]/10 flex items-center justify-center gap-2 group/btn cursor-pointer"
+  className="relative w-full h-12 font-outfit font-light rounded-xl bg-transparent border border-zinc-200 dark:border-white/10 hover:border-[#0A756A] dark:hover:border-[#0A756A] text-[#0A756A] dark:text-white  text-sm transition-all duration-300 hover:bg-[#0A756A]/5 dark:hover:bg-[#0A756A]/10 flex items-center justify-center gap-2 group/btn cursor-pointer"
 >
   <span>Explore Online Plans</span>
-  <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
+  <ArrowRight className="w-4 h-4  transition-transform group-hover/btn:translate-x-1" />
 </button>
             </div>
           </motion.div>
@@ -338,18 +338,16 @@ export default function Courses() {
           <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
             
             {/* Floating micro-badge */}
-            <div className="w-10 h-10 rounded-full bg-[#0A756A]/10 border border-[#0A756A]/20 flex items-center justify-center text-[#0A756A] mb-6">
-              <Award className="w-5 h-5 animate-pulse" />
-            </div>
+          
 
-            <h3 className="text-3xl md:text-5xl font-bold font-clash text-zinc-900 dark:text-white tracking-tight leading-tight mb-4">
-              Ready to Start Your <br />
-              <span className="bg-gradient-to-r from-zinc-800 to-[#0A756A] dark:from-white dark:to-[#0A756A] bg-clip-text text-transparent">
+            <h3 className="text-3xl md:text-5xl font-bold font-outfit tracking text-zinc-900 dark:text-white tracking-tight leading-tight mb-4">
+              Ready to Start Your 
+              <span className="bg-gradient-to-r from-zinc-800 to-[#0A756A] dark:from-white dark:to-[#0A756A] font-outfit font-bold bg-clip-text text-transparent">
                 Digital Marketing Journey?
               </span>
             </h3>
 
-            <p className="text-zinc-650 dark:text-zinc-400 text-sm md:text-base leading-relaxed mb-8 max-w-lg font-satoshi">
+            <p className="text-zinc-650 dark:text-zinc-400 text-sm md:text-[12px] leading-relaxed mb-8 max-w-lg font-outfit font-light">
               Learn from industry experts, work on real projects, master AI-powered marketing tools, and become job-ready with Entrain Labs.
             </p>
 
@@ -358,19 +356,19 @@ export default function Courses() {
               {/* Primary CTA */}
               <button
                 onClick={() => handleEnrollClick("CTA Section")}
-                className="h-12 px-8 rounded-xl bg-[#0A756A] text-white font-bold text-sm transition-all duration-300 hover:bg-[#129A8C] hover:shadow-[0_0_30px_rgba(10,117,106,0.25)] dark:bg-white dark:text-zinc-950 dark:hover:bg-[#0A756A] dark:hover:text-white flex items-center justify-center gap-2 group/ctaBtn cursor-pointer"
+                className="h-12 px-8 rounded-xl bg-[#0A756A] text-white font-outfit font-light  text-sm transition-all duration-300 hover:bg-[#129A8C] hover:shadow-[0_0_30px_rgba(10,117,106,0.25)] dark:bg-white dark:text-zinc-950 dark:hover:bg-[#0A756A] dark:hover:text-white flex items-center justify-center gap-2 group/ctaBtn cursor-pointer"
               >
-                <span>Enroll Now</span>
+                <span className=""> Enroll Now</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover/ctaBtn:translate-x-1" />
               </button>
 
               {/* Secondary CTA */}
               <button
                 onClick={() => handleEnrollClick("Download Brochure")}
-                className="h-12 px-8 rounded-xl bg-transparent border border-zinc-200 hover:border-zinc-300 text-zinc-850 dark:border-white/10 dark:hover:border-white/20 dark:text-white transition-all duration-300 hover:bg-zinc-100/50 dark:hover:bg-white/5 flex items-center justify-center gap-2 cursor-pointer"
+                className="h-12 md:px-8 px-2 md:rounded-xl rounded-md bg-transparent border border-primary/50 hover:border-zinc-300 text-zinc-850 dark:border-white/10 dark:hover:border-white/20 dark:text-white transition-all duration-300 hover:bg-zinc-100/50 dark:hover:bg-white/5 flex items-center justify-center gap-2 cursor-pointer"
               >
-                <FileText className="w-4 h-4 text-zinc-500" />
-                <span>Download Brochure</span>
+                <FileText className="w-4 h-4   text-primary" />
+                <span className="text-primary font-outfit font-light">Download Brochure</span>
               </button>
             </div>
           </div>

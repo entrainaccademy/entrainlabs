@@ -12,15 +12,15 @@ import shahana from "/hero.png";
 import coatwith from "../../assets/coatwith.png" 
 export default function Hero() {
   const [isEnrollOpen, setIsEnrollOpen] = useState(false)
-  return (<section className="relative min-h-screen flex items-center justify-center pt-1 px-6 md:px-8 pb-20 overflow-hidden text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+  return (<section className="relative min-h-screen flex items-center justify-center pt-[39px] md:pt-0 px-0 md:px-8 pb-20 overflow-hidden text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
 
     {/* Bottom fade line */}
     <div className="absolute bottom-0 left-0  right-0 h-40 bg-gradient-to-t from-zinc-50 via-zinc-50/20 to-transparent dark:from-zinc-950 pointer-events-none z-10" />
 
-    <div className="relative mx-auto  max-w-7xl px-6 md:px-8 z-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center w-full mt-0">
+    <div className="relative mx-auto  max-w-7xl px-6 md:px-8 z-20 grid grid-cols-1 lg:grid-cols-12 gap-1 sm:gap-10 lg:gap-16 items-center w-full mt-0">
 
       {/* Left Column: Headline copy */}
-      <div className="lg:col-span-7 flex px-12 flex-col gap-6 text-left">
+      <div className="lg:col-span-7 flex px-0 sm:px-6 lg:px-12 flex-col gap-6 text-left">
 
         {/* Tagline Badge */}
 
@@ -40,27 +40,28 @@ export default function Hero() {
         </div>
 
         {/* Subheading text */}
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }} className="text-zinc-650 dark:text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl font-satoshi ">
+        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }} className="text-zinc-650 dark:text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl font-roboto font-light ">
+
           Bridge the gap between theory and industry. Gain certified, AI-powered competencies and manage active advertising budgets during a guaranteed agency internship.
         </motion.p>
 
         {/* Action CTAs */}
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }} className="flex flex-wrap items-center gap-4 mt-2">
-          <button onClick={() => setIsEnrollOpen(true)} className="relative inline-flex h-12 items-center justify-center rounded-full bg-gradient-to-r from-brand-primary to-brand-primary text-white px-8 text-xs font-semibold tracking-wider hover:opacity-95 shadow-lg shadow-brand-accent/20 dark:shadow-brand-accent/10 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer">
-            Apply Program
-          </button>
+      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }} className="flex flex-row md:flex-wrap items-center gap-4 mt-2">
+  <button onClick={() => setIsEnrollOpen(true)} className="relative inline-flex shrink-0 whitespace-nowrap h-[45px] md:h-12 items-center justify-center rounded-xs md:rounded-sm bg-gradient-to-r from-brand-primary to-brand-primary text-white px-4 md:px-8 text-[12px] md:text-xs font-poppins tracking-wider hover:opacity-95 shadow-lg shadow-brand-accent/20 dark:shadow-brand-accent/10 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer">
+    Apply Program
+  </button>
 
-          <a href="#courses" className="inline-flex h-12 items-center justify-center rounded-full border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:bg-zinc-50 dark:hover:bg-zinc-800 text-zinc-800 dark:text-zinc-300 px-7 text-xs font-semibold tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer">
-            Explore Courses
-          </a>
-        </motion.div>
+  <a href="#courses" className="inline-flex shrink-0 whitespace-nowrap h-[45px] md:h-12 items-center justify-center font-poppins text-primary font-light  md:rounded-md border border-prima dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:bg-zinc-50 dark:hover:bg-zinc-800  dark:text-zinc-300 px-4 md:px-7 text-xs  tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer">
+    Explore Courses
+  </a>
+</motion.div>
 
 
 
       </div>
 
       {/* Right Column: Premium Agency Showcase Workspace */}
-      <div className="lg:col-span-5 relative  flex items-center justify-center min-h-[550px] lg:min-h-[660px] -mt-10 md:mt-22 px-4">
+      <div className="lg:col-span-5 relative  flex items-center justify-center min-h-[320px] sm:min-h-[420px] lg:min-h-[660px] -mt-10 md:mt-22 px-4">
 
         {/* Ambient color mesh background glow */}
         <div className="absolute w-[450px] h-[450px] rounded-full bg-primary/1520 from-brand-primary to-brand-accent/5 dark:from-brand-primary/15 dark:via-brand-accent/5 dark:to-transparent blur-3xl pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
@@ -79,7 +80,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 w-full flex justify-center items-end max-w-md h-[460px] lg:h-[560px]"
+          className="relative z-10 w-full flex justify-center items-end max-w-md h-[320px] sm:h-[420px] lg:h-[560px]"
         >
         
   <div className="relative flex items-end  justify-center   h-full w-full">
@@ -96,7 +97,7 @@ export default function Hero() {
       src={shahana} 
       alt="Shahana"
 
-      className="relative z-10   h-[650px] object-contain transition duration-500 hover:scale-[1.02]"
+      className="relative z-10 h-[300px] sm:h-[400px] md:h-[550px] lg:h-[650px] object-contain transition duration-500 hover:scale-[1.02]"
       style={{
         // maskImage: 'linear-gradient(to bottom, black 90%, transparent 100%)',
         // WebkitMaskImage: 'linear-gradient(to bottom, black 80%, transparent 90%)'
@@ -110,7 +111,7 @@ export default function Hero() {
   </div>
 
           {/* Vertical decorative grid dots overlay */}
-          <div className="absolute bottom-10 left-6 w-12 h-32 bg-[radial-gradient(rgba(10,117,106,0.15)_1px,transparent_1px)] bg-[size:10px_10px] pointer-events-none z-0 hidden sm:block" />
+          {/* <div className="absolute bottom-10 left-6 w-12 h-32 bg-[radial-gradient(rgba(10,117,106,0.15)_1px,transparent_1px)] bg-[size:10px_10px] pointer-events-none z-0 hidden sm:block" /> */}
         </motion.div>
 
       

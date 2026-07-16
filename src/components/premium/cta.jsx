@@ -22,8 +22,8 @@ export default function FinalCTA() {
         
         {/* Animated tag */}
         <motion.div initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-zinc-800 bg-zinc-900/60 backdrop-blur-md">
-          <Sparkles size={11} className="text-brand-accent"/>
-          <span className="text-[10px] font-semibold font-mono tracking-wider text-zinc-400 uppercase">
+          {/* <Sparkles size={11} className="text-brand-accent"/> */}
+          <span className="text-[10px] font-medium font-outfit tracking-wider text-zinc-400 uppercase">
             Start Your Transformation
           </span>
         </motion.div>

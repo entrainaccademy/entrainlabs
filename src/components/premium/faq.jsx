@@ -19,13 +19,11 @@ export default function FAQSection() {
         
         {/* Section Header */}
         <div className="flex flex-col items-center text-center gap-4 mb-16 max-w-2xl mx-auto">
-          <span className="text-xs font-semibold uppercase tracking-widest text-brand-accent font-satoshi">
-            FAQ
-          </span>
-          <h2 className="text-3xl md:text-5xl font-bold font-clash tracking-tight text-zinc-900 dark:text-white leading-tight">
+       
+          <h2 className="text-3xl md:text-5xl font-medium font-outfit tracking-tight text-zinc-900 dark:text-white leading-tight">
             Frequently Asked Questions.
           </h2>
-          <p className="text-zinc-500 dark:text-zinc-400 text-sm leading-relaxed">
+          <p className="text-zinc-500 dark:text-zinc-400 text-[12px] leading-relaxed font-outfit font-light">
             Get clarity on academy batches, curriculum operations, placement support, and fees structure.
           </p>
         </div>
@@ -35,16 +33,16 @@ export default function FAQSection() {
           {faqData.map((item, idx) => {
             const isOpen = openIndex === idx;
             return (<motion.div key={idx} initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: idx * 0.05 }} className={`rounded-2xl border transition-all duration-300 overflow-hidden relative text-left ${isOpen
-                    ? "bg-white dark:bg-zinc-900 border-brand-accent/30 shadow-md"
+                    ? "bg-white dark:bg-zinc-900  border-brand-primary/5 font-outfit font-normal shadow-primary/10 shadow-md"
                     : "bg-white dark:bg-zinc-900/40 border-zinc-150 dark:border-zinc-800/80 hover:border-zinc-300 dark:hover:border-zinc-700"}`}>
                 {/* Background noise */}
-                <div className="absolute inset-0 noise-overlay pointer-events-none opacity-20 dark:opacity-30"/>
+                <div className="absolute inset-0 noise-overlay  pointer-events-none opacity-20 dark:opacity-30"/>
 
                 {/* Accordion Trigger button */}
                 <button onClick={() => toggleFAQ(idx)} className="w-full flex items-center justify-between p-5 md:p-6 cursor-pointer text-left z-10 relative">
                   <div className="flex items-center gap-4 pr-4">
                     <HelpCircle size={15} className={`shrink-0 transition-colors duration-300 ${isOpen ? "text-brand-accent" : "text-zinc-400"}`}/>
-                    <span className="text-sm font-bold text-zinc-900 dark:text-white font-clash leading-snug">
+                    <span className="text-sm font-medium font-outfit text-zinc-900 dark:text-white  leading-snug">
                       {item.question}
                     </span>
                   </div>

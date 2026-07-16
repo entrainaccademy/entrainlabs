@@ -17,41 +17,36 @@ export default function TrustedBy() {
     { name: "Meta", logo: metaLogo },
     { name: "SEMrush", logo: semrushLogo },
     { name: "Shopify", logo: shopifyLogo },
-    { name: "WordPress", logo: wordpressLogo }
+    { name: "WordPress", logo: wordpressLogo },
   ];
 
-  // Repeat the list to ensure seamless marquee sliding animation
+  // Duplicate items for smooth infinite scroll
   const marqueeItems = [...tools, ...tools, ...tools, ...tools];
 
   return (
-    <section className="relative py-2  bg-gradient-to-tr from-[#F8FAFC] via-white to-[#F0F7F6] dark:from-zinc-950 dark:via-zinc-950/80 dark:to-zinc-900/30 border-b border-zinc-50 dark:border-zinc-900 overflow-hidden font-sans">
-      <div className="mx-auto max-w-7xl px-6 md:px-8 flex flex-col items-center gap-6">
-        
-        {/* Infinite Auto-Scrolling Marquee - Flat Logos */}
-        <div className="w-full relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)] py-6 z-10">
-          <div 
-            className="flex gap-8 w-max animate-marquee py-2 hover:[animation-play-state:paused] items-center"
+    <section className="relative py-3 md:py-5 overflow-hidden bg-white/5 md:bg-gradient-to-tr from-[#F8FAFC] via-white to-[#F0F7F6] border-b border-zinc-100">
+      <div className="mx-auto max-w-7xl px-4 md:px-8">
+        <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)] py-4">
+          <div
+            className="flex items-center gap-4 bg-red-000 md:gap-2 min-w-max animate-marquee hover:[animation-play-state:paused]"
             style={{ animationDuration: "55s" }}
           >
-            {marqueeItems.map((tool, idx) => {
-              return (
-                <div
-                  key={idx}
-                  className="flex items-center justify-center transition-all duration-300 hover:scale-105 hover:opacity-90 shrink-0"
-                >
-                  <img
-                    src={tool.logo}
-                    alt={tool.name}
-                    className="h-22 w-auto object-contain select-none dark:brightness-200 dark:contrast-100"
-                  />
-                </div>
-              );
-            })}
+            {marqueeItems.map((tool, idx) => (
+              <div
+                key={idx}
+                className="w-22 bg-red-000 md:w-44 bg-red-000 h-6 md:h-20 flex items-center justify-center shrink-0 transition-all duration-300 hover:scale-105"
+              >
+                <img
+                  src={tool.logo}
+                  alt={tool.name}
+                  draggable={false}
+                  className="max-h-12 md:max-h-16 h-22 bg-red-000 w-auto object-contain select-none"
+                />
+              </div>
+            ))}
           </div>
         </div>
-
       </div>
     </section>
   );
 }
-
