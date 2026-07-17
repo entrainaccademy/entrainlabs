@@ -120,7 +120,7 @@ export default function MentorsSection() {
 {/* Image Card */}
 {/* Image Card */}
 <div className="relative w-full flex justify-center">
-  <div className="group relative w-full  h-[290px] md:h-[460px] overflow-hidden md:rounded-t-[220px] rounded-t-[220px] md:rounded-b-[2px] rounded-b-[12px] bg-primary/80 border border-[#0A756A]/10 transition-all duration-500 hover:bg-[#0A756A]/15 hover:border-[#0A756A]/20">
+  <div className="group relative md:w-full w-[250px]  h-[290px] md:h-[460px] overflow-hidden md:rounded-t-[220px] rounded-t-[350px] md:rounded-b-[2px] rounded-b-[12px] bg-primary/80 border border-[#0A756A]/10 transition-all duration-500 hover:bg-[#0A756A]/90  hover:border-[#0A756A]/20">
 
     {/* Soft Glow */}
     <div className="absolute inset-0 pointer-events-none">

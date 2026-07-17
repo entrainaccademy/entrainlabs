@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <TrustedBy />
+      <TrustedBy className="" />
       <WhyChooseUs />
       <Courses />
 

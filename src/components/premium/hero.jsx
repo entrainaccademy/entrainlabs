@@ -12,15 +12,15 @@ import shahana from "/hero.png";
 import coatwith from "@/assets/coatwith.png" 
 export default function Hero() {
   const [isEnrollOpen, setIsEnrollOpen] = useState(false)
-  return (<section className="relative min-h-screen flex items-center justify-center pt-[39px] md:pt-0 px-0 md:px-8 pb-20 overflow-hidden text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+  return (<section className="relative min-h-screen flex md:items-center  items-top top-0 md:justify-center  md:pt-0 px-0 md:px-8 md:pb-20 pb-0 overflow-hidden text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
 
     {/* Bottom fade line */}
-    <div className="absolute bottom-0 left-0  right-0 h-40 bg-gradient-to-t from-zinc-50 via-zinc-50/20 to-transparent dark:from-zinc-950 pointer-events-none z-10" />
+    <div className="absolute bottom-0 left-0  right-0 h-40   bg-gradient-to-t from-zinc-50 via-zinc-50/20 to-transparent dark:from-zinc-950 pointer-events-none z-10" />
 
-    <div className="relative mx-auto  max-w-7xl px-6 md:px-8 z-20 grid grid-cols-1 lg:grid-cols-12 gap-1 sm:gap-10 lg:gap-16 items-center w-full mt-0">
+    <div className="relative mx-auto max-w-7xl px-6 md:px-8  h-auto bg-red-000 z-20 bg-red-000 grid grid-cols-1 lg:grid-cols-12 gap-1 bg-red-000 sm:gap-10 lg:gap-16 items-center w-full mt-0">
 
       {/* Left Column: Headline copy */}
-      <div className="lg:col-span-7 flex px-0 sm:px-6 lg:px-12 flex-col gap-6 text-left">
+      <div className="lg:col-span-7 flex px-0 bg-red-000 sm:px-6 lg:px-12 flex-col gap-6 text-left">
 
         {/* Tagline Badge */}
 
@@ -61,7 +61,7 @@ export default function Hero() {
       </div>
 
       {/* Right Column: Premium Agency Showcase Workspace */}
-      <div className="lg:col-span-5 relative  flex items-center justify-center min-h-[320px] sm:min-h-[420px] lg:min-h-[660px] -mt-10 md:mt-22 px-4">
+      <div className="lg:col-span-5 relative  flex items-center bg-red-000 justify-center min-h-[320px] sm:min-h-[420px] lg:min-h-[660px] -mt-60 md:mt-22 px-4">
 
         {/* Ambient color mesh background glow */}
         <div className="absolute w-[450px] h-[450px] rounded-full bg-primary/1520 from-brand-primary to-brand-accent/5 dark:from-brand-primary/15 dark:via-brand-accent/5 dark:to-transparent blur-3xl pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
@@ -80,10 +80,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 w-full flex justify-center items-end max-w-md h-[320px] sm:h-[420px] lg:h-[560px]"
+          className="relative z-10 w-full flex justify-center bg-red-000 items-end max-w-md h-[320px] sm:h-[420px] lg:h-[560px]"
         >
         
-  <div className="relative flex items-end  justify-center   h-full w-full">
+  <div className="relative flex items-end  justify-center  bg-red-000  h-full w-full">
     {/* Arched Gradient Backing Frame */}
     <div className="absolute bottom-0 left-1/2   -translate-x-1/2 w-[85%] h-[85%] bg-primary/5 from-brand-primary/5 via-brand-accent/5 to-transparent dark:from-brand-primary/10 dark:via-brand-accent/5 dark:to-transparent rounded-t-[140px] border-t border-x border-zinc-200/40 dark:border-zinc-800/40 z-0" />
 

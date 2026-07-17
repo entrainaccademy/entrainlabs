@@ -36,7 +36,7 @@ export default function Navbar() {
   return (<>
     <motion.header className="fixed top-0 left-0 right-0  z-50 w-full pointer-events-none flex flex-col items-center  pt-6 md:pt-8" initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }}>
       {/* Floating Capsule Container */}
-      <div className={cn("pointer-events-auto w-68 md:w-[94%]  h-16 md:h-[70px]   max-w-6xl flex items-center justify-between transition-all duration-300 ease-in-out rounded-[12px] md:rounded-[18px] border border-primary/10 bg-background/80 backdrop-blur-xl shadow-lg shadow-black/5", isScrolled ? "py-2 px-6 md:px-8" : "py-2 px-6 md:px-8")}>
+      <div className={cn("pointer-events-auto w-[94%] md:px-0 px-4 md:w-[94%]  h-16 md:h-[70px]   max-w-6xl flex items-center justify-between transition-all duration-300 ease-in-out rounded-[12px] md:rounded-[18px] border border-primary/10 bg-background/80 backdrop-blur-xl shadow-lg shadow-black/5", isScrolled ? "py-2 px-6 md:px-8" : "py-2 px-6 md:px-8")}>
         {/* Logo */}
         <Link to="/" className="flex items-center group">
           <div className="relative w-24 h-16 overflow-visible">

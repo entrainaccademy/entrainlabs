@@ -24,9 +24,9 @@ export default function TrustedBy() {
   const marqueeItems = [...tools, ...tools, ...tools, ...tools];
 
   return (
-    <section className="relative py-3 md:py-5 overflow-hidden bg-white/5 md:bg-gradient-to-tr from-[#F8FAFC] via-white to-[#F0F7F6] border-b border-zinc-100">
+    <section className="relative py-0 md:py-5 overflow-hidden  bg-red-000 md:bg-gradient-to-tr from-[#F8FAFC] via-white to-[#F0F7F6] border-b border-zinc-100">
       <div className="mx-auto max-w-7xl px-4 md:px-8">
-        <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)] py-4">
+        <div className="relative w-full overflow-hidden bg-red-000 [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)] py-4">
           <div
             className="flex items-center gap-4 bg-red-000 md:gap-2 min-w-max animate-marquee hover:[animation-play-state:paused]"
             style={{ animationDuration: "55s" }}
