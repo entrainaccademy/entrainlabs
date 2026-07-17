@@ -46,6 +46,7 @@ tablet.png
 mobile.png
 *.png
 !public/**/*.png
+!src/assets/**
 
 # documentation (screenshot tool)
 SCREENSHOT-TOOL.md

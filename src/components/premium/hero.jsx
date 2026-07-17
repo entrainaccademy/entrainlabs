@@ -9,7 +9,7 @@ import shahana from "/hero.png";
 // import heroafna from "../../assets/heroafna.png";
 // import logofull from '../../assets/afnafullnonbg.png'
 // import afnaeditnonbg  from "../../assets/afnaeditnonbg.png";
-import coatwith from "../../assets/coatwith.png" 
+import coatwith from "@/assets/coatwith.png" 
 export default function Hero() {
   const [isEnrollOpen, setIsEnrollOpen] = useState(false)
   return (<section className="relative min-h-screen flex items-center justify-center pt-[39px] md:pt-0 px-0 md:px-8 pb-20 overflow-hidden text-zinc-900 dark:text-zinc-100 transition-colors duration-300">

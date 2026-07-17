@@ -37,7 +37,7 @@ import {
 // import twentythree from "../../assets/twentythree.png";
 // import nonbg from "../../assets/nonbg.png";
 // import nonbg2 from "../../assets/nonbg2.png";
-import demo from '../../assets/demo.jpeg'
+import demo from '@/assets/demo.jpeg'
 
 
 

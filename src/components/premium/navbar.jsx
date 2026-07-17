@@ -5,7 +5,7 @@ import { Menu, X } from "lucide-react";
 import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced";
 import { cn } from "@/lib/utils";
 import { Link } from "react-router-dom";
-import logo from '../../assets/logolab.png'
+import logo from '@/assets/logolab.png'
 
 const navLinks = [
   { label: "Home", href: "/", id: "home" },
