@@ -12,7 +12,7 @@ import shahana from "/hero.png";
 import coatwith from "@/assets/coatwith.png" 
 export default function Hero() {
   const [isEnrollOpen, setIsEnrollOpen] = useState(false)
-  return (<section className="relative min-h-screen flex md:items-center  items-top top-0 md:justify-center  md:pt-0 px-0 md:px-8 md:pb-20 pb-0 overflow-hidden text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+  return (<section className="relative min-h-screen flex md:items-center  items-top top-0 md:mt-0 -mt-20 md:justify-center  md:pt-0 px-0 md:px-8 md:pb-20 pb-0 overflow-hidden text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
 
     {/* Bottom fade line */}
     <div className="absolute bottom-0 left-0  right-0 h-40   bg-gradient-to-t from-zinc-50 via-zinc-50/20 to-transparent dark:from-zinc-950 pointer-events-none z-10" />
@@ -32,7 +32,7 @@ export default function Hero() {
         {/* Hero Headline */}
         <div className="flex flex-col gap-2 ">
           <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} className="text-4xl sm:text-5xl md:text-7xl font-bold  font-outfit leading-[1.1] tracking-tight text-zinc-950 dark:text-white">
-            Learn.. <br />
+            <span className="font-medium font-outfit">Learn..</span> <br />
             <span className="text-brand-primary ">
               Practice.  <br  className="font-satoshi  "/><span className="font-poppins">Get  Hired.</span>
             </span>
