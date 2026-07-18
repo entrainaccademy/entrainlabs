@@ -52,7 +52,7 @@ const ContactForm = () => {
 *Message:*
 ${formData.message}`;
         // WhatsApp number (replace with your actual number)
-        const whatsappNumber = "919745020223";
+        const whatsappNumber = "917593841013";
         // Encode message for URL
         const encodedMessage = encodeURIComponent(message);
         // Open WhatsApp with pre-filled message

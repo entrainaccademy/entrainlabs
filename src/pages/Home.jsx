@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "@/components/premium/hero";
-import TrustedBy from "@/components/premium/trusted-by";
+// import TrustedBy from "@/components/premium/trusted-by";
 import WhyChooseUs from "@/components/premium/why-us";
 import Courses from "@/components/premium/courses";
 import LearningJourney from "@/components/premium/journey";
@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <TrustedBy className="" />
+      
       <WhyChooseUs />
       <Courses />
 
@@ -24,6 +24,7 @@ export default function Home() {
       {/* <SuccessStories /> */}
       {/* <PlacementPartners /> */}
       <MentorsSection />
+      
       {/* <NumbersSection /> */}
       {/* <AIToolsSection /> */}
       <FAQSection />

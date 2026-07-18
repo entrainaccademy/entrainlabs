@@ -23,6 +23,7 @@ import {
 import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced";
 import { useNavigate } from "react-router-dom";
 import { faqData } from "@/lib/data";
+import TrustedBy from "@/components/premium/trusted-by"; 
 
 // ==========================================
 // DATA DEFINITIONS (CURRICULUM, PRICING, ETC.)
@@ -562,7 +563,7 @@ export default function Courses({ defaultSection }) {
           </div>
         </div> */}
 
-
+      <TrustedBy className="my-16 md:my-24" />
         {/* ==========================================
             SECTION 6: BOTTOM CTA
             ========================================== */}
@@ -580,9 +581,9 @@ export default function Courses({ defaultSection }) {
 
 
             <h3 className="text-3xl md:text-5xl font-bold font-clash text-zinc-900 dark:text-white tracking-tight leading-tight mb-4">
-              Get Started with the <br />
+              Begin Your Learning <br />
               <span className="bg-gradient-to-r from-zinc-800 to-[#0A756A] dark:from-white dark:to-[#0A756A] bg-clip-text text-transparent">
-                Digital Marketing Academy
+                  Journey Today
               </span>
             </h3>
 

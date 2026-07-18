@@ -3,34 +3,13 @@ import React from "react";
 import { motion } from "motion/react";
 import { Sparkles } from "lucide-react";
 
-import afanImg from "@/assets/afananobgnew.png";
-import shahanImg from "/shahaana.png";
+import afanImg from "@/assets/afa.png";
+import greshma from "/shahaana.png";
 import safa from "/safano.png";
+// import greshma from "/hrfull.png"
 
 export default function MentorsSection() {
-  const mentors = [
-    {
-      name: "Afna",
-      
-      image: afanImg,
-       
 
-    },
-    {
-      name: "Shahan",
-
-      image: shahanImg,
-      
-
-    },
-    {
-      name: "Safa",
-      
-      image: safa,
-
-      
-    },
-  ];
 
   // Stagger animation container variants
   const containerVariants = {
@@ -83,9 +62,9 @@ export default function MentorsSection() {
             transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="text-[32px] md:text-[42px] lg:text-[64px] font-bold font-outfit tracking-tight text-zinc-900 dark:text-white leading-tight"
           >
-            Learn From{" "}
+            Meet{" "}
             <span className="text-[#0A756A] font-outfit font-bold dark:text-[#5EEAD4]">
-              Industry Experts
+               Your Faculty
             </span>
           </motion.h2>
           
@@ -109,62 +88,74 @@ export default function MentorsSection() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
         >
-      {mentors.map((mentor, index) => (
-  <motion.div
-    key={index}
-    variants={cardVariants}
-    className="flex flex-col items-center w-full max-w-[360px] mx-auto"
-  >
-    {/* Image Card */}
-  {/* Image Card */}
-{/* Image Card */}
-{/* Image Card */}
-<div className="relative w-full flex justify-center">
-  <div className="group relative md:w-full w-[250px]  h-[290px] md:h-[460px] overflow-hidden md:rounded-t-[220px] rounded-t-full md:rounded-b-[2px] rounded-b-[1px] bg-primary/80 border border-[#0A756A]/10 transition-all duration-500 hover:bg-[#0A756A]/90  hover:border-[#0A756A]/20">
+          {/* Mentor 1: Afna */}
+          <motion.div
+            variants={cardVariants}
+            className="flex flex-col items-center w-full max-w-[360px] mx-auto"
+          >
+            <div className="relative w-full flex justify-center">
+              <div className="group relative md:w-full w-[250px] h-[340px] md:h-[460px] overflow-hidden md:rounded-t-[220px] rounded-t-full md:rounded-b-[2px] rounded-b-[1px] bg-primary/80 border border-[#0A756A]/10 transition-all duration-500 hover:bg-[#0A756A]/90 hover:border-[#0A756A]/20">
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-8 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-[#0A756A]/10 blur-3xl" />
+                </div>
+                <div className="absolute top-8 left-1/2 -translate-x-1/2 w-56 h-56 rounded-full border border-[#0A756A]/10" />
+                <div className="absolute top-14 left-1/2 -translate-x-1/2 w-44 h-44 rounded-full border border-dashed border-[#0A756A]/15 group-hover:rotate-180 transition-transform duration-[6000ms]" />
+                <div className="absolute inset-0 flex items-end justify-center px-4">
+                  <img
+                    src={afanImg}
+                    alt="Afna"
+                    className="h-[95%] md:h-[98%] w-auto max-w-full object-contain object-bottom transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 drop-shadow-[0_20px_40px_rgba(0,0,0,0.12)]"
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
-    {/* Soft Glow */}
-    <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute top-8 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-[#0A756A]/10 blur-3xl" />
-    </div>
+          {/* Mentor 2: Greshma */}
+          <motion.div
+            variants={cardVariants}
+            className="flex flex-col items-center w-full max-w-[360px] mx-auto"
+          >
+            <div className="relative w-full flex justify-center">
+              <div className="group relative md:w-full w-[250px] h-[340px] md:h-[460px] overflow-hidden md:rounded-t-[220px] rounded-t-full md:rounded-b-[2px] rounded-b-[1px] bg-primary/80 border border-[#0A756A]/10 transition-all duration-500 hover:bg-[#0A756A]/90 hover:border-[#0A756A]/20">
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-8 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-[#0A756A]/10 blur-3xl" />
+                </div>
+                <div className="absolute top-8 left-1/2 -translate-x-1/2 w-56 h-56 rounded-full border border-[#0A756A]/10" />
+                <div className="absolute top-14 left-1/2 -translate-x-1/2 w-44 h-44 rounded-full border border-dashed border-[#0A756A]/15 group-hover:rotate-180 transition-transform duration-[6000ms]" />
+                <div className="absolute inset-0 flex items-end justify-center px-4">
+                  <img
+                    src={greshma}
+                    alt="Greshma"
+                    className="h-[95%] md:h-[98%] md:pt-10 pt-5 w-auto max-w-full object-contain object-bottom transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 drop-shadow-[0_20px_40px_rgba(0,0,0,0.12)]"
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
 
-    {/* Decorative Ring */}
-    <div className="absolute top-8 left-1/2 -translate-x-1/2 w-56 h-56 rounded-full border border-[#0A756A]/10" />
-    <div className="absolute top-14 left-1/2 -translate-x-1/2 w-44 h-44 rounded-full border border-dashed border-[#0A756A]/15 group-hover:rotate-180 transition-transform duration-[6000ms]" />
-
-    {/* Mentor Image */}
-    <div className="absolute inset-0 flex items-end justify-center px-4">
-      <img
-        src={mentor.image}
-        alt={mentor.name}
-        className="
-          h-[95%]
-          md:h-[98%]
-          w-auto
-          max-w-full
-          object-contain
-          object-bottom
-          transition-all
-          duration-500
-          group-hover:scale-105
-          group-hover:-translate-y-2
-          drop-shadow-[0_20px_40px_rgba(0,0,0,0.12)]
-        "
-      />
-    </div>
-
-  </div>
-</div>
-
-    {/* Name Card */}
-    {/* <div className="md:mt-5  bg-red-000  w-full rounded-2xl  border-zinc-000  md:py-5 py-0 text-center">
-      <h3 className="  text-[12px] md:text-2xl font-poppins font-medium text-zinc-900">
-        {mentor.name}
-      </h3>
-
-    
-    </div> */}
-  </motion.div>
-))}
+          {/* Mentor 3: Safa */}
+          <motion.div
+            variants={cardVariants}
+            className="flex flex-col items-center w-full max-w-[360px] mx-auto"
+          >
+            <div className="relative w-full flex justify-center">
+              <div className="group relative md:w-full w-[250px] h-[340px] md:h-[460px] overflow-hidden md:rounded-t-[220px] rounded-t-full md:rounded-b-[2px] rounded-b-[1px] bg-primary/80 border border-[#0A756A]/10 transition-all duration-500 hover:bg-[#0A756A]/90 hover:border-[#0A756A]/20">
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-8 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-[#0A756A]/10 blur-3xl" />
+                </div>
+                <div className="absolute top-8 left-1/2 -translate-x-1/2 w-56 h-56 rounded-full border border-[#0A756A]/10" />
+                <div className="absolute top-14 left-1/2 -translate-x-1/2 w-44 h-44 rounded-full border border-dashed border-[#0A756A]/15 group-hover:rotate-180 transition-transform duration-[6000ms]" />
+                <div className="absolute inset-0 flex items-end justify-center px-4">
+                  <img
+                    src={safa}
+                    alt="Safa"
+                    className="h-[95%] md:h-[98%] w-auto max-w-full object-contain object-bottom transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 drop-shadow-[0_20px_40px_rgba(0,0,0,0.12)]"
+                  />
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

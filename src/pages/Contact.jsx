@@ -39,7 +39,7 @@ export default function Contact() {
       
       // Redirect to WhatsApp with filled details
       const waMsg = `*Free Career Consultation Request*%0A%0A*Name:* ${formData.name}%0A*Phone:* ${formData.phone}%0A*Email:* ${formData.email}%0A*Course:* ${formData.course}%0A*Message:* ${formData.message}`;
-      const waUrl = `https://wa.me/919745020223?text=${waMsg}`;
+      const waUrl = `https://wa.me/917593841013?text=${waMsg}`;
       window.open(waUrl, "_blank");
 
       // Reset states
@@ -457,7 +457,7 @@ export default function Contact() {
               Call Now
             </a>
             <a 
-              href="https://wa.me/919745020223" 
+              href="https://wa.me/917593841013" 
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex h-12 items-center justify-center px-7 rounded-full border border-zinc-200 bg-white hover:bg-zinc-50 text-zinc-700 font-medium text-sm transition-all duration-300 hover:scale-[1.03] active:scale-[0.97] cursor-pointer"

@@ -69,7 +69,7 @@ export function EnrollmentFormAdvanced({ open, onOpenChange, autoTrigger = false
         // Format the WhatsApp message
         const message = `*New Enrollment Request*%0A%0A*Name:* ${formData.name}%0A*Email:* ${formData.email}%0A*Phone:* ${formData.phone}`;
         // WhatsApp number in international format (country code + number, no spaces or symbols)
-        const whatsappNumber = "919745020223";
+        const whatsappNumber = "917593841013";
         // Open WhatsApp with pre-filled message
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
         window.open(whatsappUrl, "_blank");

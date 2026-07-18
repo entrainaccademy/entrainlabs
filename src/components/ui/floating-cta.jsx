@@ -8,8 +8,8 @@ const WhatsAppIcon = (props) => (
 );
 
 const FloatingCTA = () => {
-    const phoneNumber = "+919745020223";
-    const whatsappNumber = "919745020223";
+    const phoneNumber = "+917593841013";
+    const whatsappNumber = "917593841013";
     
     const handlePhoneClick = () => {
         window.location.href = `tel:${phoneNumber}`;
@@ -20,7 +20,7 @@ const FloatingCTA = () => {
     };
 
     return (
-        <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3 md:hidden">
             {/* WhatsApp Button */}
             <button 
                 onClick={handleWhatsAppClick} 

@@ -38,7 +38,7 @@ const ContactInfo = () => {
       </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 animate-in fade-in slide-in-from-bottom-10 duration-1000 delay-150 ease-in-out fill-mode-both">
-        <a href="mailto:contact@entrainlabs.com" className="group rounded-md border border-border bg-background p-4 transition-colors hover:bg-muted/50">
+        <a href="mailto:entrainlabs@gmail.com" className="group rounded-md border border-border bg-background p-4 transition-colors hover:bg-muted/50">
           <div className="flex items-center gap-3">
             <span className="flex size-10 items-center justify-center rounded-sm bg-muted text-foreground">
               <Mail className="size-4"/>
@@ -46,12 +46,12 @@ const ContactInfo = () => {
             <div className="min-w-0">
               <p className="text-sm text-muted-foreground">Email</p>
               <p className="truncate text-sm font-medium text-foreground sm:text-base">
-                contact@entrainlabs.com
+                entrainlabs@gmail.com
               </p>
             </div>
           </div>
         </a>
-        <a href="tel:+919745020223" className="group rounded-md border border-border bg-background p-4 transition-colors hover:bg-muted/50">
+        <a href="tel:+917593841013" className="group rounded-md border border-border bg-background p-4 transition-colors hover:bg-muted/50">
           <div className="flex items-center gap-3">
             <span className="flex size-10 items-center justify-center rounded-sm bg-muted text-foreground">
               <Phone className="size-4"/>
@@ -59,7 +59,7 @@ const ContactInfo = () => {
             <div>
               <p className="text-sm text-muted-foreground">Phone / WhatsApp</p>
               <p className="text-sm font-medium text-foreground sm:text-base">
-                +91 97450 20223
+                +91 75938 41013
               </p>
             </div>
           </div>

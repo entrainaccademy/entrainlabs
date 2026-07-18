@@ -107,7 +107,7 @@ export default function WhyChooseUs() {
   };
 
   return (
-    <section id="about" className="relative py-28 md:py-32 bg-zinc-50 dark:bg-zinc-950 font-sans overflow-hidden transition-colors duration-300">
+    <section id="about" className="relative py-1 md:py-32 bg-zinc-50 dark:bg-zinc-950 font-sans overflow-hidden transition-colors duration-300">
       
       {/* 5% Opacity Grid Pattern */}
       {/* <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none select-none z-0" /> */}

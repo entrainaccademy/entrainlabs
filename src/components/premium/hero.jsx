@@ -12,7 +12,7 @@ import shahana from "/hero.png";
 import coatwith from "@/assets/coatwith.png" 
 export default function Hero() {
   const [isEnrollOpen, setIsEnrollOpen] = useState(false)
-  return (<section className="relative min-h-screen flex md:items-center  items-top top-0 md:mt-0 -mt-20 md:justify-center  md:pt-0 px-0 md:px-8 md:pb-20 pb-0 overflow-hidden text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+  return (<section className="relative bg-red-000  min-h-screen flex md:items-center  items-top top-0 md:mt-0 -mt-20 md:justify-center  md:pt-0 px-0 md:px-8 md:pb-20 pb-1 overflow-hidden text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
 
     {/* Bottom fade line */}
     <div className="absolute bottom-0 left-0  right-0 h-40   bg-gradient-to-t from-zinc-50 via-zinc-50/20 to-transparent dark:from-zinc-950 pointer-events-none z-10" />

@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced";
 import { useNavigate } from "react-router-dom";
+import TrustedBy from "@/components/premium/trusted-by";
 
 export default function Courses() {
   const navigate = useNavigate();
@@ -121,7 +122,7 @@ export default function Courses() {
     >
       {/* Background System */}
       {/* Dot Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808009_1px,transparent_1px),linear-gradient(to_bottom,#80808009_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
+      <div className="absolute inset-0    border-red-600 bg-[linear-gradient(to_right,#80808009_1px,transparent_1px),linear-gradient(to_bottom,#80808009_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
 
       {/* Noise Texture */}
       <div className="absolute inset-0 noise-overlay pointer-events-none opacity-[0.015] dark:opacity-[0.02]" />
@@ -319,7 +320,8 @@ export default function Courses() {
 
   
 
-       
+         
+         <TrustedBy className="my-14 md:my-24" />
 
      
 
@@ -341,9 +343,9 @@ export default function Courses() {
           
 
             <h3 className="text-3xl md:text-5xl font-bold font-outfit tracking text-zinc-900 dark:text-white tracking-tight leading-tight mb-4">
-              Ready to Start Your 
+              Take the First
               <span className="bg-gradient-to-r from-zinc-800 to-[#0A756A] dark:from-white dark:to-[#0A756A] font-outfit font-bold bg-clip-text text-transparent">
-                Digital Marketing Journey?
+                Step to  Successful Career
               </span>
             </h3>
 
