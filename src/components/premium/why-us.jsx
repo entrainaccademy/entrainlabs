@@ -1,5 +1,6 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced";
 import { motion } from "motion/react";
 import { 
   Target, 
@@ -43,6 +44,7 @@ import demo from '@/assets/demo.jpeg'
 
 
 export default function WhyChooseUs() {
+  const [isEnrollOpen, setIsEnrollOpen] = useState(false);
   const items = [
     {
       title: "Practical Learning",
@@ -224,6 +226,7 @@ export default function WhyChooseUs() {
             {/* Bottom CTA Button */}
             <div className="flex justify-start w-full">
               <motion.button 
+                onClick={() => setIsEnrollOpen(true)}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -243,6 +246,9 @@ export default function WhyChooseUs() {
 
         </div>
       </div>
+      
+      {/* Enrollment Dialog */}
+      <EnrollmentFormAdvanced open={isEnrollOpen} onOpenChange={setIsEnrollOpen} />
     </section>
   );
 }

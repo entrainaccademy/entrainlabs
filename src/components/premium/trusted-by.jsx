@@ -27,7 +27,7 @@ export default function TrustedBy({ className = "" }) {
     <section className={`relative py-0 md:py-5 overflow-hidden bg-red-000 border-zinc-100 ${className}`}>
       <div className="mx-auto max-w-7xl px-4 md:px-8">
         <div className="text-center mb-6">
-          <h4 className="text-xs md:text-sm font-semibold uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 font-satoshi">
+          <h4 className="text-xs md:text-sm font-light font-outfit uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 font-satoshi">
             Our Tools
           </h4>
         </div>

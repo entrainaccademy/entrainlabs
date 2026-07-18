@@ -114,7 +114,7 @@ const Footer = () => {
                   <p className="text-base font-medium text-foreground">
                     {title}
                   </p>
-                  <ul className="flex flex-col gap-3">
+                  <ul className="flex flex-row gap-1">
                     {links.map(({ title, href }) => (<li key={title}>
                         <a href={href} className="text-base font-normal text-muted-foreground hover:text-foreground">
                           {title}

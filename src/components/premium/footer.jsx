@@ -179,8 +179,8 @@ export default function Footer() {
 
             <div className="flex flex-col gap-4 w-full">
               {/* Phone item */}
-              <div className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/[0.01] backdrop-blur-md p-3.5 hover:border-[#0A756A]/30 hover:bg-white/[0.03] hover:shadow-[0_10px_30px_-10px_rgba(10,117,106,0.15)] hover:-translate-y-0.5 transition-all duration-300 group">
-                <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-[#0A756A] to-[#14b8a6]/80 text-white flex items-center justify-center shrink-0 shadow-lg shadow-[#0A756A]/10">
+              <div className="flex items-center gap-4 rounded-xl  border-white/5  p-3.5 hover:border-[#0A756A]/30 hover:bg-white/[0.03] hover:shadow-[0_10px_30px_-10px_rgba(10,117,106,0.15)] hover:-translate-y-0.5 transition-all duration-300 group">
+                <div className="h-10 w-10 rounded-lg  text-primary flex items-center justify-center shrink-0 transition-colors duration-300 group-hover:bg-[#0A756A] group-hover:text-white shadow-lg">
                   <Phone size={15} />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -192,21 +192,21 @@ export default function Footer() {
               </div>
 
               {/* Email item */}
-              <div className="flex items-center gap-4 rounded-xl border border-white/5 bg-white/[0.01] backdrop-blur-md p-3.5 hover:border-[#0A756A]/30 hover:bg-white/[0.03] hover:shadow-[0_10px_30px_-10px_rgba(10,117,106,0.15)] hover:-translate-y-0.5 transition-all duration-300 group">
-                <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-[#0A756A] to-[#14b8a6]/80 text-white flex items-center justify-center shrink-0 shadow-lg shadow-[#0A756A]/10">
+              <div className="flex items-center gap-6  border-white/5  p-3.5 hover:border-[#0A756A]/30 hover:bg-white/[0.03] hover:shadow-[0_10px_30px_-10px_rgba(10,117,106,0.15)] hover:-translate-y-0.5 transition-all duration-300 group">
+                <div className="h-10 w-10 rounded-lg  text-primary flex items-center justify-center shrink-0 transition-colors duration-300 group-hover:bg-[#0A756A] group-hover:text-white shadow-lg">
                   <Mail size={15} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="block text-[10px] text-zinc-500 uppercase tracking-widest font-semibold font-clash">Email</span>
-                  <a href="mailto:entrainlabs@gmail.com" className="block text-[13px] font-medium text-zinc-300 hover:text-[#14b8a6] transition-colors focus:outline-none focus:text-[#14b8a6] break-all">
+                  <span className="block text-[8px] text-zinc-500 uppercase tracking-widest font-semibold font-clash">Email</span>
+                  <a href="mailto:entrainlabs@gmail.com" className="block text-[13px] font-clash font-medium text-zinc-300 hover:text-[#14b8a6] transition-colors focus:outline-none focus:text-[#14b8a6] break-all">
                     entrainlabs@gmail.com
                   </a>
                 </div>
               </div>
 
               {/* Location item */}
-              <div className="flex items-start gap-4 rounded-xl border border-white/5 bg-white/[0.01] backdrop-blur-md p-3.5 hover:border-[#0A756A]/30 hover:bg-white/[0.03] hover:shadow-[0_10px_30px_-10px_rgba(10,117,106,0.15)] hover:-translate-y-0.5 transition-all duration-300 group">
-                <div className="h-10 w-10 rounded-full bg-gradient-to-tr from-[#0A756A] to-[#14b8a6]/80 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-lg shadow-[#0A756A]/10">
+              <div className="flex items-start gap-4  p-3.5 hover:border-[#0A756A]/30 hover:bg-white/[0.03] hover:shadow-[0_10px_30px_-10px_rgba(10,117,106,0.15)] hover:-translate-y-0.5 transition-all duration-300 group">
+                <div className="h-10 w-10 rounded-lg text-primary flex items-center justify-center shrink-0 mt-0.5 transition-colors duration-300 group-hover:bg-[#0A756A] group-hover:text-white shadow-lg">
                   <MapPin size={15} />
                 </div>
                 <div className="flex-1 min-w-0">

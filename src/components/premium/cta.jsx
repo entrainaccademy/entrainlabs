@@ -36,12 +36,12 @@ export default function FinalCTA() {
         </motion.div>
 
         {/* Headline */}
-        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-4xl md:text-6xl font-bold font-clash tracking-tight leading-none bg-gradient-to-r from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent max-w-2xl">
+        <motion.h2 initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="text-4xl md:text-6xl font-bold font-outfit tracking-tight leading-none bg-gradient-to-r from-white via-zinc-200 to-zinc-500 bg-clip-text text-transparent max-w-2xl">
           Ready to Build Your Career?
         </motion.h2>
 
         {/* Subtitle */}
-        <motion.p initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="text-zinc-400 text-sm md:text-base leading-relaxed max-w-md">
+        <motion.p initial={{ opacity: 0, y: 15 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="text-zinc-400 text-sm  font-clash md:text-base leading-relaxed max-w-md">
           Join Entrain Labs today. Connect with industry mentors, gain verified agency experience, and unlock recruitment channels.
         </motion.p>
 
@@ -53,7 +53,7 @@ export default function FinalCTA() {
           </button>
           
           <button onClick={handleWhatsAppChat} className="flex h-12 items-center justify-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-800 text-zinc-200 px-7 text-xs font-semibold tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer">
-            <WhatsAppIcon className="text-[#25D366] h-4 w-4" />
+            <WhatsAppIcon className="text-primary h-4 w-4" />
             <span>Chat on WhatsApp</span>
           </button>
         </motion.div>
