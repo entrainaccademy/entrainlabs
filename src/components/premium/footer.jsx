@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
-import ftlogo from '/footerlogo.jpeg';
+const ftlogo = "/footerlogo.jpeg";
 
 // Inline SVG components for social media icons to prevent missing exports from library versions
 const InstagramIcon = (props) => (

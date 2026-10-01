@@ -3,13 +3,8 @@ import { useState } from "react";
 import { motion } from "motion/react";
 import { ArrowDown, Sparkles, Target, Zap } from "lucide-react";
 import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced";
-import shahana from "/hero.png";
-
-// import afnanobgfull from "../../assets/afnanobgfull.png";
-// import heroafna from "../../assets/heroafna.png";
-// import logofull from '../../assets/afnafullnonbg.png'
-// import afnaeditnonbg  from "../../assets/afnaeditnonbg.png";
-import coatwith from "@/assets/coatwith.png" 
+const shahana = "/hero.png";
+import coatwith from "@/assets/coatwith.png"; 
 export default function Hero() {
   const [isEnrollOpen, setIsEnrollOpen] = useState(false)
   return (<section className="relative bg-red-000  min-h-screen flex md:items-center  items-top top-0 md:mt-0 -mt-20 md:justify-center  md:pt-0 px-0 md:px-8 md:pb-20 pb-1 overflow-hidden text-zinc-900 dark:text-zinc-100 transition-colors duration-300">

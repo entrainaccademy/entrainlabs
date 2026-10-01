@@ -4,7 +4,8 @@ import { motion, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced";
 import { cn } from "@/lib/utils";
-import { Link } from "react-router-dom";
+import { Link as RouterLink } from "next/link";
+import Link from "next/link";
 import logo from '@/assets/logolab.png'
 
 const navLinks = [
@@ -38,10 +39,10 @@ export default function Navbar() {
       {/* Floating Capsule Container */}
       <div className={cn("pointer-events-auto w-[94%] md:px-0 px-4 md:w-[94%]  h-16 md:h-[70px]   max-w-6xl flex items-center justify-between transition-all duration-300 ease-in-out rounded-[12px] md:rounded-[18px] border border-primary/10 bg-background/80 backdrop-blur-xl shadow-lg shadow-black/5", isScrolled ? "py-2 px-6 md:px-8" : "py-2 px-6 md:px-8")}>
         {/* Logo */}
-        <Link to="/" className="flex items-center group">
+        <Link href="/" className="flex items-center group">
           <div className="relative w-24 h-16 overflow-visible">
             <img
-              src={logo}
+              src={logo.src || logo}
               alt="Entrain Labs Logo"
               className="absolute w-24 h-16 inset-0  m-auto object-contain transition-transform duration-300 group-hover:scale-110"
             />
@@ -51,7 +52,7 @@ export default function Navbar() {
         {/* Navigation Links (Desktop) */}
         <nav className="hidden lg:flex items-center font-satoshi text-[#4B5563]   gap-1.5 relative">
           {navLinks.map((link) => {
-            return (<Link key={link.id} to={link.href} className="text-sm font-medium text-zinc-600 dark:text-zinc-900 hover:text-black dark:hover:text-white transition-colors py-1.5 px-4">
+            return (<Link key={link.id} href={link.href} className="text-sm font-medium text-zinc-600 dark:text-zinc-900 hover:text-black dark:hover:text-white transition-colors py-1.5 px-4">
               {link.label}
             </Link>);
           })}
@@ -78,16 +79,16 @@ export default function Navbar() {
 
 
             <div className="flex flex-col  gap-3 font-helvetica font-thin text-[14px] leading-[20px] tracking-[0px] normal-case">
-              <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
                 <p className="capitalize">Home</p>
               </Link>
-              <Link to="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
+              <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
                 <p className="capitalize">About Us</p>
               </Link>
-              <Link to="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
+              <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
                 <p className='capitalize'>Blog</p>
               </Link>
-              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2">
+              <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2">
                 <p className='capitalize'>Contact</p>
               </Link>
             </div>

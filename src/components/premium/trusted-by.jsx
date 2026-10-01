@@ -42,7 +42,7 @@ export default function TrustedBy({ className = "" }) {
                 className="w-22 bg-red-000 md:w-44 bg-red-000 h-6 md:h-20 flex items-center justify-center shrink-0 transition-all duration-300 hover:scale-105"
               >
                 <img
-                  src={tool.logo}
+                  src={tool.logo.src || tool.logo}
                   alt={tool.name}
                   draggable={false}
                   className="max-h-12 md:max-h-16 h-22 bg-red-000 w-auto object-contain select-none"

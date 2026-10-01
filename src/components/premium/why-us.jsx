@@ -142,7 +142,7 @@ export default function WhyChooseUs() {
             {/* Framed Image */}
             <div className="relative w-full aspect-[4/5] sm:aspect-[4/3] lg:aspect-[3/4] max-w-md rounded-[2rem] overflow-hidden  border-zinc-200/60 dark:border-zinc-800/60   shadow-zinc-200/50 dark:shadow-zinc-950/50 group select-none bg-zinc-000 dark:bg-zinc-900">
               <img 
-                src={demo} 
+                src={demo.src || demo} 
                 alt="Students collaborating at study table" 
                 className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105" 
               />

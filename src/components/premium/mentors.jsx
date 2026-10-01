@@ -4,9 +4,8 @@ import { motion } from "motion/react";
 import { Sparkles } from "lucide-react";
 
 import afanImg from "@/assets/afa.png";
-import greshma from "/shahaana.png";
-import safa from "/safano.png";
-// import greshma from "/hrfull.png"
+const greshma = "/shahaana.png";
+const safa = "/safano.png";
 
 export default function MentorsSection() {
 
@@ -102,7 +101,7 @@ export default function MentorsSection() {
                 <div className="absolute top-14 left-1/2 -translate-x-1/2 w-44 h-44 rounded-full border border-dashed border-[#0A756A]/15 group-hover:rotate-180 transition-transform duration-[6000ms]" />
                 <div className="absolute inset-0 flex items-end justify-center px-4">
                   <img
-                    src={afanImg}
+                    src={afanImg.src || afanImg}
                     alt="Afna"
                     className="h-[95%] md:h-[98%] w-auto max-w-full object-contain object-bottom transition-all duration-500 group-hover:scale-105 group-hover:-translate-y-2 drop-shadow-[0_20px_40px_rgba(0,0,0,0.12)]"
                   />

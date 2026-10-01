@@ -21,7 +21,7 @@ import {
   Minus
 } from "lucide-react";
 import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { faqData } from "@/lib/data";
 import TrustedBy from "@/components/premium/trusted-by"; 
 
@@ -166,7 +166,7 @@ const curriculumPhases = [
 // ==========================================
 
 export default function Courses({ defaultSection }) {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [isEnrollOpen, setIsEnrollOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("");
   const [activePhaseIndex, setActivePhaseIndex] = useState(0);

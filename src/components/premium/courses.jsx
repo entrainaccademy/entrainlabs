@@ -14,11 +14,11 @@ import {
   CheckCircle2
 } from "lucide-react";
 import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import TrustedBy from "@/components/premium/trusted-by";
 
 export default function Courses() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [isEnrollOpen, setIsEnrollOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("");
 
@@ -308,7 +308,7 @@ export default function Courses() {
 
               {/* Action Button - Scrolls to Pricing */}
          <button
-  onClick={() => navigate("/coursedetails")}
+  onClick={() => router.push("/coursedetails")}
   className="relative w-full h-12 font-outfit font-light rounded-xl bg-transparent border border-zinc-200 dark:border-white/10 hover:border-[#0A756A] dark:hover:border-[#0A756A] text-[#0A756A] dark:text-white  text-sm transition-all duration-300 hover:bg-[#0A756A]/5 dark:hover:bg-[#0A756A]/10 flex items-center justify-center gap-2 group/btn cursor-pointer"
 >
   <span>Explore Online Plans</span>
