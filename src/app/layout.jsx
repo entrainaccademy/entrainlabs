@@ -4,6 +4,9 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://entrainlabs.com";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
+  verification: {
+    google: "uXYmP6Be_6YsCRaT-XdYesu1mQ00vtNu1l67R-VaagE",
+  },
   title: {
     default: "Entrain Labs - Best Digital Marketing Academy in Kerala",
     template: "%s | Entrain Labs",
