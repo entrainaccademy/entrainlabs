@@ -1,6 +1,6 @@
 import Blog from "@/views/Blog";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://entrainlabs.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.entrainlabs.in";
 
 export const metadata = {
   title: "Digital Marketing Insights & Career Guides",

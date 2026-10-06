@@ -52,6 +52,7 @@ export default function Footer() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Courses", path: "/courses" },
+    { name: "Offline Batches", path: "/offline-batches" },
     // { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" }
   ];

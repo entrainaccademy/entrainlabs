@@ -1,6 +1,6 @@
 import Courses from "@/views/Courses";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://entrainlabs.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.entrainlabs.in";
 
 export const metadata = {
   title: "Digital Marketing Courses & Certification Programs",

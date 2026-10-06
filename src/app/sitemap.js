@@ -1,7 +1,7 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://entrainlabs.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.entrainlabs.in";
 
 export default function sitemap() {
-  const currentDate = new Date().toISOString();
+  const currentDate = new Date();
 
   return [
     {
@@ -12,6 +12,12 @@ export default function sitemap() {
     },
     {
       url: `${siteUrl}/courses`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/offline-batches`,
       lastModified: currentDate,
       changeFrequency: "weekly",
       priority: 0.9,

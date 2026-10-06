@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { faqData } from "@/lib/data";
 import TrustedBy from "@/components/premium/trusted-by"; 
 
@@ -308,13 +309,13 @@ export default function Courses({ defaultSection }) {
                 </div>
               </div>
 
-              <button
-                onClick={() => handleEnrollClick("Offline Classroom")}
+              <Link
+                href="/offline-batches"
                 className="relative w-full h-12 rounded-xl bg-[#0A756A] text-white font-semibold text-sm transition-all duration-300 hover:bg-[#129A8C] hover:shadow-[0_0_30px_rgba(10,117,106,0.25)] dark:bg-white dark:text-zinc-950 dark:hover:bg-[#0A756A] dark:hover:text-white flex items-center justify-center gap-2 group/btn cursor-pointer"
               >
                 <span>Join Offline Batch</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-              </button>
+              </Link>
             </div>
           </motion.div>
 

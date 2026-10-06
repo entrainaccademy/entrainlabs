@@ -1,0 +1,17 @@
+# Entrain Labs
+
+> Entrain Labs is a digital marketing academy based in Kerala, India, offering training courses in digital marketing.
+
+Website: https://www.entrainlabs.in/
+
+## Main pages
+
+- [Home](https://www.entrainlabs.in/): Overview of the academy and its programs.
+- [Courses](https://www.entrainlabs.in/courses): Digital marketing courses offered by Entrain Labs.
+- [About](https://www.entrainlabs.in/about): About the academy.
+- [Blog](https://www.entrainlabs.in/blog): Articles and insights on digital marketing.
+- [Contact](https://www.entrainlabs.in/contact): Enquiries and admissions contact.
+
+## Optional
+
+- [Sitemap](https://www.entrainlabs.in/sitemap.xml)

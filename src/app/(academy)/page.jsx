@@ -1,6 +1,6 @@
 import Home from "@/views/Home";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://entrainlabs.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.entrainlabs.in";
 
 export const metadata = {
   title: "Best Digital Marketing Academy in Kerala",

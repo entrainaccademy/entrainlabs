@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /about
+Allow: /courses
+Allow: /offline-batches
+Allow: /coursedetails
+Allow: /contact
+Allow: /blog
+Disallow: /api/*
+
+Sitemap: https://entrainlabs.com/sitemap.xml

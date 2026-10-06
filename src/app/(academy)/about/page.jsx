@@ -1,6 +1,6 @@
 import About from "@/views/About";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://entrainlabs.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.entrainlabs.in";
 
 export const metadata = {
   title: "About Us - Practical Digital Marketing Academy",

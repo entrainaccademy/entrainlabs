@@ -1,9 +1,12 @@
 import "@/index.css";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://entrainlabs.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.entrainlabs.in";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
+  alternates: {
+    canonical: "/",
+  },
   verification: {
     google: "uXYmP6Be_6YsCRaT-XdYesu1mQ00vtNu1l67R-VaagE",
   },
