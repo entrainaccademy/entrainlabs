@@ -92,7 +92,7 @@ export default function Footer() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10 py-16 sm:py-20 md:py-24 z-10">
 
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 xl:gap-12 pb-16 border-b border-white/[0.06]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.85fr_0.85fr_1.3fr_1.1fr] gap-10 lg:gap-6 xl:gap-10 pb-16 border-b border-white/[0.06]">
 
           {/* Column 1 — Brand info */}
           <div className="flex flex-col items-start gap-6 col-span-1">
@@ -178,36 +178,36 @@ export default function Footer() {
               Contact Us
             </span>
 
-            <div className="flex flex-col gap-4 w-full">
+            <div className="flex flex-col gap-3.5 w-full">
               {/* Phone item */}
-              <div className="flex items-center gap-4 rounded-xl  border-white/5  p-3.5 hover:border-[#0A756A]/30 hover:bg-white/[0.03] hover:shadow-[0_10px_30px_-10px_rgba(10,117,106,0.15)] hover:-translate-y-0.5 transition-all duration-300 group">
-                <div className="h-10 w-10 rounded-lg  text-primary flex items-center justify-center shrink-0 transition-colors duration-300 group-hover:bg-[#0A756A] group-hover:text-white shadow-lg">
+              <div className="flex items-center gap-3.5 rounded-xl p-2 sm:p-2.5 hover:bg-white/[0.03] hover:-translate-y-0.5 transition-all duration-300 group">
+                <div className="h-9 w-9 rounded-lg text-primary flex items-center justify-center shrink-0 transition-colors duration-300 group-hover:bg-[#0A756A] group-hover:text-white shadow-lg">
                   <Phone size={15} />
                 </div>
                 <div className="flex-1 min-w-0">
                   <span className="block text-[10px] text-zinc-500 uppercase tracking-widest font-semibold font-clash">Phone</span>
-                  <a href="tel:+917593841013" className="block text-[13px] font-medium text-zinc-300 hover:text-[#14b8a6] transition-colors focus:outline-none focus:text-[#14b8a6]">
+                  <a href="tel:+917593841013" className="block text-[13px] font-medium text-zinc-300 hover:text-[#14b8a6] transition-colors focus:outline-none focus:text-[#14b8a6] whitespace-nowrap">
                     +91 75938 41013
                   </a>
                 </div>
               </div>
 
               {/* Email item */}
-              <div className="flex items-center gap-6  border-white/5  p-3.5 hover:border-[#0A756A]/30 hover:bg-white/[0.03] hover:shadow-[0_10px_30px_-10px_rgba(10,117,106,0.15)] hover:-translate-y-0.5 transition-all duration-300 group">
-                <div className="h-10 w-10 rounded-lg  text-primary flex items-center justify-center shrink-0 transition-colors duration-300 group-hover:bg-[#0A756A] group-hover:text-white shadow-lg">
+              <div className="flex items-center gap-3.5 rounded-xl p-2 sm:p-2.5 hover:bg-white/[0.03] hover:-translate-y-0.5 transition-all duration-300 group">
+                <div className="h-9 w-9 rounded-lg text-primary flex items-center justify-center shrink-0 transition-colors duration-300 group-hover:bg-[#0A756A] group-hover:text-white shadow-lg">
                   <Mail size={15} />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="block text-[8px] text-zinc-500 uppercase tracking-widest font-semibold font-clash">Email</span>
-                  <a href="mailto:entrainlabs@gmail.com" className="block text-[13px] font-clash font-medium text-zinc-300 hover:text-[#14b8a6] transition-colors focus:outline-none focus:text-[#14b8a6] break-all">
+                  <span className="block text-[10px] text-zinc-500 uppercase tracking-widest font-semibold font-clash">Email</span>
+                  <a href="mailto:entrainlabs@gmail.com" className="block text-[13px] font-medium text-zinc-300 hover:text-[#14b8a6] transition-colors focus:outline-none focus:text-[#14b8a6] whitespace-nowrap">
                     entrainlabs@gmail.com
                   </a>
                 </div>
               </div>
 
               {/* Location item */}
-              <div className="flex items-start gap-4  p-3.5 hover:border-[#0A756A]/30 hover:bg-white/[0.03] hover:shadow-[0_10px_30px_-10px_rgba(10,117,106,0.15)] hover:-translate-y-0.5 transition-all duration-300 group">
-                <div className="h-10 w-10 rounded-lg text-primary flex items-center justify-center shrink-0 mt-0.5 transition-colors duration-300 group-hover:bg-[#0A756A] group-hover:text-white shadow-lg">
+              <div className="flex items-start gap-3.5 rounded-xl p-2 sm:p-2.5 hover:bg-white/[0.03] hover:-translate-y-0.5 transition-all duration-300 group">
+                <div className="h-9 w-9 rounded-lg text-primary flex items-center justify-center shrink-0 mt-0.5 transition-colors duration-300 group-hover:bg-[#0A756A] group-hover:text-white shadow-lg">
                   <MapPin size={15} />
                 </div>
                 <div className="flex-1 min-w-0">
