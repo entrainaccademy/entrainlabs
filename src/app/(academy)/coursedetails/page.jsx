@@ -26,6 +26,39 @@ export const metadata = {
   },
 };
 
+const jsonLdBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": `${siteUrl}/`,
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Courses",
+      "item": `${siteUrl}/courses`,
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Course Details",
+      "item": `${siteUrl}/coursedetails`,
+    },
+  ],
+};
+
 export default function Page() {
-  return <CourseDetails />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+      <CourseDetails />
+    </>
+  );
 }

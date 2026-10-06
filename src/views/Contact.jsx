@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Check, HelpCircle, ArrowRight, MessageSquare, ShieldCheck, Clock, Award } from "lucide-react";
+import { contactFaqs } from "@/lib/data";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -60,24 +61,7 @@ export default function Contact() {
     setActiveFaq(activeFaq === index ? null : index);
   };
 
-  const faqs = [
-    {
-      q: "Which course is best for beginners?",
-      a: "Our Digital Marketing Master Program is the best starting point. It covers everything from absolute basics to advanced performance marketing, SEO, and social media advertising, combined with real client projects."
-    },
-    {
-      q: "Do you offer online classes?",
-      a: "Yes, we offer both offline classroom training at our center and live interactive online sessions to suit working professionals and students alike."
-    },
-    {
-      q: "Will I receive placement assistance?",
-      a: "Absolutely. We provide dedicated career support, resume building, mock interviews, and guaranteed internship opportunities with active agency projects."
-    },
-    {
-      q: "Can working professionals join?",
-      a: "Yes! Our batches are flexible, offering evening and weekend programs designed specifically for working professionals looking to upskill or switch careers."
-    }
-  ];
+  const faqs = contactFaqs;
 
   return (
     <div className="relative bg-white text-zinc-650 min-h-screen py-16 sm:py-20 md:py-28 overflow-hidden z-10">
