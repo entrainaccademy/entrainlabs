@@ -309,7 +309,7 @@ export default function Courses() {
 
               {/* Action Button - Scrolls to Pricing */}
          <button
-  onClick={() => router.push("/coursedetails")}
+  onClick={() => router.push("/online-plans")}
   className="relative w-full h-12 font-outfit font-light rounded-xl bg-transparent border border-zinc-200 dark:border-white/10 hover:border-[#0A756A] dark:hover:border-[#0A756A] text-[#0A756A] dark:text-white  text-sm transition-all duration-300 hover:bg-[#0A756A]/5 dark:hover:bg-[#0A756A]/10 flex items-center justify-center gap-2 group/btn cursor-pointer"
 >
   <span>Explore Online Plans</span>

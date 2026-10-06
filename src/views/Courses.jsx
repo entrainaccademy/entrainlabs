@@ -371,7 +371,7 @@ export default function Courses({ defaultSection }) {
               </div>
 
               <button
-                onClick={() => handleScrollToSection("online-programs")}
+                onClick={() => router.push("/online-plans")}
                 className="relative w-full h-12 rounded-xl bg-transparent border border-zinc-200 dark:border-white/10 hover:border-[#0A756A] dark:hover:border-[#0A756A] text-[#0A756A] dark:text-white font-semibold text-sm transition-all duration-300 hover:bg-[#0A756A]/5 dark:hover:bg-[#0A756A]/10 flex items-center justify-center gap-2 group/btn cursor-pointer"
               >
                 <span>Explore Online Plans</span>
@@ -379,109 +379,6 @@ export default function Courses({ defaultSection }) {
               </button>
             </div>
           </motion.div>
-        </div>
-
-
-        {/* ==========================================
-            SECTION 2: ONLINE TRAINING PROGRAMS (PRICING)
-            ========================================== */}
-        <div id="online-programs" className="scroll-mt-24 mb-24 md:mb-32">
-          <div className="text-center mb-16">
-         
-            <h3 className="text-3xl md:text-5xl font-bold font-clash text-zinc-900 dark:text-white mb-4">
-              Online Training Programs
-            </h3>
-            <p className="text-zinc-650 dark:text-zinc-400 text-sm max-w-xl mx-auto font-satoshi">
-              Select a pathway tailored to your experience, and speed up your career progression with structured resources.
-            </p>
-          </div>
-
-          {/* THREE PREMIUM PRICING CARDS */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
-            {pricingPlans.map((plan, idx) => {
-              const isPopular = plan.popular;
-              return (
-                <motion.div
-                  key={plan.id}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.7, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                  whileHover={{ y: -8 }}
-                  onMouseMove={handleMouseMove}
-                  className={`group relative rounded-3xl p-[1px] flex flex-col justify-between overflow-hidden transition-all duration-500 shadow-sm dark:shadow-none ${isPopular
-                    ? "bg-gradient-to-b from-[#0A756A] via-[#0A756A]/40 to-transparent lg:scale-105 z-20 shadow-[0_20px_50px_rgba(10,117,106,0.08)] dark:shadow-[0_20px_50px_rgba(10,117,106,0.15)]"
-                    : "bg-gradient-to-b from-zinc-200/80 via-zinc-150 to-transparent dark:from-white/10 dark:via-zinc-900/50 dark:to-transparent"
-                    }`}
-                >
-                  <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                    style={{
-                      background: isPopular
-                        ? "radial-gradient(400px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(10, 117, 106, 0.12), transparent 80%)"
-                        : "radial-gradient(400px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(10, 117, 106, 0.08), transparent 80%)"
-                    }}
-                  />
-
-                  {isPopular && (
-                    <div className="absolute -top-20 left-1/2  -translate-x-1/2 w-64 h-32 bg-[#0A756A]/10 dark:bg-[#0A756A]/20 blur-3xl pointer-events-none" />
-                  )}
-
-                  <div className="relative h-full bg-red-900   bg-white dark:bg-zinc-950/90 backdrop-blur-2xl rounded-[23px] p-6 md:p-8 flex flex-col justify-between">
-                    <div>
-                      <div className="flex items-center justify-between gap-3 mb-6">
-                        <span className={`text-[10px]  tracking-wider px-3 py-1 rounded-full uppercase font-medium font-clash border ${isPopular
-                          ? "bg-[#0A756A]/10 text-[#0A756A] border-[#0A756A]/20 dark:bg-[#0A756A]/20 dark:text-[#0A756A] dark:border-[#0A756A]/30"
-                          : "bg-zinc-100 dark:bg-white/5 text-zinc-500 dark:text-zinc-400 border-zinc-200 dark:border-white/5"
-                          }`}>
-                          {plan.badge}
-                        </span>
-                        <div className="flex items-center gap-1 text-zinc-500 font-mono text-xs">
-                          <span>Duration:</span>
-                          <span className="text-zinc-800 dark:text-white font-semibold">{plan.duration}</span>
-                        </div>
-                      </div>
-
-                      <h4 className="text-2xl md:text-3xl font-bold font-clash text-zinc-900 dark:text-white mb-2">
-                        {plan.name}
-                      </h4>
-
-                      <p className="text-[#0A756A] text-xs font-semibold tracking-wide font-satoshi mb-4 uppercase">
-                        Perfect For: {plan.perfectFor}
-                      </p>
-
-                      <p className="text-zinc-650 dark:text-zinc-400 text-xs md:text-sm leading-relaxed mb-6 pb-6 border-b border-zinc-200/50 dark:border-white/5 font-satoshi">
-                        {plan.description}
-                      </p>
-
-                      <div className="flex flex-col gap-3.5 mb-8">
-                        <span className="text-[10px] font-mono tracking-widest text-zinc-400 dark:text-zinc-500 uppercase">
-                          What's Included:
-                        </span>
-                        {plan.features.map((feat, i) => (
-                          <div key={i} className="flex items-start gap-2.5 text-xs md:text-sm text-zinc-700 dark:text-zinc-300">
-                            <CheckCircle2 className="w-4.5 h-4.5 text-[#0A756A] shrink-0 mt-0.5" />
-                            <span className="font-satoshi">{feat}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    <button
-                      onClick={() => handleEnrollClick(plan.name)}
-                      className={`relative w-full h-12 rounded-xl font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 group/pbtn cursor-pointer ${isPopular
-                        ? "bg-[#0A756A] text-white hover:bg-[#129A8C] hover:shadow-[0_0_30px_rgba(10,117,106,0.3)]"
-                        : "bg-zinc-100 hover:bg-[#0A756A] hover:text-white text-zinc-800 border border-zinc-200 dark:bg-white/5 dark:hover:bg-white/10 dark:text-white dark:border-white/10 dark:hover:border-[#0A756A]/50"
-                        }`}
-                    >
-                      <span>{plan.buttonText}</span>
-                      <ArrowRight className="w-4 h-4 transition-transform group-hover/pbtn:translate-x-1" />
-                    </button>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
         </div>
 
 
