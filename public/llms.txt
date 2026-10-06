@@ -8,6 +8,8 @@ Website: https://www.entrainlabs.in/
 
 - [Home](https://www.entrainlabs.in/): Overview of the academy and its programs.
 - [Courses](https://www.entrainlabs.in/courses): Digital marketing courses offered by Entrain Labs.
+- [Offline Batches](https://www.entrainlabs.in/offline-batches): Offline classroom training batches in Kerala.
+- [Online Plans](https://www.entrainlabs.in/online-plans): Online training programs and pricing plans.
 - [About](https://www.entrainlabs.in/about): About the academy.
 - [Blog](https://www.entrainlabs.in/blog): Articles and insights on digital marketing.
 - [Contact](https://www.entrainlabs.in/contact): Enquiries and admissions contact.

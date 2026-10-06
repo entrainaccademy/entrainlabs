@@ -23,6 +23,12 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${siteUrl}/online-plans`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${siteUrl}/coursedetails`,
       lastModified: currentDate,
       changeFrequency: "weekly",
