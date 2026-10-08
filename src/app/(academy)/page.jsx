@@ -7,7 +7,7 @@ export const metadata = {
   description:
     "Learn Digital Marketing in Kerala through live project training, AI tools, agency internship, and guaranteed career placement support at Entrain Labs.",
   alternates: {
-    canonical: `${siteUrl}`,
+    canonical: `${siteUrl}/`,
   },
   openGraph: {
     title: "Best Digital Marketing Academy in Kerala | Entrain Labs",
