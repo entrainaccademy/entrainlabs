@@ -252,19 +252,19 @@ export const faqData = [
 export const contactFaqs = [
     {
         q: "Which course is best for beginners?",
-        a: "The Starter program is the best starting point for beginners, covering digital marketing fundamentals and core execution skills. Students seeking advanced performance marketing, AI tools, and real client projects can also explore our Career Track and Pro Master programs."
+        a: "The Digital Marketing Master Program is the best starting point. It covers foundational concepts through advanced performance marketing, SEO and social media advertising, along with real client projects."
     },
     {
         q: "Do you offer online classes?",
-        a: "Yes, we offer both offline classroom training at our center and live interactive online sessions to suit working professionals and students alike."
+        a: "Yes. We offer both offline classroom training at our center and live interactive online sessions, to suit working professionals and students with different schedules."
     },
     {
         q: "Will I receive placement assistance?",
-        a: "Yes. We provide dedicated career support including resume building, mock interviews, and internship opportunities with real agency projects."
+        a: "Yes. We provide career support including resume building and mock interviews, and internship opportunities with real agency projects."
     },
     {
         q: "Can working professionals join?",
-        a: "Yes! Our batches are flexible, offering evening and weekend programs designed specifically for working professionals looking to upskill or switch careers."
+        a: "Yes. Our batches are flexible, with evening and weekend programs designed for working professionals who want to upskill or switch careers."
     }
 ];
 export const partnersData = [
