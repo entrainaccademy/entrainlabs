@@ -105,6 +105,10 @@ export default function Footer() {
               <img
                 src={ftlogo}
                 alt="Entrain Labs Logo"
+                loading="lazy"
+                decoding="async"
+                width={112}
+                height={36}
                 className="object-contain h-9 w-auto transition-transform duration-300 group-hover:scale-[1.01]"
               />
             </a>

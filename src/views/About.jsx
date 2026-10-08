@@ -40,16 +40,16 @@ function FadeIn({ children, delay = 0, className = "" }) {
 /* ─── Section heading ───────────────────────── */
 function SectionHeading({ eyebrow, title, center = false }) {
   return (
-    <FadeIn className={center ? "text-center" : ""}>
+    <div className={center ? "text-center" : ""}>
       {eyebrow && (
-        <p className="text-[#0a756a] text-sm font-clash  font-normal uppercase tracking-widest mb-2">
+        <p className="text-[#0a756a] text-sm font-clash font-normal uppercase tracking-widest mb-2">
           {eyebrow}
         </p>
       )}
       <h2 className="text-3xl md:text-[38px] font-noto font-normal text-gray-900 leading-tight">
         {title}
       </h2>
-    </FadeIn>
+    </div>
   );
 }
 
@@ -62,8 +62,8 @@ function WhyCard({ icon, title, desc, delay }) {
           {icon}
         </div>
         <div>
-          <h4 className="font-light  font-clash text-gray-00 text-base mb-1">{title}</h4>
-          <p className="text-gray-500 text-2xl text-sm leading-relaxed">{desc}</p>
+          <h4 className="font-light font-clash text-gray-900 text-base mb-1">{title}</h4>
+          <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
         </div>
       </div>
     </FadeIn>
@@ -101,7 +101,7 @@ export default function About() {
     {
       icon: <Briefcase size={20} />,
       title: "Practical Learning",
-      desc: "Work on real projects and campaigns. Theory supports execution  not the other way around.",
+      desc: "Work on real projects and campaigns. Theory supports execution — not the other way around.",
     },
     {
       icon: <Users size={20} />,
@@ -118,15 +118,6 @@ export default function About() {
       title: "Career Support",
       desc: "Build your portfolio and prepare for jobs or freelancing with direct agency referrals.",
     },
-  ];
-
-  const audience = [
-    { icon: <GraduationCap size={22} />, label: "Students" },
-    { icon: <Search size={22} />, label: "Job Seekers" },
-    { icon: <Briefcase size={22} />, label: "Freelancers" },
-    { icon: <TrendingUp size={22} />, label: "Entrepreneurs" },
-    { icon: <LineChart size={22} />, label: "Business Owners" },
-    { icon: <Users size={22} />, label: "Working Professionals" },
   ];
 
   const skills = [
@@ -149,22 +140,11 @@ export default function About() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(10,117,106,0.05),transparent)] pointer-events-none" />
         <div className="max-w-4xl mx-auto text-center relative z-10">
 
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, delay: 0.08, ease: "easeOut" }}
-            className="text-4xl sm:text-5xl md:text-6xl font-medium font-dm text-[#0a756a]/85 leading-tight tracking-tight mb-6"
-          >
-            Learn Today, Apply Tomorrow, {" "}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium font-dm text-[#0a756a]/85 leading-tight tracking-tight mb-6">
+            Learn Today, Apply Tomorrow,{" "}
             <span className="text-[#0a756a]/85">Grow for Life</span>
-          </motion.h1>
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.24 }}
-            className="flex flex-wrap gap-3 justify-center"
-          >
+          </h1>
+          <div className="flex flex-wrap gap-3 justify-center">
             <a
               href="/courses"
               className="group inline-flex items-center gap-2 rounded-xl
@@ -191,7 +171,7 @@ export default function About() {
             >
               Contact Us
             </a>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -199,43 +179,48 @@ export default function About() {
       <section className="py-20 px-6">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-          <FadeIn>
-            <div className="relative w-full aspect-[4/3] md:aspect-[3/4] rounded-3xl overflow-hidden shadow-xl border border-gray-00/50 group select-none bg-gray-55">
-              {/* Crisp background image with no blur */}
-              <img
-                src="shaaanaaa.png"
-                alt="About Entrain Labs"
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-
-              {/* Subtle dark gradient overlay */}
-              {/* <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" /> */}
-
-              {/* Testimonial Quote Card correctly centered horizontally & vertically */}
-
-
-              {/* Floating Element 1: 50+ Agency Partners (Bottom Left) */}
-              
-
-
+          <div>
+            <div className="relative w-full aspect-[4/3] md:aspect-[3/4] rounded-3xl overflow-hidden shadow-xl border border-gray-100 group select-none bg-gray-50">
+              {/* Responsive high performance LCP image */}
+              <picture>
+                <source
+                  media="(max-width: 768px)"
+                  srcSet="/shaaanaaa-mobile.webp"
+                  type="image/webp"
+                />
+                <source
+                  srcSet="/shaaanaaa.webp"
+                  type="image/webp"
+                />
+                <img
+                  src="/shaaanaaa.webp"
+                  alt="About Entrain Labs"
+                  // @ts-ignore
+                  fetchPriority="high"
+                  decoding="async"
+                  width={1400}
+                  height={1577}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </picture>
             </div>
-          </FadeIn>
+          </div>
 
-          <div className="flex flex-col -mt-74 gap-5">
+          <div className="flex flex-col gap-5">
             <SectionHeading eyebrow="Who We Are" title="Practical Skills for Real Careers" />
-            <FadeIn delay={0.1}>
-              <p className="text-gray-500 text-[14px] font-manrope  font-normal leading-relaxed">
-                Entrain Labs  a practical Digital Marketing Academy dedicated to helping learners develop industry-ready skills. We focus on hands-on training, real-world projects, and modern digital tools to prepare students for successful careers.
+            <FadeIn delay={0.05}>
+              <p className="text-gray-500 text-[14px] font-manrope font-normal leading-relaxed">
+                Entrain Labs is a practical Digital Marketing Academy dedicated to helping learners develop industry-ready skills. We focus on hands-on training, real-world projects, and modern digital tools to prepare students for successful careers.
               </p>
             </FadeIn>
-            <FadeIn delay={0.18}>
+            <FadeIn delay={0.1}>
               <div className="flex flex-col gap-3 mt-1">
                 {[
                   "Hands-on projects from Day 1",
                   "Live sessions with industry mentors",
                   "AI tools integrated into every module",
                 ].map((point) => (
-                  <div key={point} className="flex items-center gap-2.5 text-gray-700 text-[12px] font-manrope  font-normal leading-relaxed">
+                  <div key={point} className="flex items-center gap-2.5 text-gray-700 text-[12px] font-manrope font-normal leading-relaxed">
                     <CheckCircle2 size={12} className="text-[#0a756a] shrink-0" />
                     {point}
                   </div>

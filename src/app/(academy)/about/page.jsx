@@ -69,6 +69,24 @@ const jsonLdBreadcrumb = {
 export default function Page() {
   return (
     <>
+      <link
+        rel="preload"
+        as="image"
+        href="/shaaanaaa-mobile.webp"
+        type="image/webp"
+        media="(max-width: 768px)"
+        // @ts-ignore
+        fetchPriority="high"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href="/shaaanaaa.webp"
+        type="image/webp"
+        media="(min-width: 769px)"
+        // @ts-ignore
+        fetchPriority="high"
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdAbout) }}

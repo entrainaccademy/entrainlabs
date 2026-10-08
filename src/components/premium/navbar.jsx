@@ -44,7 +44,10 @@ export default function Navbar() {
             <img
               src={logo.src || logo}
               alt="Entrain Labs Logo"
-              className="absolute w-24 h-16 inset-0  m-auto object-contain transition-transform duration-300 group-hover:scale-110"
+              width={96}
+              height={64}
+              decoding="async"
+              className="absolute w-24 h-16 inset-0 m-auto object-contain transition-transform duration-300 group-hover:scale-110"
             />
           </div>
         </Link>
