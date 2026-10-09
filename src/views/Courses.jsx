@@ -370,13 +370,13 @@ export default function Courses({ defaultSection }) {
                 </div>
               </div>
 
-              <button
-                onClick={() => router.push("/online-plans")}
+              <Link
+                href="/online-plans"
                 className="relative w-full h-12 rounded-xl bg-transparent border border-zinc-200 dark:border-white/10 hover:border-[#0A756A] dark:hover:border-[#0A756A] text-[#0A756A] dark:text-white font-semibold text-sm transition-all duration-300 hover:bg-[#0A756A]/5 dark:hover:bg-[#0A756A]/10 flex items-center justify-center gap-2 group/btn cursor-pointer"
               >
                 <span>Explore Online Plans</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-              </button>
+              </Link>
             </div>
           </motion.div>
         </div>

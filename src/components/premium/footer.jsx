@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Link from "next/link";
 import { Mail, Phone, MapPin, ArrowRight } from "lucide-react";
 const ftlogo = "/footerlogo.jpeg";
 
@@ -53,22 +54,22 @@ export default function Footer() {
     { name: "About", path: "/about" },
     { name: "Courses", path: "/courses" },
     { name: "Offline Batches", path: "/offline-batches" },
-    // { name: "Blog", path: "/blog" },
+    { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" }
   ];
 
   const programs = [
-    "Digital Marketing Master Program",
-    "Performance Marketing",
-    "SEO",
-    "Google Ads",
-    "Meta Ads",
-    "Content Marketing",
-    "Career Plus"
+    { name: "Digital Marketing Master Program", path: "/courses" },
+    { name: "Performance Marketing", path: "/courses" },
+    { name: "SEO Optimization", path: "/courses" },
+    { name: "Google Ads & Meta Ads", path: "/courses" },
+    { name: "Offline Classroom Batches", path: "/offline-batches" },
+    { name: "Online Training Plans", path: "/online-plans" },
+    { name: "Career Support & Internship", path: "/courses" }
   ];
 
   const socialLinks = [
-    { Icon: InstagramIcon, href: "https://instagram.com", label: "Instagram" },
+    { Icon: InstagramIcon, href: "https://instagram.com/entrain_labs", label: "Instagram" },
     { Icon: FacebookIcon, href: "https://facebook.com", label: "Facebook" },
     { Icon: LinkedinIcon, href: "https://linkedin.com", label: "LinkedIn" },
     { Icon: YoutubeIcon, href: "https://youtube.com", label: "YouTube" },
@@ -97,7 +98,7 @@ export default function Footer() {
           {/* Column 1 — Brand info */}
           <div className="flex flex-col items-start gap-6 col-span-1">
             {/* White Logo Card */}
-            <a
+            <Link
               href="/"
               className="inline-flex items-center justify-center p-2.5 rounded-sm  shadow-xl hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgb(255,255,255,0.12)] hover:ring-2 hover:ring-[#0A756A]/20 transition-all duration-300 relative group"
               aria-label="Entrain Labs Home"
@@ -111,7 +112,7 @@ export default function Footer() {
                 height={36}
                 className="object-contain h-9 w-auto transition-transform duration-300 group-hover:scale-[1.01]"
               />
-            </a>
+            </Link>
 
             <p className="text-[13px] leading-relaxed text-zinc-400 max-w-xs font-satoshi">
               Build practical digital marketing skills through live classes, AI tools, real-world projects, and expert mentorship.
@@ -143,13 +144,13 @@ export default function Footer() {
             <ul className="flex flex-col gap-3 text-[13px] font-satoshi w-full">
               {quickLinks.map((link) => (
                 <li key={link.name}>
-                  <a
+                  <Link
                     href={link.path}
                     className="relative py-1 inline-block text-zinc-400 hover:text-white hover:translate-x-1 transition-all duration-300 font-medium group focus:outline-none focus:text-white"
                   >
                     <span>{link.name}</span>
                     <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#0A756A] transition-all duration-300 group-hover:w-full" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -163,14 +164,14 @@ export default function Footer() {
 
             <ul className="flex flex-col gap-3 text-[13px] font-satoshi w-full">
               {programs.map((prog) => (
-                <li key={prog}>
-                  <a
-                    href="#courses"
+                <li key={prog.name}>
+                  <Link
+                    href={prog.path}
                     className="relative py-1 inline-block text-zinc-400 hover:text-white hover:translate-x-1 transition-all duration-300 font-medium group focus:outline-none focus:text-white"
                   >
-                    <span>{prog}</span>
+                    <span>{prog.name}</span>
                     <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-[#0A756A] transition-all duration-300 group-hover:w-full" />
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -273,11 +274,11 @@ export default function Footer() {
 
           {/* Right quick footer links */}
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
-            <a href="/privacy" className="hover:text-white transition-colors focus:outline-none focus:text-white">Privacy Policy</a>
+            <Link href="/about" className="hover:text-white transition-colors focus:outline-none focus:text-white">About Us</Link>
             <span className="text-zinc-700">•</span>
-            <a href="/terms" className="hover:text-white transition-colors focus:outline-none focus:text-white">Terms & Conditions</a>
+            <Link href="/contact" className="hover:text-white transition-colors focus:outline-none focus:text-white">Contact & Support</Link>
             <span className="text-zinc-700">•</span>
-            <a href="/sitemap" className="hover:text-white transition-colors focus:outline-none focus:text-white">Sitemap</a>
+            <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors focus:outline-none focus:text-white">Sitemap</a>
           </div>
         </div>
 

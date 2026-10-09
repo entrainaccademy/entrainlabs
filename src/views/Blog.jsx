@@ -622,10 +622,10 @@ export default function Blog() {
                   Back to Hub
                 </button>
 
-                <div className="text-[10px] sm:text-xs font-medium text-zinc-450 dark:text-zinc-550 flex items-center gap-1.5 font-mono select-none">
-                  <span>Home</span>
+                <div className="text-[10px] sm:text-xs font-medium text-zinc-500 dark:text-zinc-400 flex items-center gap-1.5 font-mono">
+                  <a href="/" className="hover:text-[#0A756A] dark:hover:text-[#5EEAD4] transition-colors">Home</a>
                   <span>/</span>
-                  <span>Blog</span>
+                  <button onClick={handleCloseArticle} className="hover:text-[#0A756A] dark:hover:text-[#5EEAD4] transition-colors cursor-pointer">Blog</button>
                   <span>/</span>
                   <span className="text-[#0A756A] dark:text-[#5EEAD4] truncate max-w-[120px] sm:max-w-none">
                     {activeReadingArticle.category}

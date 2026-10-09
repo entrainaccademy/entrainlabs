@@ -52,10 +52,16 @@ export default function FinalCTA() {
             <ArrowRight size={13} className="transition-transform group-hover:translate-x-0.5"/>
           </button>
           
-          <button onClick={handleWhatsAppChat} className="flex h-12 items-center justify-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-800 text-zinc-200 px-7 text-xs font-semibold tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer">
+          <a
+            href={`https://wa.me/${whatsappNumber}?text=Hi%2C%20I%20am%20interested%20in%20the%20digital%20marketing%20courses%20at%20Entrain%20Labs.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex h-12 items-center justify-center gap-2 rounded-full border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-800 text-zinc-200 px-7 text-xs font-semibold tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer"
+            aria-label="Chat with Entrain Labs on WhatsApp"
+          >
             <WhatsAppIcon className="text-primary h-4 w-4" />
             <span>Chat on WhatsApp</span>
-          </button>
+          </a>
         </motion.div>
 
       </div>

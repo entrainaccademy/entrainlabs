@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef } from "react";
+import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import {
   Briefcase,
@@ -145,7 +146,7 @@ export default function About() {
             <span className="text-[#0a756a]/85">Grow for Life</span>
           </h1>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a
+            <Link
               href="/courses"
               className="group inline-flex items-center gap-2 rounded-xl
               border border-[#18C29C]/20
@@ -164,13 +165,13 @@ export default function About() {
                 size={16}
                 className="transition-transform group-hover:translate-x-1"
               />
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl border border-gray-200 text-gray-700 font-inter font-medium text-sm hover:border-gray-300 hover:bg-gray-50 transition-colors duration-200"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       </section>

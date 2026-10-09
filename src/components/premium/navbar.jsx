@@ -85,6 +85,12 @@ export default function Navbar() {
               <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
                 <p className="capitalize">Home</p>
               </Link>
+              <Link href="/courses" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
+                <p className="capitalize">Courses</p>
+              </Link>
+              <Link href="/offline-batches" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
+                <p className="capitalize">Offline Batches</p>
+              </Link>
               <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
                 <p className="capitalize">About Us</p>
               </Link>
