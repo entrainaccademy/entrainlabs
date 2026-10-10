@@ -9,6 +9,7 @@ import FloatingCTA from "@/components/ui/floating-cta";
 import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Courses, { CourseDetails } from "@/pages/Courses";
+import onlinePlans from "@/pages/online-plans";
 import Contact from "@/pages/Contact";
 import Blog from "@/pages/Blog";
 
@@ -26,7 +27,8 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/coursedetails" element={<CourseDetails />} />
-          </Routes>
+            <Route path="/online-plans" element={<online-plans />} />
+          </Routes> 
         </div>
 
         <Footer />
