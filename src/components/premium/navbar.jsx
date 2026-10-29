@@ -114,6 +114,12 @@ export default function Navbar() {
     </motion.header>
 
     {/* Advanced Enrollment dialog */}
-    <EnrollmentFormAdvanced open={isEnrollOpen} onOpenChange={setIsEnrollOpen} />
+    <EnrollmentFormAdvanced
+      open={isEnrollOpen}
+      onOpenChange={setIsEnrollOpen}
+      batchType="Offline Batch"
+      batchName="Weekday Regular (Morning Batch)"
+      sourcePage="Navbar Header"
+    />
   </>);
 }

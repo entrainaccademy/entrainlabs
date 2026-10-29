@@ -3,41 +3,11 @@ import React, { useState } from "react";
 import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced";
 import { motion } from "motion/react";
 import { 
-  Target, 
-  Laptop, 
-  Cpu, 
-  Users, 
-  FolderOpen, 
-  Zap,
-  ArrowRight,
-  Sparkles
+  Briefcase,
+  FolderOpen,
+  Wrench,
+  GraduationCap
 } from "lucide-react";
-// import chooseImg from "../../assets/choose.jpg";
-// import one from "../../assets/one.jpg";
-// import two from "../../assets/two.jpg";
-// import three from "../../assets/three.jpg";
-// import four from "../../assets/four.jpg";
-// import five from "../../assets/five.jpg";
-// import six from "../../assets/six.jpg";
-// import seven from "../../assets/seven.jpg";
-// import eight from "../../assets/eight.jpg";
-// import nine from "../../assets/nine.jpg";
-// import ten from "../../assets/ten.jpg";
-// import eleven from "../../assets/eleven.jpg";
-// import twelve from "../../assets/twelve.jpg";
-// import thirteen from "../../assets/thirteenonbg.";
-// import fourteen from "../../assets/fourteen.jpg";
-// import fifteen from "../../assets/fifteen.jpg";
-// import sixteen from "../../assets/sixteen.jpg";
-// import seventeen from "../../assets/seventeen.jpg";
-// import eighteen from "../../assets/eighteen.jpg";
-// import nineteen from "../../assets/nineteen.jpg";
-// import twenty from "../../assets/twenty.jpg";
-// import twentyone from "../../assets/twentyone.jpg";
-// import twentytwo from "../../assets/twentytwo.jpg";
-// import twentythree from "../../assets/twentythree.png";
-// import nonbg from "../../assets/nonbg.png";
-// import nonbg2 from "../../assets/nonbg2.png";
 import demo from '../../assets/demo.jpg'
 
 
@@ -47,40 +17,28 @@ export default function WhyChooseUs() {
   const [isEnrollOpen, setIsEnrollOpen] = useState(false);
   const items = [
     {
-      title: "Practical Learning",
-      description: "Learn by doing real client projects.",
-      icon: Target,
+      title: "Agency-Style Training",
+      description: "Learn practical strategies used in current digital marketing work.",
+      icon: Briefcase,
       color: "text-emerald-500 bg-emerald-50/80 dark:bg-emerald-950/20 border-emerald-100 dark:border-emerald-900/30"
     },
     {
-      title: "Offline & Online",
-      description: "Flexible classroom and online learning.",
-      icon: Laptop,
+      title: "Live Project Experience",
+      description: "Practise campaign work and build a portfolio you can show employers or clients.",
+      icon: FolderOpen,
       color: "text-cyan-500 bg-cyan-50/80 dark:bg-cyan-950/20 border-cyan-100 dark:border-cyan-900/30"
     },
     {
-      title: "AI-Powered Training",
-      description: "Master ChatGPT, Midjourney, Gemini, Canva AI, and modern AI marketing tools.",
-      icon: Cpu,
+      title: "Hands-On Training with Industry Tools",
+      description: "Work with tools such as Google Analytics 4, SEMrush, Meta Ads Manager, WordPress, Canva, and ChatGPT.",
+      icon: Wrench,
       color: "text-purple-500 bg-purple-50/80 dark:bg-purple-950/20 border-purple-100 dark:border-purple-900/30"
     },
     {
-      title: "Expert Mentors",
-      description: "Learn from experienced industry professionals.",
-      icon: Users,
+      title: "Career and Placement Support",
+      description: "Prepare for job applications with resume-building workshops and mock interviews.",
+      icon: GraduationCap,
       color: "text-amber-500 bg-amber-50/80 dark:bg-amber-950/20 border-amber-100 dark:border-amber-900/30"
-    },
-    {
-      title: "Career-Focused",
-      description: "Portfolio building, resume support, interview preparation.",
-      icon: FolderOpen,
-      color: "text-rose-500 bg-rose-50/80 dark:bg-rose-950/20 border-rose-100 dark:border-rose-900/30"
-    },
-    {
-      title: "Job-Ready Skills",
-      description: "SEO, Google Ads, Meta Ads, Analytics, Social Media Marketing and Automation.",
-      icon: Zap,
-      color: "text-indigo-500 bg-indigo-50/80 dark:bg-indigo-950/20 border-indigo-100 dark:border-indigo-900/30"
     }
   ];
 
@@ -161,18 +119,20 @@ export default function WhyChooseUs() {
             
             {/* Section Header */}
             <div className="flex flex-col items-start gap-3  mb-10 max-w-2xl">
-             
-              <motion.h2 
+              <span className="text-xs sm:text-sm text-brand-primary dark:text-emerald-400 font-satoshi font-medium tracking-wide">
+                Why Choose Us?
+              </span>
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="text-4xl sm:text-5xl font-semibold font-outfit tracking-tight text-zinc-950 dark:text-white leading-[1.1]"
+                className="text-3xl sm:text-4xl font-semibold font-outfit tracking-tight text-zinc-950 dark:text-white leading-[1.15]"
               >
-                Why Choose<br />Entrain Labs?
+                What Makes Entrain Labs the Best Digital Marketing Training Institute in Manjeri?
               </motion.h2>
-              <p className="text-[12px] lg:text-[12px] sm:text-lg text-zinc-500 dark:text-zinc-400  font-satoshi mt-2 max-w-xl">
-                "We focus on practical learning, industry tools, AI-powered training, and career success."
+              <p className="text-sm sm:text-base text-zinc-500 dark:text-zinc-400 font-satoshi mt-2 max-w-xl">
+                Practical, agency-style training at a digital marketing institute in Manjeri, Malappuram, with career support to help you take your next step.
               </p>
             </div>
 
@@ -248,7 +208,13 @@ export default function WhyChooseUs() {
       </div>
       
       {/* Enrollment Dialog */}
-      <EnrollmentFormAdvanced open={isEnrollOpen} onOpenChange={setIsEnrollOpen} />
+      <EnrollmentFormAdvanced
+        open={isEnrollOpen}
+        onOpenChange={setIsEnrollOpen}
+        batchType="Offline Batch"
+        batchName="Weekday Regular (Morning Batch)"
+        sourcePage="Why Choose Us Section"
+      />
     </section>
   );
 }

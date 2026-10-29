@@ -17,6 +17,7 @@ import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import TrustedBy from "@/components/premium/trusted-by";
+import CourseExperienceAudience from "@/components/premium/course-experience-audience";
 
 export default function Courses() {
   const router = useRouter();
@@ -139,19 +140,20 @@ export default function Courses() {
       <div className="relative bg-gray-000 mx-auto max-w-7xl px-6 md:px-8 z-10">
         
         {/* SECTION HEADER */}
-        <div className="flex flex-col items-center  text-center max-w-3xl mx-auto mb-20 md:mb-28">
-        
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 md:mb-24">
+          
+         
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="text-4xl md:text-6xl font-regular  font-clash tracking-tight text-zinc-900 bg-red-000 dark:text-white mt-1 leading-[1.1] mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold font-outfit tracking-tight text-zinc-950 dark:text-white leading-[1.2] mb-5"
           >
-           
-            <span className=" font-normal font-dm  bg-gradient-to-r from-zinc-800 via-zinc-900 to-[#0A756A] dark:from-white dark:via-zinc-200 dark:to-[#0A756A] bg-clip-text text-transparent">
-              Digital Marketing Program
+            What You Will Learn in Our{" "}
+            <span className="text-[#0A756A] dark:text-emerald-400">
+              Digital Marketing Course
             </span>
           </motion.h2>
           <motion.p
@@ -159,7 +161,7 @@ export default function Courses() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-[#0A756A] dark:text-zinc-400 text-base  md:text-[14px]  leading-relaxed font-outfit font-thin max-w-2xl"
+            className="text-zinc-650 dark:text-zinc-400 text-sm sm:text-base leading-relaxed font-outfit font-light max-w-2xl"
           >
             Learn Digital Marketing through live training, real projects, AI tools, and expert career support.
           </motion.p>
@@ -324,7 +326,8 @@ export default function Courses() {
          
          <TrustedBy className="my-14 md:my-24" />
 
-     
+         {/* Two-part Section: Live Projects & Internship + Target Audience */}
+         <CourseExperienceAudience />
 
         {/* BOTTOM CTA SECTION */}
         <motion.div
@@ -383,6 +386,9 @@ export default function Courses() {
       <EnrollmentFormAdvanced
         open={isEnrollOpen}
         onOpenChange={setIsEnrollOpen}
+        batchType="Offline Batch"
+        batchName={selectedPlan || "Digital Marketing Course"}
+        sourcePage="Courses Section"
         storageKey={`enroll-popup-marketing-courses-${selectedPlan || "general"}`}
       />
     </section>

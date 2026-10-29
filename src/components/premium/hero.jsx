@@ -123,6 +123,12 @@ export default function Hero() {
     </div>
 
     {/* Advanced Enrollment dialog */}
-    <EnrollmentFormAdvanced open={isEnrollOpen} onOpenChange={setIsEnrollOpen} />
+    <EnrollmentFormAdvanced
+      open={isEnrollOpen}
+      onOpenChange={setIsEnrollOpen}
+      batchType="Offline Batch"
+      batchName="Weekday Regular (Morning Batch)"
+      sourcePage="Hero Section"
+    />
   </section>);
 }

@@ -857,7 +857,10 @@ export default function OfflineBatches() {
       <EnrollmentFormAdvanced
         open={isEnrollOpen}
         onOpenChange={setIsEnrollOpen}
-        storageKey={`enroll-popup-offline-batches-${selectedBatch.toLowerCase().replace(/\s+/g, "-")}`}
+        batchType="Offline Batch"
+        batchName={selectedBatch || "Weekday Regular (Morning Batch)"}
+        sourcePage="Offline Batches"
+        storageKey={`enroll-popup-offline-batches-${(selectedBatch || "general").toLowerCase().replace(/\s+/g, "-")}`}
       />
 
     </div>

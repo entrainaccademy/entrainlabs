@@ -218,35 +218,28 @@ export const testimonialsData = [
 ];
 export const faqData = [
     {
-        question: "Do I need prior experience or technical skills to enroll?",
-        answer: "Absolutely not. Our programs are engineered from the absolute fundamentals up. We cover standard marketing concepts before diving into advanced bidding configurations, SEO technical audits, and code-free automation setups.",
+        question: "Do I need a technical or coding background to join this course?",
+        answer: "No. Digital marketing is creative and analytical. Anyone with a Plus Two or graduation qualification can learn it.",
         category: "General"
     },
-    {
-        question: "What does the 'Guaranteed Agency Internship' involve?",
-        answer: "As part of the Master Program, you spend 3 months working directly inside our affiliate digital marketing agency. You will attend client briefings, draft creative briefs, construct active advertising structures on Facebook Ads Manager, and execute analytics audits.",
-        category: "Internship"
+      {
+        question: "Will I receive a certificate after completing the course",
+        answer: "Yes. You’ll receive our institute’s professional completion certificate, along with preparation guides for official Google and Meta certifications.",
+        category: "General"
     },
+   
     {
-        question: "How does the placement support system operate?",
-        answer: "Our placement pipeline includes daily portfolio reviews, resume optimizations specifically tailored to digital roles, mock interview boards conducted by external agency managers, and direct introductions to our network of hiring companies.",
+        question: "Do you offer placement assistance?",
+        answer: "Yes. We provide placement support, including résumé writing, LinkedIn profile optimization, mock interviews, and interview scheduling with partner companies.",
         category: "Career"
     },
+  
     {
-        question: "Are the courses offered online, offline, or hybrid?",
-        answer: "We offer both interactive physical batches at our training hubs in Kerala and high-definition online cohorts. Hybrid packages are also available, letting you attend theory components remotely and work on live projects physically.",
-        category: "General"
-    },
-    {
-        question: "Do I receive accredited certifications after completion?",
-        answer: "Yes, you receive an official Entrain Labs course completion certificate, along with structured guidance to secure 15+ external certifications from platforms like Google, Meta, HubSpot, and SEMrush.",
+        question: "Are flexible batch timings available?",
+        answer: " Yes. We offer weekday batches for students and job seekers, as well as weekend batches for working professionals.",
         category: "Career"
     },
-    {
-        question: "Can I pay the tuition fees in flexible installments?",
-        answer: "Yes, we support flexible interest-free monthly installment programs and custom banking student loans to ensure quality education is financially accessible to everyone.",
-        category: "General"
-    }
+ 
 ];
 
 export const contactFaqs = [

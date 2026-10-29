@@ -1,6 +1,7 @@
 import React from "react";
 import Hero from "@/components/premium/hero";
 // import TrustedBy from "@/components/premium/trusted-by";
+import PracticalLearning from "@/components/premium/practical-learning";
 import WhyChooseUs from "@/components/premium/why-us";
 import Courses from "@/components/premium/courses";
 import LearningJourney from "@/components/premium/journey";
@@ -9,6 +10,7 @@ import PlacementPartners from "@/components/premium/partners";
 import MentorsSection from "@/components/premium/mentors";
 import NumbersSection from "@/components/premium/numbers";
 import AIToolsSection from "@/components/premium/tools";
+import LeadRegistrationForm from "@/components/premium/lead-registration-form";
 import FAQSection from "@/components/premium/faq";
 import FinalCTA from "@/components/premium/cta";
 
@@ -16,7 +18,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-      
+
+      <PracticalLearning />
       <WhyChooseUs />
       <Courses />
 
@@ -27,6 +30,10 @@ export default function Home() {
       
       {/* <NumbersSection /> */}
       {/* <AIToolsSection /> */}
+      
+      {/* Free Demo Lead Registration Section */}
+      <LeadRegistrationForm />
+
       <FAQSection />
       <FinalCTA />
     </>

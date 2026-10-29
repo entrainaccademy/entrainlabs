@@ -67,6 +67,12 @@ export default function FinalCTA() {
       </div>
 
       {/* Advanced Enrollment dialog */}
-      <EnrollmentFormAdvanced open={isEnrollOpen} onOpenChange={setIsEnrollOpen}/>
+      <EnrollmentFormAdvanced
+        open={isEnrollOpen}
+        onOpenChange={setIsEnrollOpen}
+        batchType="Offline Batch"
+        batchName="Weekday Regular (Morning Batch)"
+        sourcePage="Final CTA Section"
+      />
     </section>);
 }

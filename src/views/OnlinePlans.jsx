@@ -245,7 +245,10 @@ export default function OnlinePlans() {
       <EnrollmentFormAdvanced
         open={isEnrollOpen}
         onOpenChange={setIsEnrollOpen}
-        storageKey={`enroll-popup-online-plans-${selectedPlan || "general"}`}
+        batchType="Online Batch"
+        batchName={selectedPlan || "Career Track"}
+        sourcePage="Online Plans"
+        storageKey={`enroll-popup-online-plans-${(selectedPlan || "general").toLowerCase().replace(/\s+/g, "-")}`}
       />
     </div>
   );
