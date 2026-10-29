@@ -1,6 +1,5 @@
-﻿import OnlinePlans from "@/views/OnlinePlans";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.entrainlabs.in";
+import OnlinePlans from "@/views/OnlinePlans";
+import { siteUrl } from "@/lib/constants";
 
 export const metadata = {
   title: "Online Digital Marketing Training Plans & Pricing",

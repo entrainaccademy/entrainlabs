@@ -1,6 +1,5 @@
 import { CourseDetails } from "@/views/Courses";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.entrainlabs.in";
+import { siteUrl } from "@/lib/constants";
 
 export const metadata = {
   title: "Course Syllabus & Online Training Plans",

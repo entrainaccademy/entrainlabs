@@ -16,6 +16,43 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.entrainlabs.in',
+          },
+        ],
+        destination: 'https://entrainlabs.in/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'entrainlabs.com',
+          },
+        ],
+        destination: 'https://entrainlabs.in/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.entrainlabs.com',
+          },
+        ],
+        destination: 'https://entrainlabs.in/:path*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

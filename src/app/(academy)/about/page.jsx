@@ -1,6 +1,5 @@
 import About from "@/views/About";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.entrainlabs.in";
+import { siteUrl } from "@/lib/constants";
 
 export const metadata = {
   title: "About Us - Practical Digital Marketing Academy",

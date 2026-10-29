@@ -218,7 +218,7 @@ export default function Footer() {
                 <div className="flex-1 min-w-0">
                   <span className="block text-[10px] text-zinc-500 uppercase tracking-widest font-semibold font-clash">Location</span>
                   <span className="block text-[12px] text-zinc-300 font-medium leading-relaxed font-satoshi">
-                    Vemboor, Manjeri,<br />Malappuram, Kerala
+                    Vemboor, Manjeri,<br />Malappuram, Kerala - 676122
                   </span>
                 </div>
               </div>

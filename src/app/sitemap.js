@@ -1,4 +1,4 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.entrainlabs.in";
+import { siteUrl } from "@/lib/constants";
 
 export default function sitemap() {
   const currentDate = new Date();

@@ -1,6 +1,5 @@
 import "@/index.css";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.entrainlabs.in";
+import { siteUrl } from "@/lib/constants";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -11,7 +10,7 @@ export const metadata = {
     google: "uXYmP6Be_6YsCRaT-XdYesu1mQ00vtNu1l67R-VaagE",
   },
   title: {
-    default: "Entrain Labs - Best Digital Marketing Academy in Kerala",
+    default: "Digital Marketing Course in Malappuram | Entrain Labs",
     template: "%s | Entrain Labs",
   },
   description:

@@ -1,18 +1,17 @@
 import Home from "@/views/Home";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.entrainlabs.in";
+import { siteUrl } from "@/lib/constants";
 
 export const metadata = {
-  title: "Best Digital Marketing Academy in Kerala",
+  title: "Digital Marketing Course in Malappuram",
   description:
-    "Learn Digital Marketing in Kerala through live project training, AI tools, agency internship, and guaranteed career placement support at Entrain Labs.",
+    "Join Entrain Labs for a digital marketing course in Manjeri, Malappuram. Learn through live projects, AI tools and an agency internship, with career support. Apply now.",
   alternates: {
     canonical: `${siteUrl}/`,
   },
   openGraph: {
-    title: "Best Digital Marketing Academy in Kerala | Entrain Labs",
+    title: "Digital Marketing Course in Malappuram | Entrain Labs",
     description:
-      "Learn Digital Marketing in Kerala through live project training, AI tools, agency internship, and guaranteed career placement support at Entrain Labs.",
+      "Join Entrain Labs for a digital marketing course in Manjeri, Malappuram. Learn through live projects, AI tools and an agency internship, with career support. Apply now.",
     url: `${siteUrl}`,
     type: "website",
     images: [
@@ -23,6 +22,13 @@ export const metadata = {
         alt: "Entrain Labs Digital Marketing Academy",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Digital Marketing Course in Malappuram | Entrain Labs",
+    description:
+      "Join Entrain Labs for a digital marketing course in Manjeri, Malappuram. Learn through live projects, AI tools and an agency internship, with career support. Apply now.",
+    images: ["/Logo.png"],
   },
 };
 

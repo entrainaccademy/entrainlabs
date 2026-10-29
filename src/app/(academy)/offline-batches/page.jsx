@@ -1,12 +1,13 @@
 import OfflineBatches from "@/views/OfflineBatches";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.entrainlabs.in";
+import { siteUrl } from "@/lib/constants";
 
 export const metadata = {
-  title: "Offline Digital Marketing Course & Classroom Batches in Kerala",
+  title: "Digital Marketing Course in Malappuram",
   description:
-    "Join Entrain Labs offline digital marketing classroom training batches in Kerala (Manjeri, Malappuram). 100% practical lab workstation, live ad spend campaigns, 1-on-1 mentor guidance, AI tools, and guaranteed agency placement support.",
+    "Join Entrain Labs for a digital marketing course in Manjeri, Malappuram. Learn through live projects, AI tools and an agency internship, with career support. Apply now.",
   keywords: [
+    "Digital Marketing Course in Malappuram",
+    "Digital Marketing Course in Manjeri",
     "Offline Digital Marketing Course Kerala",
     "Digital Marketing Classroom Training Malappuram",
     "Offline Digital Marketing Batches Manjeri",
@@ -20,9 +21,9 @@ export const metadata = {
     canonical: `${siteUrl}/offline-batches`,
   },
   openGraph: {
-    title: "Offline Digital Marketing Classroom Batches in Kerala | Entrain Labs",
+    title: "Digital Marketing Course in Malappuram | Entrain Labs",
     description:
-      "Join Entrain Labs offline digital marketing classroom training batches in Kerala (Manjeri, Malappuram). 100% practical lab workstation, live ad spend campaigns, 1-on-1 mentor guidance, AI tools, and guaranteed agency placement support.",
+      "Join Entrain Labs for a digital marketing course in Manjeri, Malappuram. Learn through live projects, AI tools and an agency internship, with career support. Apply now.",
     url: `${siteUrl}/offline-batches`,
     type: "website",
     locale: "en_IN",
@@ -38,9 +39,9 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Offline Digital Marketing Classroom Batches in Kerala | Entrain Labs",
+    title: "Digital Marketing Course in Malappuram | Entrain Labs",
     description:
-      "Join Entrain Labs offline digital marketing classroom training batches in Kerala (Manjeri, Malappuram). 100% practical lab workstation, live ad spend campaigns, 1-on-1 mentor guidance, AI tools, and guaranteed agency placement support.",
+      "Join Entrain Labs for a digital marketing course in Manjeri, Malappuram. Learn through live projects, AI tools and an agency internship, with career support. Apply now.",
     images: ["/Logo.png"],
   },
 };
