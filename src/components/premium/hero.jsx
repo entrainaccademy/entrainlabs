@@ -17,27 +17,32 @@ export default function Hero() {
       {/* Left Column: Headline copy */}
       <div className="lg:col-span-7 flex px-0 bg-red-000 sm:px-6 lg:px-12 flex-col gap-6 text-left">
 
-        {/* Tagline Badge */}
-
-        {/* <span className="text-[10px] text-primary  font-satoshi -py-14  font-thin  mt-[16px] uppercase">
-          Build Skills. Gain Experience. Launch Your Career.
-        </span> */}
-
+        {/* Tagline */}
+        <span className="text-xs sm:text-sm text-brand-primary dark:text-emerald-400 font-satoshi font-medium tracking-wide">
+          Launch Your Career as a Certified Digital Marketing Expert
+        </span>
 
         {/* Hero Headline */}
-        <div className="flex flex-col gap-2 ">
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }} className="text-4xl sm:text-5xl md:text-7xl font-bold  font-outfit leading-[1.1] tracking-tight text-zinc-950 dark:text-white">
-            <span className="font-medium font-outfit">Learn..</span> <br />
-            <span className="text-brand-primary ">
-              Practice.  <br  className="font-satoshi  "/><span className="font-poppins">Get  Hired.</span>
-            </span>
+        <div className="flex flex-col gap-2">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-outfit leading-[1.1] tracking-tight text-zinc-950 dark:text-white"
+          >
+            <span className="font-medium font-outfit">Digital Marketing Course</span> <br />
+            <span className="text-brand-primary">in Malappuram</span>
           </motion.h1>
         </div>
 
         {/* Subheading text */}
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }} className="text-zinc-650 dark:text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl font-roboto font-light ">
-
-          Bridge the gap between theory and industry. Gain certified, AI-powered competencies and manage active advertising budgets during a guaranteed agency internship.
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="text-zinc-650 dark:text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl font-roboto font-light"
+        >
+          Entrain Labs offers practical digital marketing training in Malappuram with live projects, AI tools, agency internships, and career support.
         </motion.p>
 
         {/* Action CTAs */}
