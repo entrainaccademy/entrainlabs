@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "@/components/premium/hero";
-// import TrustedBy from "@/components/premium/trusted-by";
 import PracticalLearning from "@/components/premium/practical-learning";
+// import TrustedBy from "@/components/premium/trusted-by";
 import WhyChooseUs from "@/components/premium/why-us";
 import Courses from "@/components/premium/courses";
 import LearningJourney from "@/components/premium/journey";
@@ -18,8 +18,8 @@ export default function Home() {
   return (
     <>
       <Hero />
-
       <PracticalLearning />
+
       <WhyChooseUs />
       <Courses />
 

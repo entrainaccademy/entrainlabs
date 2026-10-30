@@ -390,10 +390,6 @@ export default function LeadRegistrationForm({ className = "" }) {
                 {/* Bottom Assurance Chips */}
                 <div className="pt-2 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-zinc-500 dark:text-zinc-400 font-satoshi">
                   <span className="inline-flex items-center gap-1.5">
-                    <ShieldCheck className="w-4 h-4 text-[#0A756A] dark:text-emerald-400" />
-                    100% Free · No Payment Required
-                  </span>
-                  <span className="inline-flex items-center gap-1.5">
                     <Clock className="w-4 h-4 text-[#0A756A] dark:text-emerald-400" />
                     Instant WhatsApp Slot Confirmation
                   </span>

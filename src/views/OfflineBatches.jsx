@@ -302,17 +302,6 @@ export default function OfflineBatches() {
             SECTION 1: HERO SECTION
             ========================================== */}
         <div className="text-center max-w-4xl mx-auto mb-20 md:mb-28">
-          {/* Top Pill Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#0A756A]/10 border border-[#0A756A]/20 text-[#0A756A] dark:text-[#129A8C] text-xs md:text-sm font-medium mb-6 backdrop-blur-md shadow-sm"
-          >
-            <span className="w-2 h-2 rounded-full bg-[#0A756A] animate-ping" />
-            <span className="font-outfit">In-Person Classroom Training • Manjeri, Malappuram</span>
-          </motion.div>
-
           {/* Primary H1 */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -384,37 +373,6 @@ export default function OfflineBatches() {
               <span>WhatsApp Counselor</span>
             </button>
           </motion.div>
-        </div>
-
-        {/* ==========================================
-            STATS TICKER / REPUTATION BANNER
-            ========================================== */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mb-24 md:mb-32">
-          {[
-            { label: "Practical Lab Focus", value: "100%", sub: "Hands-on execution" },
-            { label: "Max Cohort Size", value: "15", sub: "Students per batch" },
-            { label: "Premium AI Tools", value: "15+", sub: "Industry-grade suites" },
-            { label: "Placement Assistance", value: "100%", sub: "Agency & tech hiring" }
-          ].map((stat, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="p-6 rounded-2xl border border-zinc-200/80 dark:border-white/5 bg-gradient-to-b from-zinc-50/50 to-white dark:from-zinc-900/40 dark:to-zinc-900/10 text-center shadow-sm"
-            >
-              <div className="text-3xl md:text-4xl font-bold font-clash text-[#0A756A] dark:text-emerald-400 mb-1">
-                {stat.value}
-              </div>
-              <div className="text-sm font-semibold text-zinc-900 dark:text-white font-outfit">
-                {stat.label}
-              </div>
-              <div className="text-xs text-zinc-500 dark:text-zinc-400 font-satoshi mt-0.5">
-                {stat.sub}
-              </div>
-            </motion.div>
-          ))}
         </div>
 
         {/* ==========================================

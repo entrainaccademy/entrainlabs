@@ -233,17 +233,6 @@ export default function Courses({ defaultSection }) {
             SECTION 1: HERO HEADER & TRAINING MODES
             ========================================== */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 md:mb-24">
-          {/* Category Eyebrow Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A756A]/10 border border-[#0A756A]/20 text-[#0A756A] dark:text-emerald-400 text-xs sm:text-sm font-medium mb-4 backdrop-blur-sm"
-          >
-            <span className="font-satoshi tracking-wide">Digital Marketing Program</span>
-          </motion.div>
-
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
