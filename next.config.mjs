@@ -23,21 +23,10 @@ const nextConfig = {
         has: [
           {
             type: 'host',
-            value: 'www.entrainlabs.in',
-          },
-        ],
-        destination: 'https://entrainlabs.in/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
             value: 'entrainlabs.com',
           },
         ],
-        destination: 'https://entrainlabs.in/:path*',
+        destination: 'https://www.entrainlabs.in/:path*',
         permanent: true,
       },
       {
@@ -48,7 +37,7 @@ const nextConfig = {
             value: 'www.entrainlabs.com',
           },
         ],
-        destination: 'https://entrainlabs.in/:path*',
+        destination: 'https://www.entrainlabs.in/:path*',
         permanent: true,
       },
     ];
