@@ -20,36 +20,42 @@ export default function TrustedBy({ className = "" }) {
     { name: "WordPress", logo: wordpressLogo },
   ];
 
-  // Duplicate items for smooth infinite scroll
-  const marqueeItems = [...tools, ...tools, ...tools, ...tools];
-
   return (
-    <section className={`relative py-0 md:py-5 overflow-hidden bg-red-000 border-zinc-100 ${className}`}>
-      <div className="mx-auto max-w-7xl px-4 md:px-8">
-        <div className="text-center mb-6">
-          <h4 className="text-xs md:text-sm font-light font-outfit uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500 font-satoshi">
-            Our Tools
-          </h4>
+    <section
+      id="tools-you-will-learn"
+      aria-label="Master the Tools Used in Digital Marketing"
+      className={`relative py-12 sm:py-16 md:py-20 font-sans transition-colors duration-300 ${className}`}
+    >
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
+        {/* Section Header */}
+        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold font-outfit tracking-tight text-zinc-950 dark:text-white leading-[1.15]">
+            Master the Tools Used in{" "}
+            <span className="text-[#0A756A] dark:text-emerald-400">Digital Marketing</span>
+          </h2>
+
+          <p className="mt-3 text-sm sm:text-base text-zinc-600 dark:text-zinc-400 font-satoshi leading-relaxed max-w-2xl mx-auto">
+            Get hands-on experience with industry-leading tools and platforms through practical training.
+          </p>
         </div>
-        <div className="relative w-full overflow-hidden bg-red-000 [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)] py-4">
-          <div
-            className="flex items-center gap-4 bg-red-000 md:gap-2 min-w-max animate-marquee hover:[animation-play-state:paused]"
-            style={{ animationDuration: "55s" }}
-          >
-            {marqueeItems.map((tool, idx) => (
-              <div
-                key={idx}
-                className="w-22 bg-red-000 md:w-44 bg-red-000 h-6 md:h-20 flex items-center justify-center shrink-0 transition-all duration-300 hover:scale-105"
-              >
-                <img
-                  src={tool.logo.src || tool.logo}
-                  alt={tool.name}
-                  draggable={false}
-                  className="max-h-12 md:max-h-16 h-22 bg-red-000 w-auto object-contain select-none"
-                />
-              </div>
-            ))}
-          </div>
+
+        {/* Clean Tool Icons Only - Zero background colors, pure icons */}
+        <div className="grid grid-cols-4 lg:grid-cols-8 gap-5 sm:gap-8 lg:gap-8 items-center justify-items-center">
+          {tools.map((tool) => (
+            <div
+              key={tool.name}
+              className="w-full flex items-center justify-center p-2 transition-transform duration-300 hover:scale-110 cursor-default select-none"
+              title={tool.name}
+            >
+              <img
+                src={tool.logo.src || tool.logo}
+                alt={tool.name}
+                draggable={false}
+                className="h-9 sm:h-11 md:h-12 lg:h-14 w-auto max-w-[95px] sm:max-w-[115px] lg:max-w-[125px] object-contain select-none transition-transform duration-300"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>
