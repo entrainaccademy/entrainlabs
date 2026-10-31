@@ -63,8 +63,7 @@ export default function Footer() {
     { name: "Performance Marketing", path: "/courses" },
     { name: "SEO Optimization", path: "/courses" },
     { name: "Google Ads & Meta Ads", path: "/courses" },
-    { name: "Offline Classroom Batches", path: "/offline-batches" },
-    { name: "Online Training Plans", path: "/online-plans" },
+   
     { name: "Career Support & Internship", path: "/courses" }
   ];
 

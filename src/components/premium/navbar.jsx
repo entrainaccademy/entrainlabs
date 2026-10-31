@@ -1,12 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, Building2, MonitorPlay, ArrowRight } from "lucide-react";
 import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced";
 import { cn } from "@/lib/utils";
-import { Link as RouterLink } from "next/link";
 import Link from "next/link";
-import logo from '@/assets/logolab.png'
+import logo from '@/assets/logolab.png';
 
 const navLinks = [
   { label: "Home", href: "/", id: "home" },
@@ -15,10 +14,32 @@ const navLinks = [
   { label: "Contact", href: "/contact", id: "contact" },
   { label: "Courses", href: "/courses", id: "course" } 
 ];
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isCoursesOpen, setIsCoursesOpen] = useState(false);
+  const [isMobileCoursesOpen, setIsMobileCoursesOpen] = useState(false);
   const [isEnrollOpen, setIsEnrollOpen] = useState(false);
+  const timeoutRef = useRef(null);
+
+  const handleCoursesMouseEnter = () => {
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    setIsCoursesOpen(true);
+  };
+
+  const handleCoursesMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsCoursesOpen(false);
+    }, 150);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
   // Scroll handler
   useEffect(() => {
     const handleScroll = () => {
@@ -32,7 +53,6 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
 
   return (<>
     <motion.header className="fixed top-0 left-0 right-0  z-50 w-full pointer-events-none flex flex-col items-center  pt-6 md:pt-8" initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }}>
@@ -53,9 +73,67 @@ export default function Navbar() {
         </Link>
 
         {/* Navigation Links (Desktop) */}
-        <nav className="hidden lg:flex items-center font-satoshi text-[#4B5563]   gap-1.5 relative">
+        <nav className="hidden lg:flex items-center font-satoshi text-[#4B5563] gap-1 relative">
           {navLinks.map((link) => {
-            return (<Link key={link.id} href={link.href} className="text-sm font-medium text-zinc-600 dark:text-zinc-900 hover:text-black dark:hover:text-white transition-colors py-1.5 px-4">
+            if (link.id === "course") {
+              return (
+                <div
+                  key={link.id}
+                  className="relative"
+                  onMouseEnter={handleCoursesMouseEnter}
+                  onMouseLeave={handleCoursesMouseLeave}
+                >
+                  <Link
+                    href={link.href}
+                    className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors py-1.5 px-3.5 rounded-lg hover:bg-zinc-100/60 dark:hover:bg-zinc-800/50"
+                  >
+                    <span>{link.label}</span>
+                    <ChevronDown
+                      size={14}
+                      className={cn(
+                        "transition-transform duration-200 text-zinc-400 group-hover:text-zinc-600",
+                        isCoursesOpen && "rotate-180 text-brand-primary"
+                      )}
+                    />
+                  </Link>
+
+                  {/* Dropdown Menu on hover */}
+                  <AnimatePresence>
+                    {isCoursesOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 6, scale: 0.96 }}
+                        transition={{ duration: 0.18, ease: "easeOut" }}
+                        className="absolute top-full left-1/2 -translate-x-1/2 pt-2.5 min-w-[180px] z-50 pointer-events-auto"
+                      >
+                        <div className="bg-white/95 dark:bg-zinc-900/95 backdrop-blur-xl border border-zinc-200/90 dark:border-zinc-800 rounded-xl shadow-xl shadow-zinc-950/10 p-1.5 flex flex-col gap-0.5 whitespace-nowrap">
+                          {/* Offline Batch */}
+                          <Link
+                            href="/offline-batches"
+                            onClick={() => setIsCoursesOpen(false)}
+                            className="px-3.5 py-2 rounded-lg text-xs font-medium text-zinc-700 dark:text-zinc-200 hover:text-brand-primary dark:hover:text-emerald-400 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-colors text-left"
+                          >
+                            Offline Batch
+                          </Link>
+
+                          {/* Online Batch */}
+                          <Link
+                            href="/online-plans"
+                            onClick={() => setIsCoursesOpen(false)}
+                            className="px-3.5 py-2 rounded-lg text-xs font-medium text-zinc-700 dark:text-zinc-200 hover:text-brand-primary dark:hover:text-emerald-400 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 transition-colors text-left"
+                          >
+                            Online Batch
+                          </Link>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            }
+
+            return (<Link key={link.id} href={link.href} className="text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors py-1.5 px-4">
               {link.label}
             </Link>);
           })}
@@ -81,16 +159,73 @@ export default function Navbar() {
           <div className="px-6 py-6 flex flex-col gap-4">
 
 
-            <div className="flex flex-col  gap-3 font-helvetica font-thin text-[14px] leading-[20px] tracking-[0px] normal-case">
+            <div className="flex flex-col gap-2 font-helvetica font-thin text-[14px] leading-[20px] tracking-[0px] normal-case">
               <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
                 <p className="capitalize">Home</p>
               </Link>
-              <Link href="/courses" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
-                <p className="capitalize">Courses</p>
-              </Link>
-              <Link href="/offline-batches" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
-                <p className="capitalize">Offline Batches</p>
-              </Link>
+
+              {/* Courses Accordion in Mobile Menu */}
+              <div className="border-b border-zinc-100 dark:border-zinc-900 py-1">
+                <button
+                  type="button"
+                  onClick={() => setIsMobileCoursesOpen(!isMobileCoursesOpen)}
+                  className="w-full flex items-center justify-between text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 text-left cursor-pointer"
+                >
+                  <span className="capitalize font-medium">Courses</span>
+                  <ChevronDown
+                    size={16}
+                    className={cn(
+                      "transition-transform duration-200 text-zinc-400",
+                      isMobileCoursesOpen && "rotate-180 text-brand-primary"
+                    )}
+                  />
+                </button>
+                <AnimatePresence>
+                  {isMobileCoursesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="pl-2 pr-1 pb-2 flex flex-col gap-1.5 overflow-hidden"
+                    >
+                      <Link
+                        href="/offline-batches"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center gap-2.5 py-2 px-2.5 rounded-lg bg-zinc-50 dark:bg-zinc-900/60 text-xs text-zinc-700 dark:text-zinc-300 hover:text-brand-primary"
+                      >
+                        <Building2 size={15} className="text-[#0A756A] shrink-0" />
+                        <div className="flex flex-col text-left">
+                          <span className="font-semibold text-zinc-900 dark:text-zinc-100">Offline Batch</span>
+                          <span className="text-[11px] text-zinc-500 dark:text-zinc-400">Classroom batches in Manjeri</span>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/online-plans"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center gap-2.5 py-2 px-2.5 rounded-lg bg-zinc-50 dark:bg-zinc-900/60 text-xs text-zinc-700 dark:text-zinc-300 hover:text-amber-600"
+                      >
+                        <MonitorPlay size={15} className="text-amber-600 shrink-0" />
+                        <div className="flex flex-col text-left">
+                          <span className="font-semibold text-zinc-900 dark:text-zinc-100">Online Batch</span>
+                          <span className="text-[11px] text-zinc-500 dark:text-zinc-400">Live & flexible training plans</span>
+                        </div>
+                      </Link>
+
+                      <Link
+                        href="/courses"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="flex items-center justify-between py-1.5 px-2 text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
+                      >
+                        <span>View All Courses</span>
+                        <ArrowRight size={13} />
+                      </Link>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
               <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="text-zinc-800 dark:text-zinc-200 hover:text-zinc-900 dark:hover:text-white py-2 border-b border-zinc-100 dark:border-zinc-900">
                 <p className="capitalize">About Us</p>
               </Link>
