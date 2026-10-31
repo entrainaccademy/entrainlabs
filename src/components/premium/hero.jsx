@@ -7,15 +7,15 @@ const shahana = "/hero.png";
 import coatwith from "@/assets/coatwith.png"; 
 export default function Hero() {
   const [isEnrollOpen, setIsEnrollOpen] = useState(false)
-  return (<section className="relative bg-red-000  min-h-screen flex md:items-center  items-top top-0 md:mt-0 -mt-20 md:justify-center  md:pt-0 px-0 md:px-8 md:pb-20 pb-1 overflow-hidden text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+  return (<section className="relative min-h-[calc(100vh-5rem)] md:min-h-screen flex items-center md:justify-center pt-4 pb-12 sm:pt-6 sm:pb-16 md:pt-0 md:pb-20 px-0 md:px-8 overflow-hidden text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
 
     {/* Bottom fade line */}
     <div className="absolute bottom-0 left-0  right-0 h-40   bg-gradient-to-t from-zinc-50 via-zinc-50/20 to-transparent dark:from-zinc-950 pointer-events-none z-10" />
 
-    <div className="relative mx-auto max-w-7xl px-6 md:px-8  h-auto bg-red-000 z-20 bg-red-000 grid grid-cols-1 lg:grid-cols-12 gap-1 bg-red-000 sm:gap-10 lg:gap-16 items-center w-full mt-0">
+    <div className="relative mx-auto max-w-7xl px-4 sm:px-6 md:px-8 h-auto z-20 grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-16 items-center w-full mt-0">
 
       {/* Left Column: Headline copy */}
-      <div className="lg:col-span-7 flex px-0 bg-red-000 sm:px-6 lg:px-12 flex-col gap-6 text-left">
+      <div className="relative z-20 lg:col-span-7 flex px-0 sm:px-6 lg:px-12 flex-col gap-5 sm:gap-6 text-left">
 
         {/* Tagline */}
         <span className="text-xs sm:text-sm text-brand-primary dark:text-emerald-400 font-satoshi font-medium tracking-wide">
@@ -40,50 +40,59 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-zinc-650 dark:text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl font-roboto font-light"
+          className="text-zinc-600 dark:text-zinc-400 text-sm sm:text-base leading-relaxed max-w-xl font-roboto font-light"
         >
           Entrain Labs offers practical digital marketing training in Malappuram with live projects, AI tools, agency internships, and career support.
         </motion.p>
 
         {/* Action CTAs */}
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }} className="flex flex-row md:flex-wrap items-center gap-4 mt-2">
-  <button onClick={() => setIsEnrollOpen(true)} className="relative inline-flex shrink-0 whitespace-nowrap h-[45px] md:h-12 items-center justify-center rounded-xs md:rounded-sm bg-gradient-to-r from-brand-primary to-brand-primary text-white px-4 md:px-8 text-[12px] md:text-xs font-poppins tracking-wider hover:opacity-95 shadow-lg shadow-brand-accent/20 dark:shadow-brand-accent/10 transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer">
-    Apply Program
-  </button>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="relative z-30 w-full sm:w-auto mt-2 sm:mt-4"
+        >
+          <div
+            className="flex flex-row items-center gap-2.5 sm:gap-4 w-full sm:w-auto"
+            style={{ display: "flex", flexDirection: "row" }}
+          >
+            <button
+              type="button"
+              onClick={() => setIsEnrollOpen(true)}
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center h-11 sm:h-12 px-3 sm:px-8 rounded-lg sm:rounded-md bg-gradient-to-r from-brand-primary to-brand-primary text-white text-[12px] sm:text-xs font-poppins font-medium tracking-wide hover:opacity-95 shadow-md shadow-brand-accent/20 dark:shadow-brand-accent/10 transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer whitespace-nowrap"
+            >
+              Apply Program
+            </button>
 
-  <a href="#courses" className="inline-flex shrink-0 whitespace-nowrap h-[45px] md:h-12 items-center justify-center font-poppins text-primary font-light  md:rounded-md border border-prima dark:border-zinc-800 bg-white dark:bg-zinc-900/50 hover:bg-zinc-50 dark:hover:bg-zinc-800  dark:text-zinc-300 px-4 md:px-7 text-xs  tracking-wider transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer">
-    Explore Courses
-  </a>
-</motion.div>
-
-
+            <a
+              href="#courses"
+              className="flex-1 sm:flex-initial inline-flex items-center justify-center h-11 sm:h-12 px-3 sm:px-7 rounded-lg sm:rounded-md border border-brand-primary/40 dark:border-zinc-800 bg-white dark:bg-zinc-900/80 hover:bg-zinc-50 dark:hover:bg-zinc-800 text-brand-primary dark:text-zinc-200 text-[12px] sm:text-xs font-poppins font-medium tracking-wide transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer whitespace-nowrap shadow-xs"
+            >
+              Explore Courses
+            </a>
+          </div>
+        </motion.div>
 
       </div>
 
       {/* Right Column: Premium Agency Showcase Workspace */}
-      <div className="lg:col-span-5 relative  flex items-center bg-red-000 justify-center min-h-[320px] sm:min-h-[420px] lg:min-h-[660px] -mt-60 md:mt-22 px-4">
+      <div className="lg:col-span-5 relative flex items-center justify-center min-h-[300px] sm:min-h-[420px] lg:min-h-[660px] mt-6 sm:mt-8 lg:mt-0 px-4">
 
         {/* Ambient color mesh background glow */}
-        <div className="absolute w-[450px] h-[450px] rounded-full bg-primary/1520 from-brand-primary to-brand-accent/5 dark:from-brand-primary/15 dark:via-brand-accent/5 dark:to-transparent blur-3xl pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute w-[450px] h-[450px] rounded-full bg-brand-primary/10 from-brand-primary to-brand-accent/5 dark:from-brand-primary/15 dark:via-brand-accent/5 dark:to-transparent blur-3xl pointer-events-none top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
 
         {/* Tech Grid Background pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(10,117,106,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(10,117,106,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:28px_28px] opacity-[0.8] z-0 pointer-events-none" />
-
-        {/* Floating crosshair corner accents (Workspace indicator) */}
-        {/* <div className="absolute top-4 left-4 w-6 h-6 border-t border-l border-zinc/-200 dark:border-zinc-800 pointer-events-none" /> */}
-        {/* <div className="absolute top-4 right-4 w-6 h-6 border-t border-r border-zinc-200 dark:border-zinc-800 pointer-events-none" /> */}
-        {/* <div className="absolute bottom-4 left-4 w-6 h-6 border-b border-l border-zinc-200 dark:border-zinc-800 pointer-events-none" /> */}
-        {/* <div className="absolute bottom-4 right-4 w-6 h-6 border-b  border-r border-zinc-200 dark:border-zinc-800 pointer-events-none" /> */}
 
         {/* Main Showcase Panel (Floating Portrait Canvas) */}
         <motion.div
           initial={{ opacity: 0, y: 30, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="relative z-10 w-full flex justify-center bg-red-000 items-end max-w-md h-[320px] sm:h-[420px] lg:h-[560px]"
+          className="relative z-10 w-full flex justify-center items-end max-w-md h-[300px] sm:h-[420px] lg:h-[560px]"
         >
         
-  <div className="relative flex items-end  justify-center  bg-red-000  h-full w-full">
+  <div className="relative flex items-end justify-center h-full w-full">
     {/* Arched Gradient Backing Frame */}
     <div className="absolute bottom-0 left-1/2   -translate-x-1/2 w-[85%] h-[85%] bg-primary/5 from-brand-primary/5 via-brand-accent/5 to-transparent dark:from-brand-primary/10 dark:via-brand-accent/5 dark:to-transparent rounded-t-[140px] border-t border-x border-zinc-200/40 dark:border-zinc-800/40 z-0" />
 

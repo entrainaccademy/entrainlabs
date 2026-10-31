@@ -106,7 +106,7 @@ export default function PracticalLearning() {
               {/* Framed Image Container */}
               <div className="relative aspect-[4/5] sm:aspect-[3/4] lg:aspect-[4/5] w-full rounded-[28px] sm:rounded-[32px] overflow-hidden border border-zinc-200/80 dark:border-zinc-800 shadow-2xl shadow-zinc-950/10 bg-zinc-100 dark:bg-zinc-900">
                 <img
-                  src="/photo4.jpg"
+                  src="/photo10.jpg"
                   alt="Student achieving success with practical digital marketing at Entrain Labs"
                   className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"

@@ -45,6 +45,7 @@
   --color-brand-accent-2: #E5A93B;
   --color-brand-success: #10B981;
   
+  --breakpoint-xs: 380px;
   --animate-marquee: marquee 25s linear infinite;
   @keyframes marquee {
     from { transform: translateX(0%); }
