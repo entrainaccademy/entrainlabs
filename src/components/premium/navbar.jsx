@@ -10,8 +10,8 @@ import logo from '@/assets/logolab.png';
 const navLinks = [
   { label: "Home", href: "/", id: "home" },
   { label: "About", href: "/about", id: "about" },
-  { label: "Courses", href: "/courses", id: "course" },
   { label: "Blog", href: "/blog", id: "blog" },
+  { label: "Courses", href: "/courses", id: "course" },
   { label: "Learning Modes", href: "/learning-modes", id: "learning-modes" },
   { label: "Contact", href: "/contact", id: "contact" },
 ];
@@ -19,27 +19,27 @@ const navLinks = [
 const courseLinks = [
   {
     label: "Digital Marketing Master",
-    desc: "24-week full-stack flagship program",
+    // desc: "24-week full-stack flagship program",
     href: "/courses/digital-marketing-master-program",
   },
   {
     label: "Performance Marketing",
-    desc: "Paid media buying & ROAS scaling",
+    // desc: "Paid media buying & ROAS scaling",
     href: "/courses/performance-marketing",
   },
   {
     label: "SEO Optimization",
-    desc: "Technical SEO, audits & ranking",
+    // desc: "Technical SEO, audits & ranking",
     href: "/courses/seo-optimization",
   },
   {
     label: "Google Ads & Meta Ads",
-    desc: "Search, YouTube, Meta & CAPI",
+    // desc: "Search, YouTube, Meta & CAPI",
     href: "/courses/google-ads-meta-ads",
   },
   {
     label: "Career Support & Internship",
-    desc: "Agency residency & placement",
+    // desc: "Agency residency & placement",
     href: "/courses/career-support-internship",
   },
 ];
@@ -143,17 +143,17 @@ export default function Navbar() {
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-colors py-1.5 px-3 rounded-lg hover:bg-zinc-100/60 dark:hover:bg-zinc-800/50"
                     >
                       <span>{link.label}</span>
-                      {/* <ChevronDown
+                      <ChevronDown
                         size={14}
                         className={cn(
                           "transition-transform duration-200 text-zinc-400 group-hover:text-zinc-600",
                           isCoursesOpen && "rotate-180 text-brand-primary"
                         )}
-                      /> */}
+                      />
                     </Link>
 
                     {/* Courses Dropdown Menu */}
-                    {/* <AnimatePresence>
+                    <AnimatePresence>
                       {isCoursesOpen && (
                         <motion.div
                           initial={{ opacity: 0, y: 8, scale: 0.96 }}
@@ -179,18 +179,18 @@ export default function Navbar() {
                               </Link>
                             ))}
                             <div className="h-[1px] bg-zinc-100 dark:bg-zinc-800 my-1" />
-                            <Link
+                            {/* <Link
                               href="/courses"
                               onClick={() => setIsCoursesOpen(false)}
                               className="px-3 py-1.5 rounded-lg text-xs font-semibold text-[#0A756A] dark:text-emerald-400 hover:bg-[#0A756A]/10 transition-colors text-left flex items-center justify-between"
                             >
                               <span>View All Courses Catalog</span>
                               <ArrowRight size={12} />
-                            </Link>
+                            </Link> */}
                           </div>
                         </motion.div>
                       )}
-                    </AnimatePresence> */}
+                    </AnimatePresence>
                   </div>
                 );
               }
@@ -250,8 +250,8 @@ export default function Navbar() {
                             >
                               {/* <MonitorPlay size={15} className="text-amber-600 shrink-0 mt-0.5" /> */}
                               <div className="flex flex-col">
-                                <span className="text-xs font-semibold capitalize text-zinc-800 dark:text-zinc-100 group-hover/mode:text-amber-600 transition-colors">
-                                  online trainig plans
+                                <span className="text-xs font-semibold  text-zinc-800 dark:text-zinc-100 group-hover/mode:text-amber-600 transition-colors">
+                                  Online Batch
                                 </span>
                                 
                               </div>
@@ -376,14 +376,14 @@ export default function Navbar() {
                               </span>
                             </Link>
                           ))}
-                          <Link
+                          {/* <Link
                             href="/courses"
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="flex items-center justify-between py-1.5 px-2.5 text-xs font-semibold text-[#0A756A] hover:underline"
                           >
                             <span>View All Courses Catalog</span>
                             <ArrowRight size={13} />
-                          </Link>
+                          </Link> */}
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -419,14 +419,14 @@ export default function Navbar() {
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="flex items-center gap-2.5 py-2 px-2.5 rounded-lg bg-zinc-50 dark:bg-zinc-900/60 text-xs text-zinc-700 dark:text-zinc-300 hover:text-brand-primary"
                           >
-                            <Building2 size={15} className="text-[#0A756A] shrink-0" />
+                            {/* <Building2 size={15} className="text-[#0A756A] shrink-0" /> */}
                             <div className="flex flex-col text-left">
                               <span className="font-semibold text-zinc-900 dark:text-zinc-100">
                                 Offline Batch
                               </span>
-                              <span className="text-[11px] text-zinc-500 dark:text-zinc-400">
+                              {/* <span className="text-[11px] text-zinc-500 dark:text-zinc-400">
                                 Classroom batches in Manjeri
-                              </span>
+                              </span> */}
                             </div>
                           </Link>
 
@@ -435,25 +435,25 @@ export default function Navbar() {
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="flex items-center gap-2.5 py-2 px-2.5 rounded-lg bg-zinc-50 dark:bg-zinc-900/60 text-xs text-zinc-700 dark:text-zinc-300 hover:text-amber-600"
                           >
-                            <MonitorPlay size={15} className="text-amber-600 shrink-0" />
+                            {/* <MonitorPlay size={15} className="text-amber-600 shrink-0" /> */}
                             <div className="flex flex-col text-left">
                               <span className="font-semibold text-zinc-900 dark:text-zinc-100">
                                 Online Batch
                               </span>
-                              <span className="text-[11px] text-zinc-500 dark:text-zinc-400">
+                              {/* <span className="text-[11px] text-zinc-500 dark:text-zinc-400">
                                 Live & flexible training plans
-                              </span>
+                              </span> */}
                             </div>
                           </Link>
 
-                          <Link
+                          {/* <Link
                             href="/learning-modes"
                             onClick={() => setIsMobileMenuOpen(false)}
                             className="flex items-center justify-between py-1.5 px-2.5 text-xs text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
                           >
                             <span>Compare All Modes</span>
                             <ArrowRight size={13} />
-                          </Link>
+                          </Link> */}
                         </motion.div>
                       )}
                     </AnimatePresence>
