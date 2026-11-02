@@ -47,6 +47,12 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${siteUrl}/learning-modes`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${siteUrl}/offline-batches`,
       lastModified: currentDate,
       changeFrequency: "weekly",

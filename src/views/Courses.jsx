@@ -18,462 +18,508 @@ import {
   Briefcase,
   HelpCircle,
   Plus,
-  Minus
+  Minus,
+  TrendingUp,
+  Search,
+  Target,
+  Users,
+  Zap,
+  Clock,
+  MessageCircle,
 } from "lucide-react";
 import { EnrollmentFormAdvanced } from "@/components/ui/enrollment-form-advanced";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import TrustedBy from "@/components/premium/trusted-by"; 
+import TrustedBy from "@/components/premium/trusted-by";
 import CourseExperienceAudience from "@/components/premium/course-experience-audience";
 import LeadRegistrationForm from "@/components/premium/lead-registration-form";
 
 // ==========================================
-// DATA DEFINITIONS (CURRICULUM, PRICING, ETC.)
+// ALL 5 DEDICATED COURSES WITH FULL DETAILS
 // ==========================================
-
-const pricingPlans = [
+const allCoursesList = [
   {
-    id: "starter",
-    name: "Starter",
-    badge: "Best for Beginners",
-    duration: "4 Months",
-    perfectFor: "Students & Beginners",
-    description: "Get started with the fundamentals of digital marketing and master core execution skills.",
-    buttonText: "Enroll Now",
-    features: [
-      "Live Classes",
-      "Recorded Classes",
-      "Basic Assignments",
-      "Downloadable Notes",
-      "Community Support",
-      "Certificate"
+    id: "digital-marketing-master-program",
+    slug: "digital-marketing-master-program",
+    title: "Digital Marketing Master Program",
+    category: "Flagship All-In-One",
+    categoryFilter: "flagship",
+    duration: "24 Weeks (6 Months)",
+    level: "Beginner to Pro",
+    rating: 4.9,
+    reviewsCount: "500+ Graduates",
+    description:
+      "Our premier 360-degree digital marketing masterclass. Master performance media buying, technical SEO, conversion copywriting, data analytics, and modern AI marketing automations, backed by a guaranteed 8-week agency internship.",
+    highlights: [
+      "Guaranteed 8-week agency internship with client-facing responsibilities",
+      "Real Google & Meta ad budget deployment in live classroom campaigns",
+      "12+ real-world portfolio projects across D2C, B2B, and E-commerce",
+      "Generative AI & workflow automation integrated across all modules",
+      "1-on-1 mentor code & campaign audits with agency founders",
+      "100% interview placement assistance with top agency hiring partners",
     ],
-    popular: false
-  },
-  {
-    id: "career-track",
-    name: "Career Track",
-    badge: " Most Popular",
-    duration: "4 Months",
-    perfectFor: "Students & Job Seekers",
-    description: "Build an agency-ready portfolio, learn from client briefs, and master modern AI marketing automation.",
-    buttonText: "Start Career",
-    features: [
-      "Live Classes",
-      "Recorded Classes",
-      "Virtual Workplace",
-      "Weekly Review",
-      "AI Tools Training",
-      "Prompt Engineering",
-      "Practical Assignments",
-      "Real Client Projects",
-      "Career Guidance",
-      "Certificate"
+    tools: [
+      "Google Ads",
+      "Meta Ads",
+      "SEMrush",
+      "Ahrefs",
+      "GA4",
+      "GTM",
+      "Zapier",
+      "ChatGPT",
+      "Canva Pro",
+      "Looker Studio",
     ],
-    popular: true
+    href: "/courses/digital-marketing-master-program",
   },
   {
-    id: "pro-master",
-    name: "Pro Master",
-    badge: " Premium",
-    duration: "4 Months",
-    perfectFor: "Professionals & Freelancers",
-    description: "Get 1-on-1 mentorship, advanced growth strategies, personal branding, and lifetime premium support.",
-    buttonText: "Become a Pro",
-    features: [
-      "Live Classes",
-      "Recorded Classes",
-      "Virtual Workplace",
-      "Weekly Review",
-      "AI Tools",
-      "Prompt Engineering",
-      "Practical Assignments",
-      "Real Projects",
-      "Individual Mentor",
-      "Lifetime Support",
-      "Career Assistance",
-      "Certificate"
+    id: "performance-marketing",
+    slug: "performance-marketing",
+    title: "Performance Marketing Course",
+    category: "Paid Acquisition & ROAS",
+    categoryFilter: "ads",
+    duration: "12 Weeks Intensive",
+    level: "Intermediate to Pro",
+    rating: 4.8,
+    reviewsCount: "250+ Marketers",
+    description:
+      "Become an elite media buyer. Learn full-funnel TOFU/MOFU/BOFU strategy, custom audience modeling, landing page conversion rate optimization (CRO), server-side CAPI tracking, and scaling daily ad spend profitably.",
+    highlights: [
+      "Manage real ₹5,00,000+ advertising budgets during training sprints",
+      "Full-funnel customer acquisition systems across Meta & Google Ads",
+      "Conversion Rate Optimization (CRO), heatmaps & A/B testing",
+      "Server-side Conversions API (CAPI) & GA4 custom purchase funnels",
+      "Automated rules, bidding strategies & budget pacing frameworks",
+      "Direct placement pathways into senior agency media buyer positions",
     ],
-    popular: false
-  }
-];
-
-const comparisonRows = [
-  { name: "Live Classes", starter: "Yes", career: "Yes", pro: "Yes" },
-  { name: "Recorded Classes", starter: "Yes", career: "Yes", pro: "Yes" },
-  { name: "Assignments", starter: "Basic", career: "Practical", pro: "Practical" },
-  { name: "Virtual Workplace", starter: "No", career: "Yes", pro: "Yes" },
-  { name: "Weekly Review", starter: "No", career: "Yes", pro: "Yes" },
-  { name: "AI Tools", starter: "No", career: "Yes", pro: "Yes" },
-  { name: "Prompt Engineering", starter: "No", career: "Yes", pro: "Yes" },
-  { name: "Real Projects", starter: "No", career: "Client Projects", pro: "Enterprise Projects" },
-  { name: "Individual Mentor", starter: "No", career: "No", pro: "Yes" },
-  { name: "Lifetime Support", starter: "No", career: "No", pro: "Yes" },
-  { name: "Certificate", starter: "Yes", career: "Yes", pro: "Yes" }
-];
-
-const curriculumPhases = [
-  {
-    phase: "Phase 1: Marketing Fundamentals & Organic Strategy",
-    weeks: "Weeks 1–6",
-    title: "Core Fundamentals & Brand Strategy",
-    description: "Begin with consumer psychology, copywriting principles, and SEO foundations to understand organic traffic flow.",
-    modules: [
-      "Digital Marketing Foundations & Psychology",
-      "Copywriting & Storytelling Masterclass",
-      "Organic Social Media Optimization (Instagram, LinkedIn, YouTube)",
-      "Keyword Research & Competitive Benchmarking"
-    ]
+    tools: [
+      "Meta Ads Manager",
+      "Google Ads",
+      "Google Analytics 4",
+      "GTM",
+      "Triple Whale",
+      "Hotjar",
+      "Shopify",
+      "Stape.io",
+    ],
+    href: "/courses/performance-marketing",
   },
   {
-    phase: "Phase 2: Traffic Acquisition & Paid Media Buying",
-    weeks: "Weeks 7–12",
-    title: "Performance Ads & Tech Setup",
-    description: "Master direct-response advertising channels, conversion setup, and running real budget ad operations.",
-    modules: [
-      "Meta Ads (CBO, Pixel Tracking & Funnel Setup)",
-      "Google Search, Display & Performance Max Campaigns",
-      "Web Analytics Setup (GA4, GTM Custom Events)",
-      "Landing Page Optimization & A/B Testing"
-    ]
+    id: "seo-optimization",
+    slug: "seo-optimization",
+    title: "SEO Optimization Course",
+    category: "Organic Growth & SEO",
+    categoryFilter: "seo",
+    duration: "8 Weeks Intensive",
+    level: "Beginner to Advanced",
+    rating: 4.9,
+    reviewsCount: "320+ Analysts",
+    description:
+      "Unlock compounding organic traffic. Master search engine optimization from fundamentals to advanced technical audits: semantic keyword clustering, on-page SEO, Core Web Vitals, Google Search Console, and authority link building.",
+    highlights: [
+      "Perform exhaustive technical SEO audits on 15+ live commercial sites",
+      "Screaming Frog, SEMrush & Ahrefs in-depth masterclass",
+      "Topic cluster mapping and search intent keyword research",
+      "Schema.org structured data, Core Web Vitals & indexation troubleshooting",
+      "White-hat authority link building & digital PR outreach campaigns",
+      "Hands-on project ranking real client keywords on Google Page 1",
+    ],
+    tools: [
+      "SEMrush",
+      "Ahrefs",
+      "Google Search Console",
+      "Screaming Frog",
+      "GA4",
+      "PageSpeed Insights",
+      "Surfer SEO",
+    ],
+    href: "/courses/seo-optimization",
   },
   {
-    phase: "Phase 3: AI Marketing Automation & CRM",
-    weeks: "Weeks 13–18",
-    title: "Automations & Advanced AI Workflows",
-    description: "Learn to multiply output and streamline tasks using API automations, AI tools, and email engines.",
-    modules: [
-      "CRM & Email Marketing Automation (Klaviyo, Mailchimp)",
-      "Code-Free Workflow Automations via Zapier & Make",
-      "AI Content Automation (Prompt Engineering & Custom Agents)",
-      "Freelancing Systems & Retainer Contract Pitches"
-    ]
+    id: "google-ads-meta-ads",
+    slug: "google-ads-meta-ads",
+    title: "Google Ads & Meta Ads Specialization",
+    category: "The Two Advertising Giants",
+    categoryFilter: "ads",
+    duration: "8 Weeks Hands-On",
+    level: "Beginner to Pro",
+    rating: 4.8,
+    reviewsCount: "410+ Specialists",
+    description:
+      "Master the two biggest advertising networks on the planet. High-intent Google Search, YouTube Video Action campaigns, Meta Advantage+ shopping ads, Instagram Reels, custom audiences, and budget scaling.",
+    highlights: [
+      "Real campaign funds allocated in hands-on practical lab sessions",
+      "Google Search ads: SKAGs, smart bidding & negative keyword architecture",
+      "Meta Ads Manager: Advantage+ campaigns & creative iteration testing",
+      "Bulletproof tracking with GTM, Meta Pixel & Conversions API (CAPI)",
+      "Ad performance analysis: CTR, CPC, CPM, Frequency & ROAS telemetry",
+      "Official Google Ads and Meta Certified Associate credential prep",
+    ],
+    tools: [
+      "Google Ads Manager",
+      "Meta Ads Manager",
+      "Google Tag Manager",
+      "GA4",
+      "YouTube Studio",
+      "Looker Studio",
+      "Canva Pro",
+    ],
+    href: "/courses/google-ads-meta-ads",
   },
   {
-    phase: "Phase 4: Agency Internship & Portfolio Defense",
-    weeks: "Weeks 19–24",
-    title: "Live Agency Residency",
-    description: "Work inside our affiliate digital marketing agency on live client briefs with real budgets, ending with portfolio defenses.",
-    modules: [
-      "Direct Client Campaign Management",
-      "Budget Allocations & Client Reporting Presentations",
-      "Comprehensive Portfolio Review & Defense",
-      "Mock Interviews & Career Placement Support"
-    ]
-  }
+    id: "career-support-internship",
+    slug: "career-support-internship",
+    title: "Career Support & Internship Program",
+    category: "Agency Residency & Career",
+    categoryFilter: "career",
+    duration: "8 Weeks Residency",
+    level: "Placement Ready",
+    rating: 4.9,
+    reviewsCount: "100% Placement Support",
+    description:
+      "Bridge the gap between training and corporate employment. Work on live agency briefs, build a verified client portfolio, polish your ATS resume, and attend direct hiring placement drives with 65+ partner brands.",
+    highlights: [
+      "Guaranteed 8-week agency internship working on active client briefs",
+      "Work directly on live client accounts handling actual deliverables",
+      "Build a web-hosted digital portfolio with verified campaign case studies",
+      "ATS-compliant resume revamp & LinkedIn personal branding",
+      "Mock technical & HR interview drills with agency directors",
+      "Direct interview placement drives with 65+ partner brands and agencies",
+    ],
+    tools: [
+      "Slack",
+      "Notion",
+      "Asana",
+      "Google Workspace",
+      "Meta Business Suite",
+      "Google Ads",
+      "LinkedIn",
+    ],
+    href: "/courses/career-support-internship",
+  },
 ];
-
-// ==========================================
-// MAIN COMPONENT: COURSES & COURSE DETAILS COMBINED
-// ==========================================
 
 export default function Courses({ defaultSection }) {
   const router = useRouter();
   const [isEnrollOpen, setIsEnrollOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState("");
-  const [activePhaseIndex, setActivePhaseIndex] = useState(0);
-  const [openFAQIndex, setOpenFAQIndex] = useState(null);
+  const [activeCategory, setActiveCategory] = useState("all");
 
-  // Smooth scroll handler for anchor links
-  const handleScrollToSection = (id) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const filterTabs = [
+    { id: "all", label: "All Programs", count: 5 },
+    { id: "flagship", label: "Flagship", count: 1 },
+    { id: "ads", label: "Paid Media & Ads", count: 2 },
+    { id: "seo", label: "SEO & Organic", count: 1 },
+    { id: "career", label: "Career & Placement", count: 1 },
+  ];
 
-  // Scroll to default section if specified on mount
-  useEffect(() => {
-    if (defaultSection) {
-      setTimeout(() => {
-        handleScrollToSection(defaultSection);
-      }, 150);
-    }
-  }, [defaultSection]);
+  const filteredCourses =
+    activeCategory === "all"
+      ? allCoursesList
+      : allCoursesList.filter((c) => c.categoryFilter === activeCategory);
 
-  // High performance mouse tracking for glass reflection/spotlight without re-renders
-  const handleMouseMove = (e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    card.style.setProperty("--mouse-x", `${x}px`);
-    card.style.setProperty("--mouse-y", `${y}px`);
-  };
-
-  const handleEnrollClick = (planName) => {
-    setSelectedPlan(planName);
+  const handleEnrollClick = (courseTitle) => {
+    setSelectedPlan(courseTitle);
     setIsEnrollOpen(true);
   };
 
-  const toggleFAQ = (idx) => {
-    setOpenFAQIndex(prev => prev === idx ? null : idx);
+  const handleMouseMove = (e) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty("--mouse-x", `${e.clientX - rect.left}px`);
+    card.style.setProperty("--mouse-y", `${e.clientY - rect.top}px`);
   };
 
   return (
     <div className="relative bg-slate-50 dark:bg-zinc-950 text-zinc-900 dark:text-white overflow-hidden font-sans selection:bg-[#0A756A]/20 selection:text-[#0A756A]">
       {/* Background System */}
-      {/* Dot Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808009_1px,transparent_1px),linear-gradient(to_bottom,#80808009_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#80808005_1px,transparent_1px),linear-gradient(to_bottom,#80808005_1px,transparent_1px)] bg-[size:20px_20px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_40%,#000_70%,transparent_100%)] pointer-events-none" />
-
-      {/* Noise Texture */}
       <div className="absolute inset-0 noise-overlay pointer-events-none opacity-[0.015] dark:opacity-[0.02]" />
 
-      {/* Mesh Gradient / Glowing Blurs */}
+      {/* Ambient blurs */}
       <div className="absolute top-[5%] left-[-10%] w-[600px] h-[600px] rounded-full bg-[#0A756A]/5 dark:bg-[#0A756A]/10 blur-[130px] pointer-events-none" />
       <div className="absolute top-[35%] right-[-10%] w-[700px] h-[700px] rounded-full bg-[#0A756A]/4 dark:bg-[#0A756A]/5 blur-[150px] pointer-events-none" />
       <div className="absolute bottom-[10%] left-[20%] w-[550px] h-[550px] rounded-full bg-[#0A756A]/5 dark:bg-[#0A756A]/8 blur-[140px] pointer-events-none" />
 
-      {/* Soft Top Radial Lighting Overlay */}
+      {/* Top Lighting Line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[1px] bg-gradient-to-r from-transparent via-[#0A756A]/20 dark:via-[#0A756A]/30 to-transparent pointer-events-none" />
-      
-      <div className="relative mx-auto max-w-7xl px-6 md:px-8 z-10 py-16 md:py-24">
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 z-10 py-12 md:py-20">
         
         {/* ==========================================
-            SECTION 1: HERO HEADER & TRAINING MODES
+            BREADCRUMB TRAIL
             ========================================== */}
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-16 md:mb-24">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold font-outfit tracking-tight text-zinc-950 dark:text-white leading-[1.2] mb-5"
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 pb-4 border-b border-zinc-200/60 dark:border-white/5">
+          <nav aria-label="Breadcrumb" className="flex items-center flex-wrap gap-2 text-xs md:text-sm text-zinc-500 dark:text-zinc-400 font-satoshi">
+            <Link href="/" className="hover:text-[#0A756A] transition-colors">
+              Home
+            </Link>
+            <span className="text-zinc-400">/</span>
+            <span className="text-[#0A756A] dark:text-emerald-400 font-medium">Courses & Programs</span>
+          </nav>
+
+          <Link
+            href="/learning-modes"
+            className="inline-flex items-center gap-1.5 text-xs md:text-sm font-medium text-zinc-600 dark:text-zinc-400 hover:text-[#0A756A] dark:hover:text-emerald-400 transition-colors w-fit group"
           >
-            What You Will Learn in Our{" "}
-            <span className="text-[#0A756A] dark:text-emerald-400">
-              Digital Marketing Course
+            <span>Compare Offline & Online Modes</span>
+            <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
+
+        {/* ==========================================
+            HERO HEADER
+            ========================================== */}
+        <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-14 md:mb-20">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A756A]/10 border border-[#0A756A]/20 text-[#0A756A] dark:text-emerald-400 text-xs font-semibold font-clash uppercase tracking-wider mb-5 shadow-sm"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-[#0A756A] dark:text-emerald-400" />
+            <span>Practical Agency Training</span>
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-clash tracking-tight text-zinc-950 dark:text-white leading-[1.15] mb-5"
+          >
+            Explore Our Digital Marketing{" "}
+            <span className="bg-gradient-to-r from-zinc-900 via-[#0A756A] to-[#129A8C] dark:from-white dark:via-emerald-300 dark:to-[#0A756A] bg-clip-text text-transparent">
+              Courses & Specializations
             </span>
-          </motion.h2>
+          </motion.h1>
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-            className="text-zinc-650 dark:text-zinc-400 text-sm sm:text-base leading-relaxed font-outfit font-light max-w-2xl"
+            className="text-zinc-650 dark:text-zinc-300 text-sm sm:text-base md:text-lg leading-relaxed font-satoshi max-w-3xl mb-8"
           >
-            Learn Digital Marketing through live training, real projects, AI tools, and expert career support.
+            Choose from our flagship full-stack master program or focused specializations in performance marketing, SEO, and paid media. Every course includes real ad spend, live client briefs, and career placement.
           </motion.p>
-        </div>
 
-        {/* TWO TRAINING MODES CARDS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 -mt-12 mb-28 md:mb-36">
-          
-          {/* CARD 1 - Offline Classroom */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            whileHover={{ y: -6, rotate: -0.2 }}
-            onMouseMove={handleMouseMove}
-            className="group relative rounded-[32px] p-[1px] bg-gradient-to-b from-zinc-200/80 via-zinc-200/20 to-transparent dark:from-white/10 dark:via-zinc-800/50 dark:to-transparent overflow-hidden shadow-sm dark:shadow-none"
-          >
-            {/* Spotlight reflection */}
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-              style={{
-                background: "radial-gradient(400px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(10, 117, 106, 0.06), transparent 80%)"
-              }}
-            />
-            
-            <div className="relative h-full bg-white/80 dark:bg-zinc-900/40 backdrop-blur-2xl rounded-[31px] p-8 md:p-12 flex flex-col justify-between overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#0A756A]/5 dark:bg-[#0A756A]/10 rounded-full blur-2xl pointer-events-none group-hover:bg-[#0A756A]/10 dark:group-hover:bg-[#0A756A]/20 transition-colors duration-500" />
-              
-              <div>
-            
-
-                <h3 className="text-2xl md:text-3xl font-clash font-semibold text-zinc-900 dark:text-white mb-4">
-                  Offline Classroom
-                </h3>
-
-                <p className="text-zinc-650 dark:text-zinc-400 text-sm md:text-[16px] font-light leading-relaxed mb-8 max-w-md font-satoshi">
-                  Experience classroom-based learning with direct interaction, practical sessions, expert mentoring, and collaborative learning.
-                </p>
- 
-                {/* Features List */}
-                <div className="grid grid-cols-2 gap-4 mb-10 pb-8 border-b border-zinc-200/65 dark:border-white/5">
-                  {[
-                    "Classroom Training",
-                    "Live Instructor",
-                    "Practical Sessions",
-                    "Weekly Reviews",
-                    "Networking",
-                    "Certificate"
-                  ].map((feature, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#0A756A]/10 border border-[#0A756A]/20 flex items-center justify-center shrink-0">
-                        <Check className="w-3.5 h-3.5 text-[#0A756A]" />
-                      </div>
-                      <span className="text-xs md:text-[13px] text-zinc-700 dark:text-zinc-300 font-satoshi">{feature}</span>
-                    </div> 
-                  ))}
-                </div>
-              </div>
-
-              <Link
-                href="/offline-batches"
-                className="relative w-full h-12 rounded-xl bg-[#0A756A] text-white font-semibold text-sm transition-all duration-300 hover:bg-[#129A8C] hover:shadow-[0_0_30px_rgba(10,117,106,0.25)] dark:bg-white dark:text-zinc-950 dark:hover:bg-[#0A756A] dark:hover:text-white flex items-center justify-center gap-2 group/btn cursor-pointer"
-              >
-                <span>Explore Offline Batch</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-              </Link>
-            </div>
-          </motion.div>
-
-          {/* CARD 2 - Online Learning */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            whileHover={{ y: -6, rotate: 0.2 }}
-            onMouseMove={handleMouseMove}
-            className="group relative rounded-[32px] p-[1px] bg-gradient-to-b from-zinc-200/80 via-zinc-200/20 to-transparent dark:from-white/10 dark:via-zinc-800/50 dark:to-transparent overflow-hidden shadow-sm dark:shadow-none"
-          >
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-              style={{
-                background: "radial-gradient(400px circle at var(--mouse-x, 0px) var(--mouse-y, 0px), rgba(10, 117, 106, 0.06), transparent 80%)"
-              }}
-            />
-
-            <div className="relative h-full bg-white/80 dark:bg-zinc-900/40 backdrop-blur-2xl rounded-[31px] p-8 md:p-12 flex flex-col justify-between overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#0A756A]/5 dark:bg-[#0A756A]/10 rounded-full blur-2xl pointer-events-none group-hover:bg-[#0A756A]/10 dark:group-hover:bg-[#0A756A]/20 transition-colors duration-500" />
-              
-              <div>
-         
-
-                <h3 className="text-2xl md:text-3xl font-semibold font-clash text-zinc-900 dark:text-white mb-4">
-                  Online Learning
-                </h3>
-
-                <p className="text-zinc-650 dark:text-zinc-400 text-sm md:text-[16px] font-light leading-relaxed mb-8 max-w-md font-satoshi">
-                  Attend classes from anywhere with live sessions, recorded videos, practical assignments, and continuous mentor support.
-                </p>
-
-                {/* Features List */}
-                <div className="grid grid-cols-2 gap-4 mb-10 pb-8 border-b border-zinc-200/65 dark:border-white/5">
-                  {[
-                    "Live Classes",
-                    "Recorded Videos",
-                    "Flexible Schedule",
-                    "Community Support",
-                    "Practical Learning",
-                    "Certificate"
-                  ].map((feature, i) => (
-                    <div key={i} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#0A756A]/10 border border-[#0A756A]/20 flex items-center justify-center shrink-0">
-                        <Check className="w-3.5 h-3.5 text-[#0A756A]" />
-                      </div>
-                      <span className="text-xs md:text-[13px] text-zinc-700 dark:text-zinc-300 font-satoshi">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <Link
-                href="/online-plans"
-                className="relative w-full h-12 rounded-xl bg-transparent border border-zinc-200 dark:border-white/10 hover:border-[#0A756A] dark:hover:border-[#0A756A] text-[#0A756A] dark:text-white font-semibold text-sm transition-all duration-300 hover:bg-[#0A756A]/5 dark:hover:bg-[#0A756A]/10 flex items-center justify-center gap-2 group/btn cursor-pointer"
-              >
-                <span>Explore Online Plans</span>
-                <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-              </Link>
-            </div>
-          </motion.div>
-        </div>
-
-
-        {/* ==========================================
-            SECTION 3: COMPARISON TABLE
-            ========================================== */}
-      
-
-
-     
-
-
-        {/* ==========================================
-            SECTION 5: MINI FAQ
-            ========================================== */}
-        {/* <div className="mb-24 md:mb-32 max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-[10px] font-mono tracking-widest text-[#0A756A] uppercase mb-3 block">
-              Got Questions?
-            </span>
-            <h3 className="text-2xl md:text-4xl font-bold font-clash text-zinc-900 dark:text-white mb-3">
-              Syllabus & Details FAQ
-            </h3>
-            <p className="text-zinc-650 dark:text-zinc-400 text-xs md:text-sm font-satoshi max-w-md mx-auto">
-              Clear, straightforward answers about curriculum schedules, certifications, and requirements.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-4">
-            {faqData && faqData.slice(0, 4).map((item, idx) => {
-              const isOpen = openFAQIndex === idx;
+          {/* Category Filter Tabs */}
+          <div className="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl bg-white/80 dark:bg-zinc-900/80 backdrop-blur-xl border border-zinc-200/80 dark:border-white/10 shadow-sm">
+            {filterTabs.map((tab) => {
+              const isActive = activeCategory === tab.id;
               return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: idx * 0.05 }}
-                  className={`rounded-2xl border transition-all duration-300 overflow-hidden relative text-left ${isOpen
-                    ? "bg-white dark:bg-zinc-900 border-[#0A756A]/30 shadow-md shadow-[#0A756A]/5"
-                    : "bg-white dark:bg-zinc-900/40 border-zinc-200 dark:border-white/5 hover:border-zinc-300 dark:hover:border-zinc-700"
-                    }`}
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveCategory(tab.id)}
+                  className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold font-clash transition-all duration-200 cursor-pointer flex items-center gap-1.5 ${
+                    isActive
+                      ? "bg-[#0A756A] text-white shadow-sm"
+                      : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:bg-zinc-100/70 dark:hover:bg-zinc-800/50"
+                  }`}
                 >
-                  <div className="absolute inset-0 noise-overlay pointer-events-none opacity-20 dark:opacity-30" />
-
-                  <button
-                    onClick={() => toggleFAQ(idx)}
-                    className="w-full flex items-center justify-between p-5 md:p-6 cursor-pointer text-left z-10 relative"
+                  <span>{tab.label}</span>
+                  <span
+                    className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
+                      isActive
+                        ? "bg-white/20 text-white"
+                        : "bg-zinc-100 dark:bg-zinc-800 text-zinc-500"
+                    }`}
                   >
-                    <div className="flex items-center gap-4 pr-4">
-                      <HelpCircle size={16} className={`shrink-0 transition-colors duration-300 ${isOpen ? "text-[#0A756A]" : "text-zinc-400"}`} />
-                      <span className="text-sm font-bold text-zinc-900 dark:text-white font-clash leading-snug">
-                        {item.question}
-                      </span>
-                    </div>
-
-                    <div className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-400 transition-transform duration-300 ${isOpen ? "rotate-180 bg-[#0A756A]/10 text-[#0A756A]" : ""}`}>
-                      {isOpen ? <Minus size={12} /> : <Plus size={12} />}
-                    </div>
-                  </button>
-
-                  <AnimatePresence initial={false}>
-                    {isOpen && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                        className="z-10 relative"
-                      >
-                        <div className="px-5 pb-5 md:px-6 md:pb-6 text-xs md:text-sm text-zinc-655 dark:text-zinc-400 leading-relaxed pl-12">
-                          {item.answer}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
+                    {tab.count}
+                  </span>
+                </button>
               );
             })}
           </div>
-        </div> */}
-
-      <TrustedBy className="my-16 md:my-24" />
-
-      {/* Two-part Section: Live Projects & Internship + Target Audience */}
-      <CourseExperienceAudience />
-
-      {/* Free Demo Lead Registration Section */}
-      <LeadRegistrationForm className="my-14 md:my-20 rounded-3xl" />
+        </div>
 
         {/* ==========================================
-            SECTION 6: BOTTOM CTA
+            COURSES CATALOG (ALL 5 COURSES DETAILED)
             ========================================== */}
+        <div className="flex flex-col gap-8 md:gap-10 mb-24 md:mb-32">
+          {filteredCourses.map((course, idx) => (
+            <motion.div
+              key={course.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: idx * 0.08 }}
+              onMouseMove={handleMouseMove}
+              className="group relative rounded-[32px] p-[1px] bg-gradient-to-b from-zinc-200/80 via-zinc-200/20 to-transparent dark:from-white/10 dark:via-zinc-800/50 dark:to-transparent overflow-hidden shadow-sm dark:shadow-none hover:shadow-xl transition-all duration-300"
+            >
+              <div className="relative bg-white/90 dark:bg-zinc-900/60 backdrop-blur-2xl rounded-[31px] p-6 sm:p-8 md:p-10 flex flex-col lg:flex-row gap-8 justify-between">
+                
+                {/* Left/Main Column: Title, description, highlights */}
+                <div className="flex-1 flex flex-col justify-between">
+                  <div>
+                    {/* Top Meta Row */}
+                    <div className="flex flex-wrap items-center gap-2.5 mb-4">
+                      <span className="px-3 py-1 rounded-full text-xs font-semibold font-clash bg-[#0A756A]/10 text-[#0A756A] dark:text-emerald-400 border border-[#0A756A]/20">
+                        {course.category}
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-xs text-amber-600 dark:text-amber-400 font-semibold font-satoshi">
+                        <Star size={13} className="fill-current" />
+                        <span>{course.rating}</span>
+                        <span className="text-zinc-400 font-normal">({course.reviewsCount})</span>
+                      </span>
+                    </div>
+
+                    {/* Course Title */}
+                    <h2 className="text-2xl sm:text-3xl font-bold font-clash text-zinc-900 dark:text-white mb-3 group-hover:text-[#0A756A] dark:group-hover:text-emerald-400 transition-colors">
+                      <Link href={course.href}>
+                        {course.title}
+                      </Link>
+                    </h2>
+
+                    {/* Description */}
+                    <p className="text-zinc-650 dark:text-zinc-300 text-sm sm:text-base font-satoshi leading-relaxed mb-6">
+                      {course.description}
+                    </p>
+
+                    {/* Highlights Grid */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-6">
+                      {course.highlights.map((h, hIdx) => (
+                        <div key={hIdx} className="flex items-start gap-2.5">
+                          <div className="w-4 h-4 rounded-full bg-[#0A756A]/10 text-[#0A756A] flex items-center justify-center shrink-0 mt-0.5">
+                            <Check size={11} strokeWidth={2.5} />
+                          </div>
+                          <span className="text-xs sm:text-sm text-zinc-700 dark:text-zinc-300 font-satoshi leading-tight">
+                            {h}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Tools Stack Chips */}
+                  <div className="pt-4 border-t border-zinc-100 dark:border-white/5">
+                    <span className="text-[11px] font-semibold text-zinc-400 uppercase tracking-wider block mb-2 font-clash">
+                      Key Tools Mastered:
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {course.tools.map((tool, tIdx) => (
+                        <span
+                          key={tIdx}
+                          className="px-2.5 py-1 rounded-md text-[11px] font-medium font-satoshi bg-zinc-100 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300"
+                        >
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column: Key Details Card & Actions */}
+                <div className="lg:w-72 shrink-0 flex flex-col justify-between p-6 rounded-2xl bg-slate-50 dark:bg-zinc-950/60 border border-zinc-200/60 dark:border-white/5">
+                  <div className="flex flex-col gap-3.5 mb-6">
+                    <div>
+                      <span className="text-[11px] text-zinc-400 uppercase tracking-wider font-semibold font-clash block">
+                        Duration
+                      </span>
+                      <span className="text-sm font-bold font-clash text-zinc-900 dark:text-white flex items-center gap-1.5 mt-0.5">
+                        <Clock size={14} className="text-[#0A756A]" />
+                        {course.duration}
+                      </span>
+                    </div>
+
+                    <div>
+                      <span className="text-[11px] text-zinc-400 uppercase tracking-wider font-semibold font-clash block">
+                        Skill Level
+                      </span>
+                      <span className="text-sm font-bold font-clash text-zinc-900 dark:text-white flex items-center gap-1.5 mt-0.5">
+                        <Award size={14} className="text-[#0A756A]" />
+                        {course.level}
+                      </span>
+                    </div>
+
+                    <div>
+                      <span className="text-[11px] text-zinc-400 uppercase tracking-wider font-semibold font-clash block">
+                        Training Delivery
+                      </span>
+                      <span className="text-xs text-zinc-650 dark:text-zinc-300 font-satoshi mt-0.5 block">
+                        In-person Classroom at Manjeri & Live Interactive Online
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex flex-col gap-2.5">
+                    <Link
+                      href={course.href}
+                      className="w-full h-11 rounded-xl bg-[#0A756A] hover:bg-[#129A8C] text-white font-semibold text-xs font-clash uppercase tracking-wider transition-all duration-300 hover:shadow-[0_0_20px_rgba(10,117,106,0.3)] flex items-center justify-center gap-2 group/btn cursor-pointer shadow-sm"
+                    >
+                      <span>Explore Program</span>
+                      <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-1" />
+                    </Link>
+
+                    <button
+                      type="button"
+                      onClick={() => handleEnrollClick(course.title)}
+                      className="w-full h-10 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 hover:border-[#0A756A] text-zinc-700 dark:text-zinc-300 font-medium text-xs font-satoshi transition-colors flex items-center justify-center gap-1.5 cursor-pointer shadow-sm hover:bg-[#0A756A]/5"
+                    >
+                      <MessageCircle size={13} className="text-[#0A756A]" />
+                      <span>Enquire Program</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* ==========================================
+            LEARNING MODES BANNER
+            ========================================== */}
+        <div className="mb-24 md:mb-32">
+          <div className="relative rounded-[32px] p-8 sm:p-10 md:p-12 bg-gradient-to-r from-[#0A756A]/10 via-white dark:via-zinc-900 to-[#14b8a6]/10 border border-[#0A756A]/20 dark:border-white/10 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="max-w-xl text-left">
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-[#0A756A] dark:text-emerald-400 font-clash block mb-2">
+                Flexible Formats
+              </span>
+              <h3 className="text-2xl sm:text-3xl font-bold font-clash text-zinc-900 dark:text-white mb-2">
+                Available in Offline Classroom & Online Modes
+              </h3>
+              <p className="text-zinc-650 dark:text-zinc-400 text-sm font-satoshi leading-relaxed">
+                Choose between daily in-person practical lab workstations at our Manjeri campus or live flexible online evening and weekend batches from home.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 shrink-0">
+              <Link
+                href="/offline-batches"
+                className="h-11 px-6 rounded-xl bg-[#0A756A] text-white font-semibold text-xs font-clash uppercase tracking-wider hover:bg-[#129A8C] transition-all flex items-center gap-2 shadow-sm"
+              >
+                <Building size={14} />
+                <span>Offline Batches</span>
+              </Link>
+              <Link
+                href="/online-plans"
+                className="h-11 px-6 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 text-zinc-800 dark:text-zinc-200 font-semibold text-xs font-clash uppercase tracking-wider hover:border-[#0A756A] transition-all flex items-center gap-2 shadow-sm"
+              >
+                <Laptop size={14} className="text-amber-600" />
+                <span>Online Plans</span>
+              </Link>
+              <Link
+                href="/learning-modes"
+                className="h-11 px-5 rounded-xl text-xs font-semibold font-clash uppercase tracking-wider text-[#0A756A] dark:text-emerald-400 hover:underline flex items-center gap-1"
+              >
+                <span>Compare Modes</span>
+                <ChevronRight size={14} />
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* ==========================================
+            SUPPORTING SITE SECTIONS
+            ========================================== */}
+        <TrustedBy className="my-16 md:my-24" />
+
+        <CourseExperienceAudience />
+
+        <LeadRegistrationForm className="my-14 md:my-20 rounded-3xl" />
+
+        {/* Bottom CTA Banner */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -485,23 +531,21 @@ export default function Courses({ defaultSection }) {
           <div className="absolute inset-0 noise-overlay pointer-events-none opacity-[0.015] dark:opacity-[0.03]" />
 
           <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
-
-
             <h3 className="text-3xl md:text-5xl font-bold font-clash text-zinc-900 dark:text-white tracking-tight leading-tight mb-4">
               Begin Your Learning <br />
               <span className="bg-gradient-to-r from-zinc-800 to-[#0A756A] dark:from-white dark:to-[#0A756A] bg-clip-text text-transparent">
-                  Journey Today
+                Journey Today
               </span>
             </h3>
 
             <p className="text-zinc-650 dark:text-zinc-400 text-sm md:text-base leading-relaxed mb-8 max-w-lg font-satoshi">
-              Talk directly with our curriculum coordinators over WhatsApp, clear doubt queries, and select the optimal slot scheduling.
+              Talk directly with our curriculum coordinators over WhatsApp, clear doubt queries, and select the optimal course scheduling.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
               <button
                 onClick={() => handleEnrollClick("CTA Section")}
-                className="h-12 px-8 rounded-xl bg-[#0A756A] text-white font-bold text-sm transition-all duration-300 hover:bg-[#129A8C] hover:shadow-[0_0_30px_rgba(10,117,106,0.25)] dark:bg-white dark:text-zinc-950 dark:hover:bg-[#0A756A] dark:hover:text-white flex items-center justify-center gap-2 group/ctaBtn cursor-pointer"
+                className="h-12 px-8 rounded-xl bg-[#0A756A] text-white font-bold text-sm transition-all duration-300 hover:bg-[#129A8C] hover:shadow-[0_0_30px_rgba(10,117,106,0.25)] dark:bg-white dark:text-zinc-950 dark:hover:bg-[#0A756A] dark:hover:text-white flex items-center justify-center gap-2 group/ctaBtn cursor-pointer shadow-md"
               >
                 <span>Chat with Coordinator</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover/ctaBtn:translate-x-1" />
@@ -516,9 +560,9 @@ export default function Courses({ defaultSection }) {
       <EnrollmentFormAdvanced
         open={isEnrollOpen}
         onOpenChange={setIsEnrollOpen}
-        batchType="Offline Batch"
+        batchType="Course Specialization"
         batchName={selectedPlan || "Digital Marketing Comprehensive Course"}
-        sourcePage="Courses Page"
+        sourcePage="Courses Hub Page"
         storageKey={`enroll-popup-marketing-courses-${selectedPlan || "general"}`}
       />
     </div>
