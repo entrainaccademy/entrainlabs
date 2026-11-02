@@ -53,18 +53,17 @@ export default function Footer() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     { name: "Courses", path: "/courses" },
-    { name: "Offline Batches", path: "/offline-batches" },
+    
     { name: "Blog", path: "/blog" },
     { name: "Contact", path: "/contact" }
   ];
 
   const programs = [
-    { name: "Digital Marketing Master Program", path: "/courses" },
-    { name: "Performance Marketing", path: "/courses" },
-    { name: "SEO Optimization", path: "/courses" },
-    { name: "Google Ads & Meta Ads", path: "/courses" },
-   
-    { name: "Career Support & Internship", path: "/courses" }
+    { name: "Digital Marketing Master Program", path: "/courses/digital-marketing-master-program" },
+    { name: "Performance Marketing", path: "/courses/performance-marketing" },
+    { name: "SEO Optimization", path: "/courses/seo-optimization" },
+    { name: "Google Ads & Meta Ads", path: "/courses/google-ads-meta-ads" },
+    { name: "Career Support & Internship", path: "/courses/career-support-internship" }
   ];
 
   const socialLinks = [
@@ -276,8 +275,8 @@ export default function Footer() {
             <Link href="/about" className="hover:text-white transition-colors focus:outline-none focus:text-white">About Us</Link>
             <span className="text-zinc-700">•</span>
             <Link href="/contact" className="hover:text-white transition-colors focus:outline-none focus:text-white">Contact & Support</Link>
-            <span className="text-zinc-700">•</span>
-            <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors focus:outline-none focus:text-white">Sitemap</a>
+            {/* <span className="text-zinc-700">•</span> */}
+            {/* <a href="/sitemap.xml" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors focus:outline-none focus:text-white">Sitemap</a> */}
           </div>
         </div>
 

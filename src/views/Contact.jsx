@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Mail, Phone, MapPin, Check, HelpCircle, ArrowRight, MessageSquare, ShieldCheck, Clock, Award } from "lucide-react";
+import { Mail, Phone, MapPin, Check, HelpCircle, ArrowRight, ShieldCheck } from "lucide-react";
 import { contactFaqs } from "@/lib/data";
 
 export default function Contact() {
@@ -87,10 +87,6 @@ export default function Contact() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10 z-10 text-center md:text-left mb-16 md:mb-24">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-7 flex flex-col items-center md:items-start gap-6">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0A756A]/10 text-[#0A756A] text-xs font-semibold uppercase tracking-wider font-clash">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#0A756A] animate-pulse" />
-              Direct Support
-            </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-outfit text-zinc-900 leading-[1.1] tracking-tight text-center md:text-left">
               Let's Build Your <span className="text-[#0A756A]">Digital Marketing</span> Career Together
             </h1>
@@ -223,30 +219,6 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Response Promise Card */}
-            <div className="rounded-3xl border border-zinc-200/50 bg-gradient-to-r from-zinc-50 to-[#0A756A]/5 p-6 shadow-sm">
-              <div className="flex items-center gap-2.5 text-emerald-600 font-bold text-xs tracking-wider uppercase font-clash mb-4">
-                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                Response Promise
-              </div>
-              <p className="text-[13px] text-zinc-650 leading-relaxed font-satoshi mb-4">
-                We respect your time. Our admissions department guarantees a direct response inside 24 hours of form submission.
-              </p>
-              <div className="flex flex-col gap-2.5">
-                <div className="flex items-center gap-3 text-xs font-semibold text-zinc-700">
-                  <Clock size={15} className="text-[#0A756A]" />
-                  <span>Free Career Guidance</span>
-                </div>
-                <div className="flex items-center gap-3 text-xs font-semibold text-zinc-700">
-                  <MessageSquare size={15} className="text-[#0A756A]" />
-                  <span>Course Counseling</span>
-                </div>
-                <div className="flex items-center gap-3 text-xs font-semibold text-zinc-700">
-                  <Award size={15} className="text-[#0A756A]" />
-                  <span>Placement Support</span>
-                </div>
-              </div>
-            </div>
           </div>
 
           {/* Right Column: Contact Form */}

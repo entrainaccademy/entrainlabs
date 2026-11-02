@@ -17,6 +17,36 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${siteUrl}/courses/digital-marketing-master-program`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/courses/performance-marketing`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/courses/seo-optimization`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/courses/google-ads-meta-ads`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/courses/career-support-internship`,
+      lastModified: currentDate,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
       url: `${siteUrl}/offline-batches`,
       lastModified: currentDate,
       changeFrequency: "weekly",
